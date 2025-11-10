@@ -1,22 +1,21 @@
 import Navbar from "../components/Navbar";
-import styles from "../styles/Migracion.module.css";
+import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
-
 
 import Pagination from "../components/Pagination";
 
 
-export default function Migracion() {
+export default function Atlas() {
   
   return (
     <>
       <Navbar />
+
       {/* Encabezado */}
       <header className={styles.header}>
-        
-        <h1>VISUALIZACIÓN DE DATOS</h1>
+        <h1>ATLAS DE LA MARIPOSA MONARCA</h1>
         <p>
-          La visualización de datos de la mariposa monarca permite comprender su migración, amenazas y conservación de forma clara interactiva y accesible.
+          Descubre la belleza y la ciencia detrás de la mariposa monarca a través de nuestros atlas.
         </p>
       </header>
 
@@ -25,19 +24,20 @@ export default function Migracion() {
         {/* Primera columna */}
         <div className={styles.texto}>
           <div className={styles.imagenContainer} style={{ textAlign: "left" }}>
-          <div className={styles.alinearIzquierda}>
-          
-          </div>
-          
+            
+
             <br />
             <img
-              src="/assets/iniciativas_conservacion.png"
-              alt="Iniciativas de Conservación de la Mariposa Monarca"
+              src="/assets/panel_contraste.png"
+              alt="panel de contraste del ciclo de vida"
               className={styles.imagen}
             />
             <br />
-            <div className={styles.alinearIzquierda}>
-              <h3>Iniciativas de Conservación</h3>
+            <div style={{ textAlign: "left" }}>
+              <h3>Panel de Contraste</h3>
+              <p>
+                Destrucción ambiental, Conservación, Amenazas, Conciencia, Soluciones activas, Restauración de Hábitat, Participación humana.
+              </p>
             </div>
             <div className={styles.botonIzquierda}>
               <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
@@ -46,14 +46,16 @@ export default function Migracion() {
           <br/>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/tipos_de_amenazas.png"
-              alt="Tipos de Amenazas a la Mariposa Monarca"
+              src="/assets/tradición.png"
+              alt="Red de Dependencias Ecosomática"
               className={styles.imagen}
             />
             <br/>
-            <div className={styles.alinearIzquierda}>
-            <h3>Tipos de Amenazas</h3>
-            
+            <div style={{ textAlign: "left" }}>
+              <h3>En la Tradición</h3>
+              <p>
+                Pueblos originarios, historia, artefactos, protección, mariposa monarca, memoria cultural, tradición, simbolismo.
+              </p>
             </div>
             <div className={styles.botonIzquierda}>
               <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
@@ -64,18 +66,21 @@ export default function Migracion() {
         <div className={styles.parrafoDerecha}>
           <br/>
           <div style={{ textAlign: "left" }}>
-          
+            
           </div>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/reproducción_alimentación.png"
-              alt="Reproducción y Alimentación de la Mariposa Monarca"
+              src="/assets/naturaleza.png"
+              alt="Naturaleza y Migración"
               className={styles.imagen}
             />
             <br/>
             <div style={{ textAlign: "left" }}>
-            <h3>Mapa de Áreas de Reproducción y Alimentación</h3>
-            
+              <h3>En la Naturaleza</h3>
+              <p>
+                <br/>
+                Migración, localización en México, conservación, perservación, biología, ciclo de vida, planes de protección datos biológicos.
+              </p>
             </div>
             <div className={styles.botonIzquierda}>
               <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
@@ -84,14 +89,17 @@ export default function Migracion() {
           <br/>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/tendencia_poblacional.png"
-              alt="Tendencia Poblacional de la Mariposa Monarca"
+              src="/assets/lugar.png"
+              alt="La Voz Humana"
               className={styles.imagen}
             />
             <br/>
             <div style={{ textAlign: "left" }}>
-            <h3>Tendencia Poblacional de la Mariposa Monarca</h3>
-            
+              <h3>En el Lugar</h3>
+              <p>
+                Mariposa monarca, resilencia, lugares de destino, problemáticas sociales, impacto ambiental, comunidades locales, más allá del clima, resistencia, compartida.
+
+              </p>
             </div>
             <br/>
             <div className={styles.botonIzquierda}>
@@ -101,7 +109,8 @@ export default function Migracion() {
         </div>
       </main>
 
-      <Pagination totalPages={3} currentPage={1} basePath="Visualizacion" />
+      <Pagination totalPages={3} currentPage={2} basePath="Atlas" />
+
 
       <footer className={styles.footer}>
         © 2025 Mariposa Monarca. Todos los derechos reservados.

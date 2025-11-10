@@ -1,5 +1,7 @@
 import styles from "../styles/Migracion.module.css";
 import migracionImage from "../assets/migracion.png";
+import Boton from "../components/Boton";
+
 export default function Migracion() {
   return (
     <section
@@ -37,37 +39,7 @@ export default function Migracion() {
         <p style={{ fontSize: "1.2rem", color: "white", maxWidth: "600px", margin: "0 auto" }}>
           La mariposa monarca y los humanos migran en Norteamérica buscando mejores condiciones. Las mariposas migran a México por instinto biológico, los humanos por razones socioeconómicas. Ambas demuestran resiliencia y conexión territorial.
         </p>
-        <button
-          style={{
-            marginTop: "1.5rem",
-            padding: "0.8rem 2rem",
-            backgroundColor: "#f97316",
-            border: "none",
-            borderRadius: "8px",
-            color: "white",
-            fontWeight: "bold",
-            cursor: "pointer",
-            transition: "background-color 0.3s, transform 0.2s",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = "#d65b0e";
-            e.currentTarget.style.transform = "scale(1.05)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "#f97316";
-            e.currentTarget.style.transform = "scale(1)";
-          }}
-          onTouchStart={(e) => {
-            e.currentTarget.style.backgroundColor = "#d65b0e";
-            e.currentTarget.style.transform = "scale(1.05)";
-          }}
-          onTouchEnd={(e) => {
-            e.currentTarget.style.backgroundColor = "#f97316";
-            e.currentTarget.style.transform = "scale(1)";
-          }}
-        >
-          Explorar
-        </button>
+        <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
         
       </div>
     </section>

@@ -23,12 +23,14 @@
 /* ===== Contenido principal ===== */
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+  gap: 2rem; /* Espaciado uniforme entre columnas */
+  align-items: start; /* Alinea las columnas en la parte superior */
   padding: 60px;
   background-color: #fff;
 }
+
+
 
 .texto h2 {
   font-size: 2rem;
@@ -44,7 +46,8 @@
 
 /* ===== Imagen con efecto hover ===== */
 .imagenContainer {
-  text-align: center;
+  margin: 0 auto; /* Centra las imágenes dentro de su contenedor */
+  text-align: left; /* Alinea el contenido a la izquierda */
 }
 
 .imagen {
@@ -90,4 +93,61 @@
   .header h1 {
     font-size: 2.2rem;
   }
+}
+
+/* ===== Estilos Adicionales ===== */
+.contenedorPrincipal {
+  display: flex;
+  gap: 2rem; /* Espaciado entre columnas */
+  width: 100%;
+}
+
+.columnaIzquierda,
+.columnaDerecha {
+  flex: 1; /* Ambas columnas tienen el mismo ancho */
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.columnaIzquierda {
+  text-align: left;
+}
+
+.columnaDerecha {
+  text-align: left;
+}
+
+/* Alineación exacta de columnas */
+.texto, .parrafoDerecha {
+  width: 100%;
+  max-width: 600px;
+  margin: 0;          /* ✅ elimina márgenes verticales */
+  padding: 0;         /* ✅ evita desplazamientos */
+  align-self: start;  /* ✅ fuerza a alinearse arriba */
+}
+
+.imagenContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.parrafoDerecha {
+  margin: 0; /* Elimina márgenes adicionales */
+  padding: 0; /* Elimina rellenos adicionales */
+  align-self: start; /* Asegura que la columna se alinee arriba */
+}
+
+.parrafoDerecha p:first-of-type {
+  margin-top: 0; /* Elimina espacio inicial del texto */
+  padding-top: 0; /* Asegura que no haya relleno superior */
+}
+
+.botonIzquierda {
+  display: flex;
+  justify-content: flex-start; /* Alinea el botón a la izquierda */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
 }

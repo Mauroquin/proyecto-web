@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | José Mauricio Quintero López</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      transition: background-color 0.5s, color 0.5s;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .dark-mode {
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+
+    /* Partículas de fondo */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: float 15s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+    }
+
+    /* Navbar mejorado */
+    nav {
+      backdrop-filter: blur(15px);
+      transition: all 0.5s ease;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-light-mode {
+      background-color: rgba(102, 126, 234, 0.9);
+    }
+
+    .navbar-dark-mode {
+      background-color: rgba(15, 12, 41, 0.9);
+    }
+
+    .navbar-brand {
+      font-weight: 700 !important;
+      font-size: 1.5rem;
+      color: #fff !important;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.9) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #ffd700;
+      transition: all 0.3s;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    .nav-link:hover {
+      color: #ffd700 !important;
+    }
+
+    /* Hero mejorado */
+    .hero {
+      text-align: center;
+      padding: 150px 20px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-img-container {
+      position: relative;
+      display: inline-block;
+      animation: fadeInScale 1s ease-out;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #ffd700;
+      object-fit: cover;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.4);
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 60px rgba(255, 215, 0, 0.6);
+    }
+
+    .profile-ring {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.5; }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .hero h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-top: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      animation: slideInDown 0.8s ease-out;
+    }
+
+    .hero h5 {
+      color: #ffd700;
+      font-weight: 600;
+      animation: slideInUp 0.8s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 20px auto;
+      opacity: 0.95;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .social-icons a {
+      font-size: 2rem;
+      margin: 0 15px;
+      color: #fff;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: #ffd700;
+      transform: translateY(-5px) scale(1.2);
+    }
+
+    /* Botón CV mejorado */
+    .cv-btn {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      color: #333;
+      border-radius: 50px;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+      transition: all 0.3s;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .cv-btn:hover {
+      background: linear-gradient(135deg, #ffed4e, #ffd700);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+      color: #333;
+    }
+
+    /* Secciones */
+    section {
+      padding: 80px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-weight: 700;
+      color: #ffd700;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    }
+
+    /* Cards mejorados */
+    .card-custom {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-custom::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+      transition: all 0.6s;
+    }
+
+    .card-custom:hover::before {
+      left: 100%;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3);
+      border-color: rgba(255, 215, 0, 0.5);
+    }
+
+    .card-custom h5 {
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .card-custom p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    /* Timeline para experiencia */
+    .timeline-item {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: -30px;
+      width: 2px;
+      background: linear-gradient(180deg, #ffd700, rgba(255, 215, 0, 0.2));
+    }
+
+    .timeline-item:last-child::before {
+      background: linear-gradient(180deg, #ffd700, transparent);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 6px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ffd700;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      z-index: 2;
+    }
+
+    /* Habilidades con barras de progreso */
+    .stat-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.4s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 215, 0, 0.15);
+      box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+    }
+
+    .stat-card i {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+
+    .stat-card h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin: 10px 0;
+    }
+
+    .stat-card p {
+      margin: 0;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .skill-item {
+      margin-bottom: 25px;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .skill-name i {
+      margin-right: 8px;
+      color: #ffd700;
+    }
+
+    .skill-bar {
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #ffd700, #ffed4e);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      transition: width 2s ease-out;
+      width: 0;
+    }
+
+    .skill-progress.animate {
+      animation: progressAnimation 2s ease-out forwards;
+    }
+
+    @keyframes progressAnimation {
+      from { width: 0; }
+    }
+
+    /* Badge mejorado */
+    .badge-custom {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      color: #ffd700;
+      padding: 12px 25px;
+      margin: 8px;
+      font-size: 1rem;
+      border-radius: 30px;
+      display: inline-block;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .badge-custom:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+    }
+
+    /* Contacto */
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+      transition: all 0.3s;
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .contact-item:hover {
+      background: rgba(255,215,0,0.1);
+      transform: translateX(10px);
+    }
+
+    .contact-item i {
+      color: #ffd700;
+      font-size: 1.8rem;
+      min-width: 40px;
+    }
+
+    .contact-item div {
+      flex: 1;
+    }
+
+    .contact-item a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 1.1rem;
+    }
+
+    .contact-item a:hover {
+      color: #ffd700;
+    }
+
+    .contact-item span {
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      padding: 30px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    /* Botón tema */
+    #themeToggle {
+      border: 2px solid #ffd700;
+      background: rgba(255, 215, 0, 0.1);
+      color: #ffd700;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      transition: all 0.3s;
+    }
+
+    #themeToggle:hover {
+      background: #ffd700;
+      color: #333;
+      transform: rotate(180deg);
+    }
+
+    /* Animaciones de scroll */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .info-badge {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-badge:hover {
+      background: rgba(255, 215, 0, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    }
+
+    .info-badge i {
+      font-size: 1.8rem;
+      color: #ffd700;
+    }
+
+    .info-badge small {
+      display: block;
+      font-size: 0.75rem;
+    }
+
+    .info-badge p {
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      h2 { font-size: 2rem; }
+      .profile-img { width: 140px; height: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Partículas de fondo -->
+  <div id="particles"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-light-mode">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">JMQL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre Mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+        <button id="themeToggle" class="btn ms-3 rounded-circle">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <div class="profile-img-container">
+      <div class="profile-ring"></div>
+      <img src="mauricio.png" alt="José Mauricio Quintero López" class="profile-img">
+    </div>
+    <h1 class="fw-bold">José Mauricio Quintero López</h1>
+    <h5>Administrador de Empresas | Tecnólogo en Gestión Administrativa</h5>
+    <p class="mt-3 px-3" style="max-width: 800px; margin: 0 auto;">
+      Administrador de Empresas y Tecnólogo en Gestión Administrativa, con sólida experiencia en procesos administrativos, gestión documental, atención al ciudadano y fortalecimiento organizacional. 
+      He trabajado en entidades públicas y privadas desempeñando funciones de apoyo en planeación, organización de información, archivo, cumplimiento de normativas y servicio al usuario.
+    </p>
+    <div class="row justify-content-center mt-4 px-3">
+      <div class="col-md-8">
+        <div class="row g-3">
+          <div class="col-md-4 col-6">
+            <div class="info-badge">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <small style="opacity: 0.8;">Ubicación</small>
+                <p class="mb-0"><strong>Roldanillo, Valle</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-6">
+            <div class="info-badge">
+              <i class="bi bi-calendar-event"></i>
+              <div>
+                <small style="opacity: 0.8;">Nacimiento</small>
+                <p class="mb-0"><strong>26 Oct 1979</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="info-badge">
+              <i class="bi bi-person-badge"></i>
+              <div>
+                <small style="opacity: 0.8;">Documento</small>
+                <p class="mb-0"><strong>10.014.096</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social-icons mt-4">
+      <a href="https://www.facebook.com/share/17gpMGALRY/" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.linkedin.com/in/mauricio-quintero-825a87206" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.tiktok.com/@mauricioquinter11" target="_blank"><i class="bi bi-tiktok"></i></a>
+    </div>
+    <a href="Copia_de_Hoja_de_Vida_Mauricio_Quintero.pdf" download class="cv-btn">
+      <i class="bi bi-file-earmark-arrow-down"></i> Descargar Hoja de Vida
+    </a>
+  </section>
+
+  <!-- Sobre Mí -->
+  <section id="sobre-mi" style="background: rgba(0,0,0,0.1); backdrop-filter: blur(5px);">
+    <div class="container">
+      <h2>Sobre Mí</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card card-custom p-5 fade-in-section">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h4 style="color: #ffd700; margin-bottom: 20px;">Perfil Profesional</h4>
+                <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.95;">
+                  Cuento con formación complementaria en <strong style="color: #ffd700;">liderazgo</strong>, <strong style="color: #ffd700;">gestión de proyectos en Ciencia, Tecnología e Innovación (CTI)</strong>, 
+                  <strong style="color: #ffd700;">seguridad y salud en el trabajo</strong>, así como en herramientas ofimáticas y administrativas.
+                </p>
+                <p style="font-size: 1.05rem; line-height: 1.8; opacity: 0.95;">
+                  Me caracterizo por mis capacidades en <strong style="color: #ffd700;">organización</strong>, <strong style="color: #ffd700;">trabajo en equipo</strong>, 
+                  cumplimiento de metas institucionales, <strong style="color: #ffd700;">comunicación asertiva</strong> y <strong style="color: #ffd700;">orientación al servicio</strong>. 
+                  Estoy comprometido con aportar eficiencia, transparencia y resultados en la gestión pública y administrativa.
+                </p>
+              </div>
+              <div class="col-md-4 text-center mt-4 mt-md-0">
+                <div style="background: rgba(255,215,0,0.1); border: 2px solid rgba(255,215,0,0.3); border-radius: 15px; padding: 25px;">
+                  <i class="bi bi-trophy-fill" style="font-size: 4rem; color: #ffd700;"></i>
+                  <h5 class="mt-3" style="color: #ffd700;">20+ Años</h5>
+                  <p class="mb-0">De Experiencia Profesional</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia -->
+  <section id="experiencia">
+    <div class="container">
+      <h2>Experiencia Laboral</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-9">
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="card card-custom p-4">
+              <h5>Oficina de Registro de Instrumentos Públicos Roldanillo</h5>
+              <p class="text-muted mb-2"><strong>Auxiliar Administrativo (Gestión Documental)</strong></p>
+              <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;"><i class="bi bi-calendar3"></i> Feb 2023 - Dic 2023</p>
+              <ul style="font-size: 0.95rem; opacity: 0.9;">
+                <li>Apoyo en procesos de gestión administrativa y documental</li>
+                <li>Manejo de personal en actividades de archivo y atención al público</li>
+                <li>Organización de información clave para la toma de decisiones</li>
+              </ul>
+              <p style="font-size: 0.9rem;"><i class="bi bi-person-badge"></i> <strong>Jefe Inmediato:</strong> Deliria Albares Rodríguez</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="card card-custom p-4">
+              <h5>Oficina de Registro de Instrumentos Públicos Roldanillo</h5>
+              <p class="text-muted mb-2"><strong>Asistente de Bioseguridad</strong></p>
+              <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;"><i class="bi bi-calendar3"></i> Feb 2022 - Oct 2022</p>
+              <ul style="font-size: 0.95rem; opacity: 0.9;">
+                <li>Implementación de protocolos de bioseguridad y bienestar laboral</li>
+                <li>Capacitación y sensibilización del personal en prevención de riesgos</li>
+                <li>Apoyo en el cumplimiento de normas de SG-SST</li>
+              </ul>
+              <p style="font-size: 0.9rem;"><i class="bi bi-person-badge"></i> <strong>Jefe Inmediato:</strong> Gloria Milena Armero Vargas</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="card card-custom p-4">
+              <h5>Empresa de Medicina Integral EMI S.A</h5>
+              <p class="text-muted mb-2"><strong>Auxiliar de Archivo</strong></p>
+              <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;"><i class="bi bi-calendar3"></i> Nov 2017 - Oct 2018</p>
+              <ul style="font-size: 0.95rem; opacity: 0.9;">
+                <li>Organización de documentación administrativa y de personal</li>
+                <li>Apoyo en gestión de procesos internos y atención a usuarios</li>
+              </ul>
+              <p style="font-size: 0.9rem;"><i class="bi bi-person-badge"></i> <strong>Jefe Inmediato:</strong> Paola Sapuyes</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="card card-custom p-4">
+              <h5>Industrias Electromecánicas Magnetrón</h5>
+              <p class="text-muted mb-2"><strong>Operario de Producción</strong></p>
+              <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;"><i class="bi bi-calendar3"></i> Jul 2013 - May 2015</p>
+              <ul style="font-size: 0.95rem; opacity: 0.9;">
+                <li>Cumplimiento de normas de seguridad industrial</li>
+                <li>Trabajo en equipo bajo condiciones de seguridad y productividad</li>
+              </ul>
+              <p style="font-size: 0.9rem;"><i class="bi bi-person-badge"></i> <strong>Jefe Inmediato:</strong> Luis Fernando Varela</p>
+            </div>
+          </div>
+          
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-dot"></div>
+            <div class="card card-custom p-4">
+              <h5>Colombina S.A</h5>
+              <p class="text-muted mb-2"><strong>Mantenimiento General</strong></p>
+              <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 10px;"><i class="bi bi-calendar3"></i> May 1999 - Jul 2002</p>
+              <ul style="font-size: 0.95rem; opacity: 0.9;">
+                <li>Soporte a procesos operativos y de mantenimiento</li>
+                <li>Cumplimiento de lineamientos de seguridad en planta</li>
+              </ul>
+              <p style="font-size: 0.9rem;"><i class="bi bi-person-badge"></i> <strong>Jefe Inmediato:</strong> Ing. Fabio Aguirre</p>
+            </div>
+          </div>
+
+          <div class="fade-in-section">
+            <div class="card card-custom p-4" style="background: rgba(255, 215, 0, 0.15); border: 2px solid rgba(255, 215, 0, 0.3);">
+              <h6 style="color: #ffd700;"><i class="bi bi-briefcase-fill"></i> Experiencia Adicional</h6>
+              <p class="mb-0" style="opacity: 0.9;">Trabajador independiente en ventas, fortaleciendo habilidades en atención al cliente y negociación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educación -->
+  <section id="educacion">
+    <div class="container">
+      <h2>Formación Académica</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Educación Superior -->
+          <h4 class="text-center mb-4" style="color: #ffd700; font-weight: 600;">Educación Superior</h4>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-4 h-100">
+                <i class="bi bi-mortarboard-fill" style="font-size: 2.5rem; color: #ffd700; margin-bottom: 15px;"></i>
+                <h5>Administrador de Empresas</h5>
+                <p class="mb-1"><strong>INTEP - Roldanillo</strong></p>
+                <p class="mb-0" style="opacity: 0.8;">2021</p>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-4 h-100">
+                <i class="bi bi-building" style="font-size: 2.5rem; color: #ffd700; margin-bottom: 15px;"></i>
+                <h5>Tecnólogo en Gestión Administrativa</h5>
+                <p class="mb-1"><strong>CIAF - Pereira</strong></p>
+                <p class="mb-0" style="opacity: 0.8;">2018</p>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-4 h-100">
+                <i class="bi bi-file-earmark-text" style="font-size: 2.5rem; color: #ffd700; margin-bottom: 15px;"></i>
+                <h5>Técnico en Asistencia Administrativa</h5>
+                <p class="mb-1"><strong>SENA - Pereira</strong></p>
+                <p class="mb-0" style="opacity: 0.8;">2016</p>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-4 h-100">
+                <i class="bi bi-tree" style="font-size: 2.5rem; color: #ffd700; margin-bottom: 15px;"></i>
+                <h5>Técnico en Producción Agropecuaria</h5>
+                <p class="mb-1"><strong>INTEP - Roldanillo</strong></p>
+                <p class="mb-0" style="opacity: 0.8;">2022</p>
+              </div>
+            </div>
+            <div class="col-md-12 fade-in-section">
+              <div class="card card-custom p-4">
+                <i class="bi bi-laptop" style="font-size: 2.5rem; color: #ffd700; margin-bottom: 15px;"></i>
+                <h5>Técnico en Soportes de Sistemas Informáticos y Redes</h5>
+                <p class="mb-1"><strong>INTEP - Roldanillo</strong></p>
+                <p class="mb-0" style="opacity: 0.8;">2025</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cursos y Certificaciones -->
+          <h4 class="text-center mb-4" style="color: #ffd700; font-weight: 600;">Cursos y Certificaciones</h4>
+          <div class="row g-3">
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Sistema de Gestión SST</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">ARL Positiva - 50 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Liderazgo y Proyectos CTI</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">Universidad del Valle - 135 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Herramientas Avanzadas Excel</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">SENA - 40 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Mercadeo y Ventas</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">SENA - 120 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Comercialización Rural</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">SENA - 96 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 fade-in-section">
+              <div class="card card-custom p-3">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-award-fill" style="font-size: 2rem; color: #ffd700; margin-right: 15px;"></i>
+                  <div>
+                    <h6 class="mb-1" style="color: #ffd700;">Producción de Frutales</h6>
+                    <p class="mb-0" style="font-size: 0.9rem;">SENA - 288 horas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades">
+    <div class="container">
+      <h2>Habilidades y Competencias</h2>
+      
+      <!-- Estadísticas -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+          <div class="row g-4">
+            <div class="col-md-3 col-6 fade-in-section">
+              <div class="stat-card">
+                <i class="bi bi-briefcase-fill"></i>
+                <h3 class="counter" data-target="5">0</h3>
+                <p>Empresas</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 fade-in-section">
+              <div class="stat-card">
+                <i class="bi bi-award-fill"></i>
+                <h3 class="counter" data-target="8">0</h3>
+                <p>Certificaciones</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 fade-in-section">
+              <div class="stat-card">
+                <i class="bi bi-clock-history"></i>
+                <h3><span class="counter" data-target="20">0</span>+</h3>
+                <p>Años de Experiencia</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-6 fade-in-section">
+              <div class="stat-card">
+                <i class="bi bi-mortarboard-fill"></i>
+                <h3 class="counter" data-target="5">0</h3>
+                <p>Títulos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barras de Habilidades -->
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h4 class="text-center mb-4" style="color: #ffd700; font-weight: 600;">Habilidades Principales</h4>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-folder-fill"></i> Gestión Documental</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="95"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-people-fill"></i> Atención al Usuario</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-star-fill"></i> Liderazgo</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-diagram-3-fill"></i> Trabajo en Equipo</span>
+                  <span>92%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="92"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-calendar-check-fill"></i> Planeación y Organización</span>
+                  <span>88%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="88"></div>
+                </div>
+              </div>
+              
+              <div class="skill-item fade-in-section">
+                <div class="skill-name">
+                  <span><i class="bi bi-chat-dots-fill"></i> Comunicación Asertiva</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competencias Adicionales -->
+      <div class="row justify-content-center mt-5">
+        <div class="col-lg-10">
+          <h4 class="text-center mb-4" style="color: #ffd700; font-weight: 600;">Competencias Adicionales</h4>
+          <div class="text-center">
+            <span class="badge-custom fade-in-section"><i class="bi bi-shield-check"></i> Seguridad y Salud en el Trabajo</span>
+            <span class="badge-custom fade-in-section"><i class="bi bi-file-earmark-excel"></i> Excel Avanzado</span>
+            <span class="badge-custom fade-in-section"><i class="bi bi-lightbulb"></i> Gestión de Proyectos CTI</span>
+            <span class="badge-custom fade-in-section"><i class="bi bi-graph-up"></i> Mercadeo y Ventas</span>
+            <span class="badge-custom fade-in-section"><i class="bi bi-gear-fill"></i> Procesos Administrativos</span>
+            <span class="badge-custom fade-in-section"><i class="bi bi-clipboard-check"></i> Cumplimiento Normativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card card-custom p-5 fade-in-section">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <i class="bi bi-envelope-fill"></i>
+                  <div>
+                    <small style="opacity: 0.8;">Email</small>
+                    <br>
+                    <a href="mailto:mauroquinlopez@gmail.com">mauroquinlopez@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <i class="bi bi-telephone-fill"></i>
+                  <div>
+                    <small style="opacity: 0.8;">Teléfono</small>
+                    <br>
+                    <span>3117766147</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="contact-item">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <div>
+                    <small style="opacity: 0.8;">Dirección</small>
+                    <br>
+                    <span>Calle 11b #3-24, Barrio San Sebastián<br>Roldanillo, Valle del Cauca</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <hr style="border-color: rgba(255,215,0,0.3); margin: 30px 0;">
+            
+            <div class="text-center">
+              <h5 style="color: #ffd700; margin-bottom: 20px;">Sígueme en Redes Sociales</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com/share/17gpMGALRY/" target="_blank" title="Facebook">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mauricio-quintero-825a87206" target="_blank" title="LinkedIn">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://www.tiktok.com/@mauricioquinter11" target="_blank" title="TikTok">
+                  <i class="bi bi-tiktok"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="mb-0">© 2025 José Mauricio Quintero López · Todos los derechos reservados</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Partículas de fondo
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDelay = Math.random() * 15 + 's';
+      p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+      particlesContainer.appendChild(p);
+    }
+
+    // Tema
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const nav = document.getElementById('navbar');
+    
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const dark = body.classList.contains('dark-mode');
+      toggleBtn.innerHTML = dark ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
+      nav.classList.toggle('navbar-dark-mode', dark);
+      nav.classList.toggle('navbar-light-mode', !dark);
+    });
+
+    // Animación de scroll
+    const faders = document.querySelectorAll('.fade-in-section');
+    const appearOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        
+        // Animar barras de progreso
+        const progress = entry.target.querySelector('.skill-progress');
+        if (progress) {
+          const targetWidth = progress.dataset.progress;
+          progress.style.width = targetWidth + '%';
+        }
+
+        // Animar contadores
+        const counter = entry.target.querySelector('.counter');
+        if (counter) {
+          const target = parseInt(counter.dataset.target);
+          const duration = 2000;
+          const increment = target / (duration / 16);
+          let current = 0;
+          
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.textContent = Math.floor(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target;
+            }
+          };
+          updateCounter();
+        }
+        
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Smooth scroll para navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navHeight = document.getElementById('navbar').offsetHeight;
+          const targetPosition = target.offsetTop - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Cambiar navbar en scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.3)';
+      } else {
+        navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+      }
+    });
+  </script>
+</body>
+</html>

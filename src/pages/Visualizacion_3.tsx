@@ -101,7 +101,7 @@ export default function Migracion() {
         </div>
       </main>
 
-      <Pagination totalPages={3} currentPage={1} basePath="Visualizacion" />
+      <Pagination totalPages={3} currentPage={3} basePath="Visualizacion" />
 
       <footer className={styles.footer}>
         © 2025 Mariposa Monarca. Todos los derechos reservados.
