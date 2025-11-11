@@ -1,1 +1,190 @@
+DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio Profesional - Alejandro Rengifo Martínez</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      scroll-behavior: smooth;
+    }
+    #inicio {
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+    #sobre-mi img {
+      max-width: 200px;
+      border-radius: 50%;
+      border: 4px solid #0d6efd;
+    }
+    .proyecto-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .habilidad {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">Alejandro Rengifo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formacion">Formación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Inicio -->
+  <section id="inicio">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Hola, soy <strong>Alejandro Rengifo Martínez</strong></h1>
+      <p class="lead">Tecnólogo en Sistemas | Soporte Técnico | Redes | Atención al Cliente</p>
+      <a href="#contacto" class="btn btn-light btn-lg mt-3">Contáctame</a>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi" class="py-5">
+    <div class="container text-center">
+      <h2>Sobre mí</h2>
+      <hr class="w-25 mx-auto mb-4">
+      <img src="https://via.placeholder.com/200" alt="Foto de perfil" class="mb-3">
+      <p class="px-4">
+        Soy <strong>Tecnólogo en Sistemas</strong> con amplio conocimiento en redes de comunicaciones, responsable, creativo y con excelentes relaciones interpersonales. 
+        Me adapto fácilmente al cambio, tengo iniciativa, puntualidad y gran capacidad de aprendizaje. 
+        Me apasiona la tecnología y busco siempre implementar herramientas que aumenten la productividad de las organizaciones donde trabajo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formación académica -->
+  <section id="formacion" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Formación Académica</h2>
+      <hr class="w-25 mx-auto mb-4">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <strong>Tecnólogo en Sistemas (Redes y Comunicaciones)</strong><br>
+              Institución Universitaria Antonio José Camacho – Cali (2013)
+            </li>
+            <li class="list-group-item">
+              <strong>Bachiller Técnico en Dibujo Industrial</strong><br>
+              Instituto Técnico Industrial San Juan Bosco – Cali (2008)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-center mt-5">Cursos y Certificaciones</h3>
+      <div class="row justify-content-center mt-3">
+        <div class="col-md-8">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Redes y Comunicaciones CISCO-CCNA Discovery 4.0 (2012–2013)</li>
+            <li class="list-group-item">Entrenamiento en Servicio al Cliente Contact Center – SENA (2015)</li>
+            <li class="list-group-item">AutoCAD 2009 – SENA (2009)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia Laboral -->
+  <section id="experiencia" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Experiencia Laboral</h2>
+      <hr class="w-25 mx-auto mb-4">
+
+      <div class="mb-4">
+        <h5>Agente de Call Center – Telemark Spain S.L. (abr 2015 – may 2015)</h5>
+        <p>Ofrecía a los usuarios cambios de planes de telefonía móvil, recepción de clientes y gestión de reclamaciones. 
+        Elaboración de guías tutoriales para mejorar la accesibilidad y atención al cliente.</p>
+      </div>
+
+      <div class="mb-4">
+        <h5>Asesor Comercial – Almacén NBR Créditos Botero (abr 2014 – jun 2014)</h5>
+        <p>Responsable de la atención al cliente, manejo de bodega, control de mercancía y presentación de productos en exhibición.</p>
+      </div>
+
+      <div class="mb-4">
+        <h5>Administrador / Auxiliar de Bodega – Almacén Mauro’s L.M. (2013 – 2014)</h5>
+        <p>Gestión de inventarios, atención y asesoría a clientes, control de mercancías y ventas. Elaboración de informes de ventas y supervisión de personal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center">Habilidades Técnicas</h2>
+      <hr class="w-25 mx-auto mb-4">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="habilidad">💻 Microsoft Office (Word, Excel, PowerPoint) – <strong>Muy bueno</strong></div>
+          <div class="habilidad">🌐 Redes y Comunicaciones – <strong>Bueno</strong></div>
+          <div class="habilidad">🧰 Windows – <strong>Bueno</strong></div>
+          <div class="habilidad">🐧 Linux – <strong>Regular</strong></div>
+          <div class="habilidad">💬 Herramientas de comunicación (Skype, WhatsApp, Messenger) – <strong>Muy bueno</strong></div>
+          <div class="habilidad">📱 Redes Sociales (Facebook, Twitter, LinkedIn) – <strong>Muy bueno</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-5">
+    <div class="container text-center">
+      <h2>Contacto</h2>
+      <hr class="w-25 mx-auto mb-4">
+      <p class="lead">Puedes contactarme a través de mis medios oficiales:</p>
+      <p>
+        📧 <a href="mailto:alejandromartinez902010@hotmail.com">alejandromartinez902010@hotmail.com</a><br>
+        📱 310 899 8663 | 314 757 0242<br>
+        📍 Cali, Valle del Cauca, Colombia
+      </p>
+      <div class="mt-3">
+        <a href="https://www.linkedin.com" target="_blank" class="btn btn-outline-primary me-2">
+          <i class="bi bi-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com" target="_blank" class="btn btn-outline-dark">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Alejandro Rengifo Martínez - Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
