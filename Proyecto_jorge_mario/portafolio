@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Jorge Mario Tabares Loaiza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primario: '#3B82F6',  // Azul sobrio
+            gris: '#6B7280',       // Gris neutro
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-500">
+
+  <!-- 🔹 Navegación -->
+  <nav class="fixed w-full top-0 left-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#inicio" class="text-xl font-semibold text-primario">Jorge Mario Tabares Loaiza</a>
+      <div class="space-x-4">
+        <a href="#inicio" class="hover:text-primario transition">Inicio</a>
+        <a href="#formacion" class="hover:text-primario transition">Formación</a>
+        <a href="#experiencia" class="hover:text-primario transition">Experiencia</a>
+        <a href="#proyectos" class="hover:text-primario transition">Proyectos</a>
+        <a href="#contacto" class="hover:text-primario transition">Contacto</a>
+        <button id="theme-toggle" class="ml-4 p-2 rounded bg-primario text-white hover:bg-blue-700 transition">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🏁 INICIO -->
+  <section id="inicio" class="relative min-h-screen flex flex-col justify-center items-center text-center p-6 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1581092334698-0d7c7e3d56aa?auto=format&fit=crop&w=1400&q=80" 
+         alt="Fondo tecnológico" 
+         class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-10">
+    <div class="relative z-10 mt-20">
+      <img src="mifoto.jpeg" alt="Foto de Jorge Mario Tabares Loaiza" class="w-40 h-40 rounded-full shadow-lg mb-4 object-cover mx-auto border-4 border-primario">
+      <h1 class="text-3xl font-bold mb-2 text-primario">Jorge Mario Tabares Loaiza</h1>
+      <p class="text-lg text-gris mb-3">Ingeniero Informático | Tecnólogo en Electrónica</p>
+      <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 mb-6">
+        Profesional con experiencia en desarrollo de software, bases de datos y sistemas electrónicos. 
+        Enfocado en la integración de tecnología e innovación para soluciones efectivas en entornos académicos e institucionales.
+      </p>
+      <a href="#proyectos" class="bg-primario text-white px-6 py-2 rounded hover:bg-blue-700 transition">Ver Proyectos</a>
+    </div>
+  </section>
+
+  <!-- 🎓 FORMACIÓN -->
+  <section id="formacion" class="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10 text-primario">🎓 Formación Académica</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=700&q=60" 
+               alt="Electrónica" class="w-full h-40 object-cover rounded mb-4 opacity-90">
+          <h3 class="text-xl font-semibold">Tecnólogo en Electrónica</h3>
+          <p class="text-gris">Universidad del Valle</p>
+          <p class="text-gray-600 dark:text-gray-400 mt-2">
+            Formación sólida en sistemas electrónicos, instrumentación y control, con enfoque en la aplicación práctica de la ingeniería.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=60" 
+               alt="Informática" class="w-full h-40 object-cover rounded mb-4 opacity-90">
+          <h3 class="text-xl font-semibold">Ingeniero Informático</h3>
+          <p class="text-gris">Formador y Desarrollador</p>
+          <p class="text-gray-600 dark:text-gray-400 mt-2">
+            Especializado en desarrollo de software con Python, diseño de bases de datos y herramientas tecnológicas educativas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 💼 EXPERIENCIA -->
+  <section id="experiencia" class="py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8 text-primario">💼 Experiencia Profesional</h2>
+      <ul class="space-y-4 text-left">
+        <li>🧩 <strong>Desarrollo de aplicaciones en Python (Tkinter y CustomTkinter):</strong> registro, validación y generación de reportes automatizados.</li>
+        <li>🗄️ <strong>Diseño e implementación de bases de datos SQLite3:</strong> estructuración y mantenimiento de información institucional.</li>
+        <li>💡 <strong>Docente y formador tecnológico:</strong> capacitación en herramientas digitales y proyectos de innovación académica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 🧠 PROYECTOS -->
+  <section id="proyectos" class="py-20 px-6 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10 text-primario">🧠 Proyectos Destacados</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=700&q=60" alt="CEDEAGRO" class="w-full h-40 object-cover rounded-t-lg">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Registro de Ingreso CEDEAGRO</h3>
+            <p class="text-gray-600 dark:text-gray-400">App en Python con SQLite3 para gestionar docentes, programas y reportes en Excel.</p>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=700&q=60" alt="Triage Clínico" class="w-full h-40 object-cover rounded-t-lg">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Prototipo de Triage Clínico</h3>
+            <p class="text-gray-600 dark:text-gray-400">Aplicación móvil para clasificar pacientes por prioridad médica, con interfaz práctica y clara.</p>
+          </div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow hover:scale-105 transition">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=60" alt="Gestión Académica" class="w-full h-40 object-cover rounded-t-lg">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Sistema de Gestión Académica</h3>
+            <p class="text-gray-600 dark:text-gray-400">Plataforma para la administración de docentes, áreas de práctica y sedes académicas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📬 CONTACTO -->
+  <section id="contacto" class="py-20 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6 text-primario">📬 Contacto</h2>
+      <p class="text-lg mb-4">¿Deseas proponer un proyecto o conocer más sobre mi trabajo?</p>
+      <p><strong>Correo:</strong> jmtabares@intep.edu.co</p>
+      <p><strong>Teléfono:</strong> (+57) 3218527446</p>
+      <p><strong>Ubicación:</strong> Roldanillo, Valle del Cauca - Colombia</p>
+      <div class="mt-6 space-x-4">
+        <a href="https://linkedin.com/in/jorgemariotabares" target="_blank" class="text-primario hover:underline">LinkedIn</a>
+        <a href="https://github.com/jorgemariotabares" target="_blank" class="text-primario hover:underline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-6 bg-gray-200 dark:bg-gray-800 text-center text-gray-600 dark:text-gray-400">
+    © 2025 Jorge Mario Tabares Loaiza — Portafolio Profesional
+  </footer>
+
+  <!-- 🌙 Cambio de tema -->
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const guardado = localStorage.getItem('tema');
+    if (guardado === 'light') html.classList.remove('dark');
+    else html.classList.add('dark');
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('tema', html.classList.contains('dark') ? 'dark' : 'light');
+      toggleBtn.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
 
