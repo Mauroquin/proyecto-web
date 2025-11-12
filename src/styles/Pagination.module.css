@@ -1,0 +1,33 @@
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  gap: 0.5rem;
+}
+
+/* Estilo base minimalista */
+.pageButton {
+  background: none;
+  border: none;
+  color: #222;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover: cambio de color suave */
+.pageButton:hover {
+  color: #d9822b;
+  transform: translateY(-1px);
+}
+
+/* Página activa: naranja */
+.active {
+  color: #e5984c;
+  font-weight: 600;
+}
+
+

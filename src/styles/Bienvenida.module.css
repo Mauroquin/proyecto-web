@@ -1,0 +1,44 @@
+
+
+.section {
+  background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+}
+
+h2, h1, p {
+  color: white;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background-color: darkorange;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.button:hover, .button:active, .button:focus {
+  background-color: #d65b0e;
+  transform: scale(1.05);
+}
