@@ -1,6 +1,6 @@
 import styles from "../styles/Migracion.module.css";
 import migracionImage from "../assets/migracion.png";
-import Boton from "../components/Boton";
+import Boton from "./Boton";
 
 export default function Migracion() {
   return (

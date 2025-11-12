@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../src/components/Navbar";
 import styles from "../styles/Migracion.module.css";
-import Boton from "../components/Boton";
+import Boton from "../src/components/Boton";
 
 
-import Pagination from "../components/Pagination";
+import Pagination from "../src/components/Pagination";
 
 
 export default function Migracion() {

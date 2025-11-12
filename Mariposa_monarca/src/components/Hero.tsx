@@ -1,6 +1,6 @@
 import mariposaImg from "../assets/mariposa.png";
 import styles from "../styles/Hero.module.css";
-import Boton from "../components/Boton";
+import Boton from "./Boton";
 
 export default function Hero() {
   return (
