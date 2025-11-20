@@ -2,12 +2,15 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Migracion.module.css";
 import Boton from "../components/Boton";
 
+import MapaConservacion from "../components/MapaConservacion";
+import { useState } from "react";
+
 
 import Pagination from "../components/Pagination";
 
 
 export default function Migracion() {
-  
+const [mostrarMapa, setMostrarMapa] = useState(false);  
   return (
     <>
       <Navbar />
@@ -39,9 +42,9 @@ export default function Migracion() {
             <div className={styles.alinearIzquierda}>
               <h3>Iniciativas de Conservación</h3>
             </div>
-            <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
-            </div>
+            <Boton texto="Explorar" onClick={() => setMostrarMapa(true)} />
+
+{mostrarMapa && <MapaConservacion />}
           </div>
           <br/>
           <div className={styles.imagenContainer}>

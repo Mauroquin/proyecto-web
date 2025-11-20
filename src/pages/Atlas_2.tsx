@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import styles from "../styles/Atlas.module.css";
+
 import Boton from "../components/Boton";
 
 import Pagination from "../components/Pagination";
@@ -24,14 +25,20 @@ export default function Atlas() {
         {/* Primera columna */}
         <div className={styles.texto}>
           <div className={styles.imagenContainer} style={{ textAlign: "left" }}>
+           </div> 
+
+
+
             
 
             <br />
+            <div className={styles.imagenContainer}>
             <img
               src="/assets/panel_contraste.png"
-              alt="panel de contraste del ciclo de vida"
+              alt="Red de Dependencias Ecosomática"
               className={styles.imagen}
             />
+
             <br />
             <div style={{ textAlign: "left" }}>
               <h3>Panel de Contraste</h3>
@@ -77,8 +84,8 @@ export default function Atlas() {
             <br/>
             <div style={{ textAlign: "left" }}>
               <h3>En la Naturaleza</h3>
+              
               <p>
-                <br/>
                 Migración, localización en México, conservación, perservación, biología, ciclo de vida, planes de protección datos biológicos.
               </p>
             </div>
@@ -96,8 +103,8 @@ export default function Atlas() {
             <br/>
             <div style={{ textAlign: "left" }}>
               <h3>En el Lugar</h3>
-              <p>
-                Mariposa monarca, resilencia, lugares de destino, problemáticas sociales, impacto ambiental, comunidades locales, más allá del clima, resistencia, compartida.
+              
+              <p>Mariposa monarca, resilencia, lugares de destino, problemáticas sociales, impacto ambiental, comunidades locales, más allá del clima, resistencia, compartida.
 
               </p>
             </div>

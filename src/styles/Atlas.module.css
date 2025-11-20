@@ -53,15 +53,20 @@
 .imagen {
   width: 100%;
   max-width: 600px;
+  max-height: 350px;   /* Altura máxima para alinear todas */
+  object-fit: contain; /* Muestra la imagen completa sin recortar */
   border-radius: 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0; /* Fondo gris suave para imágenes más pequeñas */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Hover */
 .imagen:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
+
 
 .imagenContainer h3 {
   margin-top: 15px;
@@ -96,11 +101,7 @@
 }
 
 /* ===== Estilos Adicionales ===== */
-.contenedorPrincipal {
-  display: flex;
-  gap: 2rem; /* Espaciado entre columnas */
-  width: 100%;
-}
+
 
 .columnaIzquierda,
 .columnaDerecha {
@@ -111,13 +112,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.columnaIzquierda {
-  text-align: left;
-}
 
-.columnaDerecha {
-  text-align: left;
-}
 
 /* Alineación exacta de columnas */
 .texto, .parrafoDerecha {
@@ -136,10 +131,14 @@
 }
 
 .parrafoDerecha {
-  margin: 0; /* Elimina márgenes adicionales */
-  padding: 0; /* Elimina rellenos adicionales */
-  align-self: start; /* Asegura que la columna se alinee arriba */
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  align-self: start;
+  text-align: left;
 }
+
 
 .parrafoDerecha p:first-of-type {
   margin-top: 0; /* Elimina espacio inicial del texto */
