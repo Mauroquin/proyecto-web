@@ -34,7 +34,7 @@ export default function Atlas() {
             <br />
             <div className={styles.imagenContainer}>
             <img
-              src="/assets/panel_contraste.png"
+              src="/assets/panel_constrate.png"
               alt="Red de Dependencias Ecosomática"
               className={styles.imagen}
             />
@@ -73,7 +73,11 @@ export default function Atlas() {
         <div className={styles.parrafoDerecha}>
           <br/>
           <div style={{ textAlign: "left" }}>
-            
+          <br />
+          <br />
+          
+          
+
           </div>
           <div className={styles.imagenContainer}>
             <img

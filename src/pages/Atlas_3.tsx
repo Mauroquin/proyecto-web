@@ -14,7 +14,7 @@ export default function Atlas() {
 
       {/* Encabezado */}
       <header className={styles.header}>
-        <h1>⬅ ATLAS DE LA MARIPOSA MONARCA</h1>
+        <h1>ATLAS DE LA MARIPOSA MONARCA</h1>
         <p>
           Descubre la belleza y la ciencia detrás de la mariposa monarca a través de nuestros atlas.
         </p>
@@ -25,37 +25,17 @@ export default function Atlas() {
         {/* Primera columna */}
         <div className={styles.texto}>
           <div className={styles.imagenContainer} style={{ textAlign: "left" }}>
-            <h2>Descubre los Paneles de la Mariposa Monarca</h2>
-
-            <br />
+            
             <img
-              src="/assets/ciclo_de_vida.png"
+              src="/assets/el_arte.png"
               alt="Ciclo de Vida de la Mariposa Monarca"
               className={styles.imagen}
             />
             <br />
             <div style={{ textAlign: "left" }}>
-              <h3>Ciclo de la Vida</h3>
+              <h3>En el arte</h3>
               <p>
-                Mariposa monarca: ciclo de vida, huevo, adulto, migración, hibernación, reproducción, desarrollo, plantas, hospederas.
-              </p>
-            </div>
-            <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
-            </div>
-          </div>
-          <br/>
-          <div className={styles.imagenContainer}>
-            <img
-              src="/assets/ecosomatica.png"
-              alt="Red de Dependencias Ecosomática"
-              className={styles.imagen}
-            />
-            <br/>
-            <div style={{ textAlign: "left" }}>
-              <h3>Red de Dependencias Ecosomáticas</h3>
-              <p>
-                Interdependencia, Amenazas, Jardines polinizadores, Restauración, Red ecológica, Equilibrio.
+                Mariposa monarca,arte, actualidad, comunidades, expresión artística, resistencia, significados simbolicos, cultura viva.
               </p>
             </div>
             <div className={styles.botonIzquierda}>
@@ -65,26 +45,20 @@ export default function Atlas() {
         </div>
         {/* Segunda columna */}
         <div className={styles.parrafoDerecha}>
-          <br/>
-          <div style={{ textAlign: "left" }}>
-            <p>
-              Explora la vida de la mariposa monarca en nuestra Galería de Arte Digital. 
-              10 paneles interactivos combinan arte y ciencia para mostrar su ciclo de vida, 
-              migración y significado cultural.
-            </p>
-          </div>
+          
+          
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/corredor_migratorio.png"
-              alt="Corredor Migratorio de la Mariposa Monarca"
+              src="/assets/el_fuego.png"
+              alt="El fuego de la memoria en las alas de la mariposa"
               className={styles.imagen}
             />
             <br/>
             <div style={{ textAlign: "left" }}>
-              <h3>Corredor Migratorio</h3>
+              <h3>El fuego de la memoria en las alas de la mariposa</h3>
               <p>
                 <br/>
-                Migración mariposa monarca, viaje anual Norteamérica, hibernación México, rutas migratorias, corredores, esenciales, supervivencia ecológica.
+                Mariposa, fuego, movimiento, imagen, deseo y fragilidad, y conceptos que reflejan la belleza efimera.
               </p>
             </div>
             <div className={styles.botonIzquierda}>
@@ -92,25 +66,9 @@ export default function Atlas() {
             </div>
           </div>
           <br/>
-          <div className={styles.imagenContainer}>
-            <img
-              src="/assets/vos_humana.png"
-              alt="La Voz Humana"
-              className={styles.imagen}
-            />
-            <br/>
-            <div style={{ textAlign: "left" }}>
-              <h3>La Voz Humana</h3>
-              <p>
-                Conexión cultural, Social, Comunidades mexicanas, Mitos, Arte Conservación humana, Tradiciones.
-              </p>
-            </div>
-            <br/>
-            <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
-            </div>
+          
           </div>
-        </div>
+        
       </main>
 
       <Pagination totalPages={3} currentPage={3} basePath="Atlas" />

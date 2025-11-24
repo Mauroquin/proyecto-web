@@ -1,4 +1,6 @@
-/* ===== Encabezado ===== */
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
 .header {
   background-color: #ffa94d;
   color: white;
@@ -20,17 +22,28 @@
   line-height: 1.5;
 }
 
-/* ===== Contenido principal ===== */
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
-  gap: 2rem; /* Espaciado uniforme entre columnas */
-  align-items: start; /* Alinea las columnas en la parte superior */
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 2rem;
+  align-items: start;
   padding: 60px;
   background-color: #fff;
 }
 
-
+/* Columna izquierda y derecha */
+.texto,
+.parrafoDerecha {
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+  margin: 0;
+  align-self: start;
+  text-align: left;
+}
 
 .texto h2 {
   font-size: 2rem;
@@ -38,27 +51,38 @@
   margin-bottom: 20px;
 }
 
-.texto p {
+.texto p,
+.parrafoDerecha p {
   font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
 }
 
-/* ===== Imagen con efecto hover ===== */
+/* Párrafo superior columna derecha sin espacio extra */
+.parrafoDerecha p:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* =========================================================
+   IMÁGENES Y CONTENEDORES
+   ========================================================= */
 .imagenContainer {
-  margin: 0 auto; /* Centra las imágenes dentro de su contenedor */
-  text-align: left; /* Alinea el contenido a la izquierda */
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .imagen {
   width: 100%;
   max-width: 600px;
-  max-height: 350px;   /* Altura máxima para alinear todas */
-  object-fit: contain; /* Muestra la imagen completa sin recortar */
+  max-height: 350px;
+  object-fit: contain;
   border-radius: 20px;
+  background-color: #f0f0f0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  background-color: #f0f0f0; /* Fondo gris suave para imágenes más pequeñas */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
+  margin: 0 auto; /* Centra la imagen sin afectar textos */
 }
 
 /* Hover */
@@ -67,14 +91,22 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-
 .imagenContainer h3 {
   margin-top: 15px;
   font-size: 1.5rem;
   color: #d45d00;
 }
 
-/* ===== Footer ===== */
+/* Botón alineado a la izquierda */
+.botonIzquierda {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 .footer {
   background-color: darkorange;
   color: white;
@@ -83,7 +115,9 @@
   margin-top: 40px;
 }
 
-/* ===== Responsivo ===== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;
@@ -98,55 +132,8 @@
   .header h1 {
     font-size: 2.2rem;
   }
-}
 
-/* ===== Estilos Adicionales ===== */
-
-
-.columnaIzquierda,
-.columnaDerecha {
-  flex: 1; /* Ambas columnas tienen el mismo ancho */
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-
-/* Alineación exacta de columnas */
-.texto, .parrafoDerecha {
-  width: 100%;
-  max-width: 600px;
-  margin: 0;          /* ✅ elimina márgenes verticales */
-  padding: 0;         /* ✅ evita desplazamientos */
-  align-self: start;  /* ✅ fuerza a alinearse arriba */
-}
-
-.imagenContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.parrafoDerecha {
-  width: 100%;
-  max-width: 600px;
-  margin: 0;
-  padding: 0;
-  align-self: start;
-  text-align: left;
-}
-
-
-.parrafoDerecha p:first-of-type {
-  margin-top: 0; /* Elimina espacio inicial del texto */
-  padding-top: 0; /* Asegura que no haya relleno superior */
-}
-
-.botonIzquierda {
-  display: flex;
-  justify-content: flex-start; /* Alinea el botón a la izquierda */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  .imagenContainer {
+    text-align: center;
+  }
 }

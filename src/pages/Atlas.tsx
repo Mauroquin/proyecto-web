@@ -76,6 +76,9 @@ export default function Atlas() {
             Digital. 10 paneles interactivos combinan arte y ciencia para
             mostrar su ciclo de vida, migración y significado cultural.
           </p>
+          <br />
+          <br />
+          <br />
 
           <div className={styles.imagenContainer}>
             <img
@@ -88,9 +91,7 @@ export default function Atlas() {
 
             <div style={{ textAlign: "left" }}>
               <h3>Corredor Migratorio</h3>
-              <p>
-                <br />
-                Migración mariposa monarca, viaje anual Norteamérica,
+              <p>Migración mariposa monarca, viaje anual Norteamérica,
                 hibernación México, rutas migratorias, corredores esenciales,
                 supervivencia ecológica.
               </p>
