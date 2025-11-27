@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7ecc7694d5e21a9403c83544a58030a7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 220px; height: 200px; 
+     background-color: white; border:2px solid grey; z-index:9999; 
+     font-size:12px; padding: 10px">
+<p><b>Iniciativas de Conservación</b></p>
+<p><i class="fa fa-circle" style="color:#228B22"></i> Santuarios</p>
+<p><i class="fa fa-circle" style="color:#32CD32"></i> Corredores Verdes</p>
+<p><i class="fa fa-circle" style="color:#90EE90"></i> Jardines Comunitarios</p>
+<p><i class="fa fa-circle" style="color:#006400"></i> Reservas Naturales</p>
+<p><i class="fa fa-circle" style="color:#ADFF2F"></i> Proyectos Milkweed</p>
+<p><i class="fa fa-circle" style="color:#7CFC00"></i> Jardines Urbanos</p>
+<p><br><b>Tamaño = Plantas sembradas</b></p>
+</div>
+    
+            <div class="folium-map" id="map_7ecc7694d5e21a9403c83544a58030a7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7ecc7694d5e21a9403c83544a58030a7 = L.map(
+                "map_7ecc7694d5e21a9403c83544a58030a7",
+                {
+                    center: [35.0, -95.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7236dbecdb3d2219386de5d8c26e95ef = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7236dbecdb3d2219386de5d8c26e95ef.addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+            var circle_marker_f86b9ea535fbb03295951ca348588b2d = L.circleMarker(
+                [19.6097, -100.2401],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_3dfa5b97dfbb49729d055e04f521de6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e0b7cab777fc9ca8345a75dcff20d75b = $(`<div id="html_e0b7cab777fc9ca8345a75dcff20d75b" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Jardín Monarca - Michoacán</b><br>         <b>Tipo:</b> Santuario<br>         <b>Plantas sembradas:</b> 15,000<br>         <b>Área:</b> 45.2 hectáreas<br>         <b>Año establecido:</b> 2018<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_3dfa5b97dfbb49729d055e04f521de6a.setContent(html_e0b7cab777fc9ca8345a75dcff20d75b);
+            
+        
+
+        circle_marker_f86b9ea535fbb03295951ca348588b2d.bindPopup(popup_3dfa5b97dfbb49729d055e04f521de6a)
+        ;
+
+        
+    
+    
+            var circle_marker_e09be83a4226937c6ae3ebc291d40db3 = L.circleMarker(
+                [29.7604, -95.3698],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.0, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_32d5dd68da59c5d6440ca4c3a33cad5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cff52aa77be27cf338c169a3118cce7b = $(`<div id="html_cff52aa77be27cf338c169a3118cce7b" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Corredor Verde Texas</b><br>         <b>Tipo:</b> Corredor Verde<br>         <b>Plantas sembradas:</b> 8,500<br>         <b>Área:</b> 23.8 hectáreas<br>         <b>Año establecido:</b> 2019<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_32d5dd68da59c5d6440ca4c3a33cad5b.setContent(html_cff52aa77be27cf338c169a3118cce7b);
+            
+        
+
+        circle_marker_e09be83a4226937c6ae3ebc291d40db3.bindPopup(popup_32d5dd68da59c5d6440ca4c3a33cad5b)
+        ;
+
+        
+    
+    
+            var circle_marker_5fa90124aa58bec8545db729cbdd96d1 = L.circleMarker(
+                [19.6097, -100.2401],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24.0, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_8a7de6aeccc134210c37f7c65e76da8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1813f585b88e57df1d87fa226766c6bb = $(`<div id="html_1813f585b88e57df1d87fa226766c6bb" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Santuario El Rosario</b><br>         <b>Tipo:</b> Santuario<br>         <b>Plantas sembradas:</b> 12,000<br>         <b>Área:</b> 38.5 hectáreas<br>         <b>Año establecido:</b> 2015<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_8a7de6aeccc134210c37f7c65e76da8b.setContent(html_1813f585b88e57df1d87fa226766c6bb);
+            
+        
+
+        circle_marker_5fa90124aa58bec8545db729cbdd96d1.bindPopup(popup_8a7de6aeccc134210c37f7c65e76da8b)
+        ;
+
+        
+    
+    
+            var circle_marker_229107552c5e103590cca0d9c6596968 = L.circleMarker(
+                [39.0119, -95.689],
+                {"bubblingMouseEvents": true, "color": "#90EE90", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#90EE90", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.4, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_71c658659b6f1997fa8ee30550dedb55 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75ad24729b65fd1fa12b3bfe0c5e94fc = $(`<div id="html_75ad24729b65fd1fa12b3bfe0c5e94fc" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Jardín Comunitario Kansas</b><br>         <b>Tipo:</b> Jardín Comunitario<br>         <b>Plantas sembradas:</b> 3,200<br>         <b>Área:</b> 8.4 hectáreas<br>         <b>Año establecido:</b> 2020<br>         <b>Estado:</b> En Desarrollo         </div>         </div>`)[0];
+                popup_71c658659b6f1997fa8ee30550dedb55.setContent(html_75ad24729b65fd1fa12b3bfe0c5e94fc);
+            
+        
+
+        circle_marker_229107552c5e103590cca0d9c6596968.bindPopup(popup_71c658659b6f1997fa8ee30550dedb55)
+        ;
+
+        
+    
+    
+            var circle_marker_4a052f886fac98275fc3133b41b3fe76 = L.circleMarker(
+                [41.5868, -93.62],
+                {"bubblingMouseEvents": true, "color": "#006400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006400", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.6, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_0fe00684a587d188d8a889142170e813 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ff5c3ea4ba6719fb2ab38fb8768aa10 = $(`<div id="html_8ff5c3ea4ba6719fb2ab38fb8768aa10" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Reserva Mariposa Iowa</b><br>         <b>Tipo:</b> Reserva Natural<br>         <b>Plantas sembradas:</b> 6,800<br>         <b>Área:</b> 19.6 hectáreas<br>         <b>Año establecido:</b> 2017<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_0fe00684a587d188d8a889142170e813.setContent(html_8ff5c3ea4ba6719fb2ab38fb8768aa10);
+            
+        
+
+        circle_marker_4a052f886fac98275fc3133b41b3fe76.bindPopup(popup_0fe00684a587d188d8a889142170e813)
+        ;
+
+        
+    
+    
+            var circle_marker_c3dc218ebfab7d5517757a238818b21f = L.circleMarker(
+                [46.7296, -94.6859],
+                {"bubblingMouseEvents": true, "color": "#ADFF2F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ADFF2F", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_742346477e9d7c96eae7c7bf30c4675e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dee1839434b6d9b454404d70845d4293 = $(`<div id="html_dee1839434b6d9b454404d70845d4293" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Proyecto Milkweed Minnesota</b><br>         <b>Tipo:</b> Proyecto Milkweed<br>         <b>Plantas sembradas:</b> 4,500<br>         <b>Área:</b> 12.3 hectáreas<br>         <b>Año establecido:</b> 2021<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_742346477e9d7c96eae7c7bf30c4675e.setContent(html_dee1839434b6d9b454404d70845d4293);
+            
+        
+
+        circle_marker_c3dc218ebfab7d5517757a238818b21f.bindPopup(popup_742346477e9d7c96eae7c7bf30c4675e)
+        ;
+
+        
+    
+    
+            var circle_marker_c396ff73f7295f1c635376aff0999a99 = L.circleMarker(
+                [43.6532, -79.3832],
+                {"bubblingMouseEvents": true, "color": "#7CFC00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7CFC00", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_4fe5fc77fbdb859908ef6f59abd49951 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03ebd754111b9405d81150ef828be2c2 = $(`<div id="html_03ebd754111b9405d81150ef828be2c2" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Jardín Urbano Toronto</b><br>         <b>Tipo:</b> Jardín Urbano<br>         <b>Plantas sembradas:</b> 2,100<br>         <b>Área:</b> 5.2 hectáreas<br>         <b>Año establecido:</b> 2019<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_4fe5fc77fbdb859908ef6f59abd49951.setContent(html_03ebd754111b9405d81150ef828be2c2);
+            
+        
+
+        circle_marker_c396ff73f7295f1c635376aff0999a99.bindPopup(popup_4fe5fc77fbdb859908ef6f59abd49951)
+        ;
+
+        
+    
+    
+            var circle_marker_8623e8898f4ca273c43e26e0b4b90e14 = L.circleMarker(
+                [36.7783, -119.4179],
+                {"bubblingMouseEvents": true, "color": "#9ACD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9ACD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.4, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_20421be0190e53e2c4c429b3e83bea69 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9cdd9edc62c073cdd0aad00e77c64f7a = $(`<div id="html_9cdd9edc62c073cdd0aad00e77c64f7a" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Corredor Polinizadores California</b><br>         <b>Tipo:</b> Corredor Polinizadores<br>         <b>Plantas sembradas:</b> 9,200<br>         <b>Área:</b> 28.7 hectáreas<br>         <b>Año establecido:</b> 2016<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_20421be0190e53e2c4c429b3e83bea69.setContent(html_9cdd9edc62c073cdd0aad00e77c64f7a);
+            
+        
+
+        circle_marker_8623e8898f4ca273c43e26e0b4b90e14.bindPopup(popup_20421be0190e53e2c4c429b3e83bea69)
+        ;
+
+        
+    
+    
+            var circle_marker_f618ba381c198ce3c9446cc123a64e56 = L.circleMarker(
+                [41.4925, -99.9018],
+                {"bubblingMouseEvents": true, "color": "#228B22", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#228B22", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.2, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_5ec6d7b45fe0ffdfc899ec7315aa5813 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a0071afc7a64c72b1dd0ab343213813 = $(`<div id="html_9a0071afc7a64c72b1dd0ab343213813" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Santuario Nebraska</b><br>         <b>Tipo:</b> Santuario<br>         <b>Plantas sembradas:</b> 5,600<br>         <b>Área:</b> 16.9 hectáreas<br>         <b>Año establecido:</b> 2018<br>         <b>Estado:</b> En Desarrollo         </div>         </div>`)[0];
+                popup_5ec6d7b45fe0ffdfc899ec7315aa5813.setContent(html_9a0071afc7a64c72b1dd0ab343213813);
+            
+        
+
+        circle_marker_f618ba381c198ce3c9446cc123a64e56.bindPopup(popup_5ec6d7b45fe0ffdfc899ec7315aa5813)
+        ;
+
+        
+    
+    
+            var circle_marker_c11b9b73946e9062d1419b64a1fe81f9 = L.circleMarker(
+                [35.4676, -97.5164],
+                {"bubblingMouseEvents": true, "color": "#98FB98", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#98FB98", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_e4c5f59f9cb0fff8672de763bf070ce3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3eea1a2c19c2f13f5019a89cc5db71e = $(`<div id="html_e3eea1a2c19c2f13f5019a89cc5db71e" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Jardín Escolar Oklahoma</b><br>         <b>Tipo:</b> Jardín Escolar<br>         <b>Plantas sembradas:</b> 1,800<br>         <b>Área:</b> 4.1 hectáreas<br>         <b>Año establecido:</b> 2022<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_e4c5f59f9cb0fff8672de763bf070ce3.setContent(html_e3eea1a2c19c2f13f5019a89cc5db71e);
+            
+        
+
+        circle_marker_c11b9b73946e9062d1419b64a1fe81f9.bindPopup(popup_e4c5f59f9cb0fff8672de763bf070ce3)
+        ;
+
+        
+    
+    
+            var circle_marker_991150b18fc3630e0f47df1be24529b7 = L.circleMarker(
+                [38.5767, -92.1735],
+                {"bubblingMouseEvents": true, "color": "#006400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#006400", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_a41a62714759ad4b61a3599249cb2705 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31fe9b41b45eba5d9ab7306453f8ee6b = $(`<div id="html_31fe9b41b45eba5d9ab7306453f8ee6b" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Reserva Natural Missouri</b><br>         <b>Tipo:</b> Reserva Natural<br>         <b>Plantas sembradas:</b> 7,300<br>         <b>Área:</b> 22.4 hectáreas<br>         <b>Año establecido:</b> 2017<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_a41a62714759ad4b61a3599249cb2705.setContent(html_31fe9b41b45eba5d9ab7306453f8ee6b);
+            
+        
+
+        circle_marker_991150b18fc3630e0f47df1be24529b7.bindPopup(popup_a41a62714759ad4b61a3599249cb2705)
+        ;
+
+        
+    
+    
+            var circle_marker_ca8c07fc09e83d5b2d9f1f71d54e3da3 = L.circleMarker(
+                [40.6331, -89.3985],
+                {"bubblingMouseEvents": true, "color": "#00FF7F", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00FF7F", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.8, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_09e7569c51601819db9e21f6246d6e02 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e44a903aff12caef242112ff526e3c43 = $(`<div id="html_e44a903aff12caef242112ff526e3c43" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Proyecto Asclepias Illinois</b><br>         <b>Tipo:</b> Proyecto Asclepias<br>         <b>Plantas sembradas:</b> 3,900<br>         <b>Área:</b> 10.8 hectáreas<br>         <b>Año establecido:</b> 2020<br>         <b>Estado:</b> En Desarrollo         </div>         </div>`)[0];
+                popup_09e7569c51601819db9e21f6246d6e02.setContent(html_e44a903aff12caef242112ff526e3c43);
+            
+        
+
+        circle_marker_ca8c07fc09e83d5b2d9f1f71d54e3da3.bindPopup(popup_09e7569c51601819db9e21f6246d6e02)
+        ;
+
+        
+    
+    
+            var circle_marker_b61db0081ec93031c145da482ce5d45b = L.circleMarker(
+                [44.2619, -89.5943],
+                {"bubblingMouseEvents": true, "color": "#00FA9A", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00FA9A", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.4, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_78400c2fea649aed366e4a7bab7e0078 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c90b46fe8f78f070dad5d5c780e990f4 = $(`<div id="html_c90b46fe8f78f070dad5d5c780e990f4" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Jardín Botánico Wisconsin</b><br>         <b>Tipo:</b> Jardín Botánico<br>         <b>Plantas sembradas:</b> 4,200<br>         <b>Área:</b> 11.5 hectáreas<br>         <b>Año establecido:</b> 2016<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_78400c2fea649aed366e4a7bab7e0078.setContent(html_c90b46fe8f78f070dad5d5c780e990f4);
+            
+        
+
+        circle_marker_b61db0081ec93031c145da482ce5d45b.bindPopup(popup_78400c2fea649aed366e4a7bab7e0078)
+        ;
+
+        
+    
+    
+            var circle_marker_60bcbd84629c7e3241a2d93f2a8a91b9 = L.circleMarker(
+                [39.791, -86.148],
+                {"bubblingMouseEvents": true, "color": "#32CD32", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#32CD32", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.2, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_2611bfca8c7477ccf41ddaff9989af26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cf1f58bc92a20e27bfb87c3ff614f25 = $(`<div id="html_0cf1f58bc92a20e27bfb87c3ff614f25" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Corredor Verde Indiana</b><br>         <b>Tipo:</b> Corredor Verde<br>         <b>Plantas sembradas:</b> 6,100<br>         <b>Área:</b> 18.2 hectáreas<br>         <b>Año establecido:</b> 2019<br>         <b>Estado:</b> Activo         </div>         </div>`)[0];
+                popup_2611bfca8c7477ccf41ddaff9989af26.setContent(html_0cf1f58bc92a20e27bfb87c3ff614f25);
+            
+        
+
+        circle_marker_60bcbd84629c7e3241a2d93f2a8a91b9.bindPopup(popup_2611bfca8c7477ccf41ddaff9989af26)
+        ;
+
+        
+    
+    
+            var circle_marker_506a96cecf59df29de95cf14a871f393 = L.circleMarker(
+                [42.3314, -84.5467],
+                {"bubblingMouseEvents": true, "color": "#3CB371", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3CB371", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.6, "stroke": true, "weight": 2}
+            ).addTo(map_7ecc7694d5e21a9403c83544a58030a7);
+        
+    
+        var popup_226ffb3348c143a0f1b8549d71c8d202 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c1914c3b1d48bfbbedbce11a7c39416 = $(`<div id="html_3c1914c3b1d48bfbbedbce11a7c39416" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">         <b>Santuario Urbano Michigan</b><br>         <b>Tipo:</b> Santuario Urbano<br>         <b>Plantas sembradas:</b> 3,800<br>         <b>Área:</b> 9.7 hectáreas<br>         <b>Año establecido:</b> 2021<br>         <b>Estado:</b> En Desarrollo         </div>         </div>`)[0];
+                popup_226ffb3348c143a0f1b8549d71c8d202.setContent(html_3c1914c3b1d48bfbbedbce11a7c39416);
+            
+        
+
+        circle_marker_506a96cecf59df29de95cf14a871f393.bindPopup(popup_226ffb3348c143a0f1b8549d71c8d202)
+        ;
+
+        
+    
+</script>
+</html>

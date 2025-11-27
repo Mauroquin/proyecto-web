@@ -42,7 +42,10 @@ export default function Migracion() {
               <h3>Mapa de Migración de la Mariposa Monarca</h3>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton
+                texto="Explorar"
+                onClick={() => window.open("/monarch_migration_map.html", "_blank")}
+              />
             </div>
           </div>
           <br/>
@@ -82,7 +85,10 @@ export default function Migracion() {
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton
+                texto="Explorar"
+                onClick={() => window.open("/mapa_migraciones_comparativo.html", "_blank")}
+              />
             </div>
           </div>
           <br/>

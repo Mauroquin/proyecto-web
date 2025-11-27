@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0038dd6013676c9fe62284c743d6f8d0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-dvf/0.3.0/leaflet-dvf.markers.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            top: 10px; right: 10px; width: 280px; height: auto; 
+            background-color: white; border:2px solid grey; z-index:9999; 
+            font-size:14px; padding: 10px">
+<h4 style="margin-top:0; text-align: center;">Áreas de Reproducción y Alimentación</h4>
+
+<h5 style="margin-bottom: 5px;">🟢 Áreas de Reproducción (Algodoncillo)</h5>
+<p style="margin: 2px 0;"><span style="color: #006400;">●</span> Densidad Muy Alta</p>
+<p style="margin: 2px 0;"><span style="color: #32CD32;">●</span> Densidad Alta</p>
+<p style="margin: 2px 0;"><span style="color: #90EE90;">●</span> Densidad Media</p>
+
+<h5 style="margin-bottom: 5px; margin-top: 10px;">🔶 Áreas de Alimentación (Néctar)</h5>
+<p style="margin: 2px 0;"><span style="color: #FF4500;">⬢</span> Importancia Muy Alta</p>
+<p style="margin: 2px 0;"><span style="color: #FFA500;">⬢</span> Importancia Alta</p>
+<p style="margin: 2px 0;"><span style="color: #FFD700;">⬢</span> Importancia Media</p>
+
+<p style="margin-top: 10px; font-size: 12px; font-style: italic;">
+Haz clic en los marcadores para más información sobre especies y fechas de floración.
+</p>
+</div>
+    
+<h2 style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); 
+           z-index: 1000; background-color: rgba(255,255,255,0.8); 
+           padding: 10px; border-radius: 5px; margin: 0;
+           font-family: Arial, sans-serif; text-align: center;">
+    Mapa de Áreas de Reproducción y Alimentación<br>
+    <span style="font-size: 16px; font-weight: normal;">Mariposa Monarca - Distribución de Plantas Huésped y Nectaríferas</span>
+</h2>
+    
+            <div class="folium-map" id="map_0038dd6013676c9fe62284c743d6f8d0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0038dd6013676c9fe62284c743d6f8d0 = L.map(
+                "map_0038dd6013676c9fe62284c743d6f8d0",
+                {
+                    center: [40.0, -95.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_71c4c10f4a82c7296cfc5251577b490c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+            var circle_marker_82147ffea0e46df90485a0b12d2404a7 = L.circleMarker(
+                [44.5, -79.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_8f9ab2b38875292409d31f202b523db2 = L.popup({"maxWidth": 300});
+
+        
+            var html_3c2f60f90c553e63826e7bd59291f3d1 = $(`<div id="html_3c2f60f90c553e63826e7bd59291f3d1" style="width: 100.0%; height: 100.0%;">     <b>Sur de Canadá - Ontario</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> Asclepias speciosa, A. syriaca<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_8f9ab2b38875292409d31f202b523db2.setContent(html_3c2f60f90c553e63826e7bd59291f3d1);
+        
+
+        circle_marker_82147ffea0e46df90485a0b12d2404a7.bindPopup(popup_8f9ab2b38875292409d31f202b523db2)
+        ;
+
+        
+    
+    
+            circle_marker_82147ffea0e46df90485a0b12d2404a7.bindTooltip(
+                `<div>
+                     Sur de Canadá - Ontario
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8d79613574caa7c8e4c4c20b9c33c016 = L.circleMarker(
+                [46.0, -94.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_01ee8bf423847c2016d21baeedcede37 = L.popup({"maxWidth": 300});
+
+        
+            var html_fa1dc6af3e87be918f66ca320079d377 = $(`<div id="html_fa1dc6af3e87be918f66ca320079d377" style="width: 100.0%; height: 100.0%;">     <b>Minnesota - Pradera</b><br>     <b>Densidad de Algodoncillo:</b> Muy Alta<br>     <b>Especies:</b> A. speciosa, A. incarnata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_01ee8bf423847c2016d21baeedcede37.setContent(html_fa1dc6af3e87be918f66ca320079d377);
+        
+
+        circle_marker_8d79613574caa7c8e4c4c20b9c33c016.bindPopup(popup_01ee8bf423847c2016d21baeedcede37)
+        ;
+
+        
+    
+    
+            circle_marker_8d79613574caa7c8e4c4c20b9c33c016.bindTooltip(
+                `<div>
+                     Minnesota - Pradera
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7b51218856a40075dadf697bc321e943 = L.circleMarker(
+                [44.8, -89.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_39b11c25cfa3ce99a69ea206a1256f17 = L.popup({"maxWidth": 300});
+
+        
+            var html_1a3aaf74ac326b19feca26d901592526 = $(`<div id="html_1a3aaf74ac326b19feca26d901592526" style="width: 100.0%; height: 100.0%;">     <b>Wisconsin - Campos</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. syriaca, A. incarnata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_39b11c25cfa3ce99a69ea206a1256f17.setContent(html_1a3aaf74ac326b19feca26d901592526);
+        
+
+        circle_marker_7b51218856a40075dadf697bc321e943.bindPopup(popup_39b11c25cfa3ce99a69ea206a1256f17)
+        ;
+
+        
+    
+    
+            circle_marker_7b51218856a40075dadf697bc321e943.bindTooltip(
+                `<div>
+                     Wisconsin - Campos
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_15e0974653f705b1dd6c9bf78e966592 = L.circleMarker(
+                [42.0, -93.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_779751176243e289d78bc18e28ee121f = L.popup({"maxWidth": 300});
+
+        
+            var html_2d6383f53841cd2dcce285d61b3d80ea = $(`<div id="html_2d6383f53841cd2dcce285d61b3d80ea" style="width: 100.0%; height: 100.0%;">     <b>Iowa - Tierras Agrícolas</b><br>     <b>Densidad de Algodoncillo:</b> Muy Alta<br>     <b>Especies:</b> A. syriaca, A. speciosa<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_779751176243e289d78bc18e28ee121f.setContent(html_2d6383f53841cd2dcce285d61b3d80ea);
+        
+
+        circle_marker_15e0974653f705b1dd6c9bf78e966592.bindPopup(popup_779751176243e289d78bc18e28ee121f)
+        ;
+
+        
+    
+    
+            circle_marker_15e0974653f705b1dd6c9bf78e966592.bindTooltip(
+                `<div>
+                     Iowa - Tierras Agrícolas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fe13ae25eafa88ec81b6c2aaa8724f74 = L.circleMarker(
+                [40.0, -89.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_fe95dc7589eb651c7fb14a308fa11d00 = L.popup({"maxWidth": 300});
+
+        
+            var html_74d123297b6da315b01f682a4e225c9b = $(`<div id="html_74d123297b6da315b01f682a4e225c9b" style="width: 100.0%; height: 100.0%;">     <b>Illinois - Pradera Central</b><br>     <b>Densidad de Algodoncillo:</b> Muy Alta<br>     <b>Especies:</b> A. syriaca, A. incarnata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_fe95dc7589eb651c7fb14a308fa11d00.setContent(html_74d123297b6da315b01f682a4e225c9b);
+        
+
+        circle_marker_fe13ae25eafa88ec81b6c2aaa8724f74.bindPopup(popup_fe95dc7589eb651c7fb14a308fa11d00)
+        ;
+
+        
+    
+    
+            circle_marker_fe13ae25eafa88ec81b6c2aaa8724f74.bindTooltip(
+                `<div>
+                     Illinois - Pradera Central
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8fccdb650ccf622ae774b39e90265fa2 = L.circleMarker(
+                [39.8, -86.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_fefe81d00a9df1d43760ca142bd00f83 = L.popup({"maxWidth": 300});
+
+        
+            var html_dd92e6a4ab47f4e5698f71aca65af0a1 = $(`<div id="html_dd92e6a4ab47f4e5698f71aca65af0a1" style="width: 100.0%; height: 100.0%;">     <b>Indiana - Campos Abiertos</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. syriaca, A. tuberosa<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_fefe81d00a9df1d43760ca142bd00f83.setContent(html_dd92e6a4ab47f4e5698f71aca65af0a1);
+        
+
+        circle_marker_8fccdb650ccf622ae774b39e90265fa2.bindPopup(popup_fefe81d00a9df1d43760ca142bd00f83)
+        ;
+
+        
+    
+    
+            circle_marker_8fccdb650ccf622ae774b39e90265fa2.bindTooltip(
+                `<div>
+                     Indiana - Campos Abiertos
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d175412d0689de879255196dfd85727c = L.circleMarker(
+                [40.2, -82.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_065a839ff0bbb45676c8e3730ed7bde7 = L.popup({"maxWidth": 300});
+
+        
+            var html_d581d43ee863b54ab0f252ecd40c04f3 = $(`<div id="html_d581d43ee863b54ab0f252ecd40c04f3" style="width: 100.0%; height: 100.0%;">     <b>Ohio - Áreas Rurales</b><br>     <b>Densidad de Algodoncillo:</b> Media<br>     <b>Especies:</b> A. syriaca, A. tuberosa<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_065a839ff0bbb45676c8e3730ed7bde7.setContent(html_d581d43ee863b54ab0f252ecd40c04f3);
+        
+
+        circle_marker_d175412d0689de879255196dfd85727c.bindPopup(popup_065a839ff0bbb45676c8e3730ed7bde7)
+        ;
+
+        
+    
+    
+            circle_marker_d175412d0689de879255196dfd85727c.bindTooltip(
+                `<div>
+                     Ohio - Áreas Rurales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6381b87d758ed5466c81a1974c8fed27 = L.circleMarker(
+                [43.5, -84.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_189ed114de63d1b755c64ff4f3856410 = L.popup({"maxWidth": 300});
+
+        
+            var html_5060652bc36da84a1141e4705e389a51 = $(`<div id="html_5060652bc36da84a1141e4705e389a51" style="width: 100.0%; height: 100.0%;">     <b>Michigan - Región de los Lagos</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. syriaca, A. incarnata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_189ed114de63d1b755c64ff4f3856410.setContent(html_5060652bc36da84a1141e4705e389a51);
+        
+
+        circle_marker_6381b87d758ed5466c81a1974c8fed27.bindPopup(popup_189ed114de63d1b755c64ff4f3856410)
+        ;
+
+        
+    
+    
+            circle_marker_6381b87d758ed5466c81a1974c8fed27.bindTooltip(
+                `<div>
+                     Michigan - Región de los Lagos
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f58941bc2c6b25fe0b33251bc8c085ad = L.circleMarker(
+                [47.5, -100.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_ff2fdca9ca92eac09f7c54f1eff40738 = L.popup({"maxWidth": 300});
+
+        
+            var html_075c9e8ee63bcd081f12ca32c4c21365 = $(`<div id="html_075c9e8ee63bcd081f12ca32c4c21365" style="width: 100.0%; height: 100.0%;">     <b>Dakota del Norte - Pradera</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. speciosa, A. verticillata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_ff2fdca9ca92eac09f7c54f1eff40738.setContent(html_075c9e8ee63bcd081f12ca32c4c21365);
+        
+
+        circle_marker_f58941bc2c6b25fe0b33251bc8c085ad.bindPopup(popup_ff2fdca9ca92eac09f7c54f1eff40738)
+        ;
+
+        
+    
+    
+            circle_marker_f58941bc2c6b25fe0b33251bc8c085ad.bindTooltip(
+                `<div>
+                     Dakota del Norte - Pradera
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2247aa80a1c7e941c8aaa946cb6edc1a = L.circleMarker(
+                [44.0, -100.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_eb0e85039210a31a8cae2ead8e70d432 = L.popup({"maxWidth": 300});
+
+        
+            var html_56378467ef9f1526628a778bbcfb0057 = $(`<div id="html_56378467ef9f1526628a778bbcfb0057" style="width: 100.0%; height: 100.0%;">     <b>Dakota del Sur - Pastizales</b><br>     <b>Densidad de Algodoncillo:</b> Muy Alta<br>     <b>Especies:</b> A. speciosa, A. verticillata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_eb0e85039210a31a8cae2ead8e70d432.setContent(html_56378467ef9f1526628a778bbcfb0057);
+        
+
+        circle_marker_2247aa80a1c7e941c8aaa946cb6edc1a.bindPopup(popup_eb0e85039210a31a8cae2ead8e70d432)
+        ;
+
+        
+    
+    
+            circle_marker_2247aa80a1c7e941c8aaa946cb6edc1a.bindTooltip(
+                `<div>
+                     Dakota del Sur - Pastizales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_485dd2a73fd256c834eeee220abfdde9 = L.circleMarker(
+                [41.5, -99.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_3b956dfc872d2b196e1252c765c3c97c = L.popup({"maxWidth": 300});
+
+        
+            var html_9c6e671154021ceacc3ab4013b46ba7b = $(`<div id="html_9c6e671154021ceacc3ab4013b46ba7b" style="width: 100.0%; height: 100.0%;">     <b>Nebraska - Grandes Llanuras</b><br>     <b>Densidad de Algodoncillo:</b> Muy Alta<br>     <b>Especies:</b> A. speciosa, A. verticillata<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_3b956dfc872d2b196e1252c765c3c97c.setContent(html_9c6e671154021ceacc3ab4013b46ba7b);
+        
+
+        circle_marker_485dd2a73fd256c834eeee220abfdde9.bindPopup(popup_3b956dfc872d2b196e1252c765c3c97c)
+        ;
+
+        
+    
+    
+            circle_marker_485dd2a73fd256c834eeee220abfdde9.bindTooltip(
+                `<div>
+                     Nebraska - Grandes Llanuras
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b21df8bbb7979af154fde589fe935b1 = L.circleMarker(
+                [38.5, -98.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_31ffbe420048a84919d8e920a945ab65 = L.popup({"maxWidth": 300});
+
+        
+            var html_d95bc013c05dc0470bbc561b88dfac13 = $(`<div id="html_d95bc013c05dc0470bbc561b88dfac13" style="width: 100.0%; height: 100.0%;">     <b>Kansas - Pradera Mixta</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. speciosa, A. viridis<br>     <b>Floración:</b> Abril - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_31ffbe420048a84919d8e920a945ab65.setContent(html_d95bc013c05dc0470bbc561b88dfac13);
+        
+
+        circle_marker_1b21df8bbb7979af154fde589fe935b1.bindPopup(popup_31ffbe420048a84919d8e920a945ab65)
+        ;
+
+        
+    
+    
+            circle_marker_1b21df8bbb7979af154fde589fe935b1.bindTooltip(
+                `<div>
+                     Kansas - Pradera Mixta
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e04f48ccd2d70afaa68df4715f4b6d11 = L.circleMarker(
+                [38.0, -92.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_a1e4acfefc0007f136baec5e46bb304e = L.popup({"maxWidth": 300});
+
+        
+            var html_bd077f6f2535820321de188a13641a75 = $(`<div id="html_bd077f6f2535820321de188a13641a75" style="width: 100.0%; height: 100.0%;">     <b>Missouri - Campos y Praderas</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. syriaca, A. viridis<br>     <b>Floración:</b> Abril - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_a1e4acfefc0007f136baec5e46bb304e.setContent(html_bd077f6f2535820321de188a13641a75);
+        
+
+        circle_marker_e04f48ccd2d70afaa68df4715f4b6d11.bindPopup(popup_a1e4acfefc0007f136baec5e46bb304e)
+        ;
+
+        
+    
+    
+            circle_marker_e04f48ccd2d70afaa68df4715f4b6d11.bindTooltip(
+                `<div>
+                     Missouri - Campos y Praderas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_39c4480097a3ebcc3b43c2c40db20354 = L.circleMarker(
+                [35.5, -97.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_ab94ebe9df9a210cd6a20eb82fed8500 = L.popup({"maxWidth": 300});
+
+        
+            var html_611722a13903c1dc2d6ad2be1f1a1452 = $(`<div id="html_611722a13903c1dc2d6ad2be1f1a1452" style="width: 100.0%; height: 100.0%;">     <b>Oklahoma - Pradera del Sur</b><br>     <b>Densidad de Algodoncillo:</b> Media<br>     <b>Especies:</b> A. viridis, A. asperula<br>     <b>Floración:</b> Abril - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_ab94ebe9df9a210cd6a20eb82fed8500.setContent(html_611722a13903c1dc2d6ad2be1f1a1452);
+        
+
+        circle_marker_39c4480097a3ebcc3b43c2c40db20354.bindPopup(popup_ab94ebe9df9a210cd6a20eb82fed8500)
+        ;
+
+        
+    
+    
+            circle_marker_39c4480097a3ebcc3b43c2c40db20354.bindTooltip(
+                `<div>
+                     Oklahoma - Pradera del Sur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_593eb2fae5cff6f1572454238f010197 = L.circleMarker(
+                [33.0, -97.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_00d610809eec2674e1abd384fc7800d6 = L.popup({"maxWidth": 300});
+
+        
+            var html_866150188eb7a4d370f3d1be44033258 = $(`<div id="html_866150188eb7a4d370f3d1be44033258" style="width: 100.0%; height: 100.0%;">     <b>Texas Norte - Pastizales</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. viridis, A. asperula<br>     <b>Floración:</b> Marzo - Octubre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_00d610809eec2674e1abd384fc7800d6.setContent(html_866150188eb7a4d370f3d1be44033258);
+        
+
+        circle_marker_593eb2fae5cff6f1572454238f010197.bindPopup(popup_00d610809eec2674e1abd384fc7800d6)
+        ;
+
+        
+    
+    
+            circle_marker_593eb2fae5cff6f1572454238f010197.bindTooltip(
+                `<div>
+                     Texas Norte - Pastizales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7977703f332fa0147f1e06a2d168d5cb = L.circleMarker(
+                [40.0, -105.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_c42a01691fd79dafebc1ff62780de005 = L.popup({"maxWidth": 300});
+
+        
+            var html_ef830602dde586c67f1d08e99b4e938f = $(`<div id="html_ef830602dde586c67f1d08e99b4e938f" style="width: 100.0%; height: 100.0%;">     <b>Colorado - Llanuras Orientales</b><br>     <b>Densidad de Algodoncillo:</b> Media<br>     <b>Especies:</b> A. speciosa, A. pumila<br>     <b>Floración:</b> Mayo - Septiembre<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_c42a01691fd79dafebc1ff62780de005.setContent(html_ef830602dde586c67f1d08e99b4e938f);
+        
+
+        circle_marker_7977703f332fa0147f1e06a2d168d5cb.bindPopup(popup_c42a01691fd79dafebc1ff62780de005)
+        ;
+
+        
+    
+    
+            circle_marker_7977703f332fa0147f1e06a2d168d5cb.bindTooltip(
+                `<div>
+                     Colorado - Llanuras Orientales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d13947320e30fb16594ba99da64b4597 = L.circleMarker(
+                [42.8, -107.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_64ec7cd2113e7b5e80f164d9589808fc = L.popup({"maxWidth": 300});
+
+        
+            var html_cde33ffbe0503b3f954f10a887413780 = $(`<div id="html_cde33ffbe0503b3f954f10a887413780" style="width: 100.0%; height: 100.0%;">     <b>Wyoming - Praderas</b><br>     <b>Densidad de Algodoncillo:</b> Media<br>     <b>Especies:</b> A. speciosa, A. pumila<br>     <b>Floración:</b> Mayo - Agosto<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_64ec7cd2113e7b5e80f164d9589808fc.setContent(html_cde33ffbe0503b3f954f10a887413780);
+        
+
+        circle_marker_d13947320e30fb16594ba99da64b4597.bindPopup(popup_64ec7cd2113e7b5e80f164d9589808fc)
+        ;
+
+        
+    
+    
+            circle_marker_d13947320e30fb16594ba99da64b4597.bindTooltip(
+                `<div>
+                     Wyoming - Praderas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_154c594f2c30ce971fcb38be75c6c0f7 = L.circleMarker(
+                [47.0, -110.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_c498c24212cfefee212dca366f05e184 = L.popup({"maxWidth": 300});
+
+        
+            var html_35b566fcec4434ba13466cefe9a021d4 = $(`<div id="html_35b566fcec4434ba13466cefe9a021d4" style="width: 100.0%; height: 100.0%;">     <b>Montana - Pastizales</b><br>     <b>Densidad de Algodoncillo:</b> Alta<br>     <b>Especies:</b> A. speciosa, A. cryptoceras<br>     <b>Floración:</b> Mayo - Agosto<br>     <b>Tipo:</b> Área de Reproducción     </div>`)[0];
+            popup_c498c24212cfefee212dca366f05e184.setContent(html_35b566fcec4434ba13466cefe9a021d4);
+        
+
+        circle_marker_154c594f2c30ce971fcb38be75c6c0f7.bindPopup(popup_c498c24212cfefee212dca366f05e184)
+        ;
+
+        
+    
+    
+            circle_marker_154c594f2c30ce971fcb38be75c6c0f7.bindTooltip(
+                `<div>
+                     Montana - Pastizales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_87ee37a5662ca6a29ef74775bf408c75 = new L.RegularPolygonMarker(
+                [38.0, -98.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_6583fd57b80bb19d788ad99d0fbc45cd = L.popup({"maxWidth": 300});
+
+        
+            var html_dfadd2fa6f9bac4c29d744e39e8c71dc = $(`<div id="html_dfadd2fa6f9bac4c29d744e39e8c71dc" style="width: 100.0%; height: 100.0%;">     <b>Campos de Girasol - Kansas</b><br>     <b>Planta Principal:</b> Helianthus annuus<br>     <b>Floración:</b> Julio - Octubre<br>     <b>Importancia:</b> Muy Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_6583fd57b80bb19d788ad99d0fbc45cd.setContent(html_dfadd2fa6f9bac4c29d744e39e8c71dc);
+        
+
+        regular_polygon_marker_87ee37a5662ca6a29ef74775bf408c75.bindPopup(popup_6583fd57b80bb19d788ad99d0fbc45cd)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_87ee37a5662ca6a29ef74775bf408c75.bindTooltip(
+                `<div>
+                     Campos de Girasol - Kansas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_c1013c1617272d247be2d9aa718aaff3 = new L.RegularPolygonMarker(
+                [40.5, -89.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_a744ddbe7fb6d42b95b8653e5ac788de = L.popup({"maxWidth": 300});
+
+        
+            var html_cf5962c246a9ea7ae3da0b136468a905 = $(`<div id="html_cf5962c246a9ea7ae3da0b136468a905" style="width: 100.0%; height: 100.0%;">     <b>Praderas de Goldenrod - Illinois</b><br>     <b>Planta Principal:</b> Solidago spp.<br>     <b>Floración:</b> Agosto - Octubre<br>     <b>Importancia:</b> Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_a744ddbe7fb6d42b95b8653e5ac788de.setContent(html_cf5962c246a9ea7ae3da0b136468a905);
+        
+
+        regular_polygon_marker_c1013c1617272d247be2d9aa718aaff3.bindPopup(popup_a744ddbe7fb6d42b95b8653e5ac788de)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_c1013c1617272d247be2d9aa718aaff3.bindTooltip(
+                `<div>
+                     Praderas de Goldenrod - Illinois
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_e0534538475851194b83a3198f9505b1 = new L.RegularPolygonMarker(
+                [45.5, -93.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_9531c96d6791d8d031d53dd147540ec3 = L.popup({"maxWidth": 300});
+
+        
+            var html_db0b86f52f4ce85cdfd93b164109c85b = $(`<div id="html_db0b86f52f4ce85cdfd93b164109c85b" style="width: 100.0%; height: 100.0%;">     <b>Campos de Aster - Minnesota</b><br>     <b>Planta Principal:</b> Symphyotrichum spp.<br>     <b>Floración:</b> Agosto - Octubre<br>     <b>Importancia:</b> Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_9531c96d6791d8d031d53dd147540ec3.setContent(html_db0b86f52f4ce85cdfd93b164109c85b);
+        
+
+        regular_polygon_marker_e0534538475851194b83a3198f9505b1.bindPopup(popup_9531c96d6791d8d031d53dd147540ec3)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_e0534538475851194b83a3198f9505b1.bindTooltip(
+                `<div>
+                     Campos de Aster - Minnesota
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_d7c3ad7e5218a60e571ae68a39c8c0d9 = new L.RegularPolygonMarker(
+                [32.0, -99.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_1d2842b267362ca5a0b443e9d555b4bc = L.popup({"maxWidth": 300});
+
+        
+            var html_2ecfdf4e78837f52c8dcad594a59c0bc = $(`<div id="html_2ecfdf4e78837f52c8dcad594a59c0bc" style="width: 100.0%; height: 100.0%;">     <b>Jardines de Zinnia - Texas</b><br>     <b>Planta Principal:</b> Zinnia elegans<br>     <b>Floración:</b> Junio - Octubre<br>     <b>Importancia:</b> Media<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_1d2842b267362ca5a0b443e9d555b4bc.setContent(html_2ecfdf4e78837f52c8dcad594a59c0bc);
+        
+
+        regular_polygon_marker_d7c3ad7e5218a60e571ae68a39c8c0d9.bindPopup(popup_1d2842b267362ca5a0b443e9d555b4bc)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_d7c3ad7e5218a60e571ae68a39c8c0d9.bindTooltip(
+                `<div>
+                     Jardines de Zinnia - Texas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_58bee73766b74eeaf95ec553cae4340c = new L.RegularPolygonMarker(
+                [35.0, -97.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_2754060d2826a4ab8515456b1fdd7742 = L.popup({"maxWidth": 300});
+
+        
+            var html_a7c3b422df95be05400b9f4483dafc1d = $(`<div id="html_a7c3b422df95be05400b9f4483dafc1d" style="width: 100.0%; height: 100.0%;">     <b>Campos de Cosmos - Oklahoma</b><br>     <b>Planta Principal:</b> Cosmos bipinnatus<br>     <b>Floración:</b> Junio - Octubre<br>     <b>Importancia:</b> Media<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_2754060d2826a4ab8515456b1fdd7742.setContent(html_a7c3b422df95be05400b9f4483dafc1d);
+        
+
+        regular_polygon_marker_58bee73766b74eeaf95ec553cae4340c.bindPopup(popup_2754060d2826a4ab8515456b1fdd7742)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_58bee73766b74eeaf95ec553cae4340c.bindTooltip(
+                `<div>
+                     Campos de Cosmos - Oklahoma
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_ece5101d889c43eb8b1ba68008b36381 = new L.RegularPolygonMarker(
+                [44.0, -90.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_08d1eb3a5e1a0be3eb5fe6ce7be3aa82 = L.popup({"maxWidth": 300});
+
+        
+            var html_0e7e01314f58c8b794e6292a34570eda = $(`<div id="html_0e7e01314f58c8b794e6292a34570eda" style="width: 100.0%; height: 100.0%;">     <b>Praderas de Joe-Pye Weed - Wisconsin</b><br>     <b>Planta Principal:</b> Eutrochium purpureum<br>     <b>Floración:</b> Julio - Septiembre<br>     <b>Importancia:</b> Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_08d1eb3a5e1a0be3eb5fe6ce7be3aa82.setContent(html_0e7e01314f58c8b794e6292a34570eda);
+        
+
+        regular_polygon_marker_ece5101d889c43eb8b1ba68008b36381.bindPopup(popup_08d1eb3a5e1a0be3eb5fe6ce7be3aa82)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_ece5101d889c43eb8b1ba68008b36381.bindTooltip(
+                `<div>
+                     Praderas de Joe-Pye Weed - Wisconsin
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_8521c50b5a23194b6071cf5be1b1bb3b = new L.RegularPolygonMarker(
+                [29.0, -98.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_7c800beaf9acba5dabdb97c892e66c29 = L.popup({"maxWidth": 300});
+
+        
+            var html_4e4e21706be4db748d76d2244bade598 = $(`<div id="html_4e4e21706be4db748d76d2244bade598" style="width: 100.0%; height: 100.0%;">     <b>Campos de Lantana - Texas Sur</b><br>     <b>Planta Principal:</b> Lantana camara<br>     <b>Floración:</b> Abril - Noviembre<br>     <b>Importancia:</b> Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_7c800beaf9acba5dabdb97c892e66c29.setContent(html_4e4e21706be4db748d76d2244bade598);
+        
+
+        regular_polygon_marker_8521c50b5a23194b6071cf5be1b1bb3b.bindPopup(popup_7c800beaf9acba5dabdb97c892e66c29)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_8521c50b5a23194b6071cf5be1b1bb3b.bindTooltip(
+                `<div>
+                     Campos de Lantana - Texas Sur
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_943e7bf8fd0b26f43306298c28c30baa = new L.RegularPolygonMarker(
+                [35.0, -106.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_1efb5eadc3782ac4b5fc5a768b93a0e9 = L.popup({"maxWidth": 300});
+
+        
+            var html_cc0a699f3f11fb624e6a3ff36aeebf5f = $(`<div id="html_cc0a699f3f11fb624e6a3ff36aeebf5f" style="width: 100.0%; height: 100.0%;">     <b>Jardines de Pentas - Nuevo México</b><br>     <b>Planta Principal:</b> Pentas lanceolata<br>     <b>Floración:</b> Mayo - Octubre<br>     <b>Importancia:</b> Media<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_1efb5eadc3782ac4b5fc5a768b93a0e9.setContent(html_cc0a699f3f11fb624e6a3ff36aeebf5f);
+        
+
+        regular_polygon_marker_943e7bf8fd0b26f43306298c28c30baa.bindPopup(popup_1efb5eadc3782ac4b5fc5a768b93a0e9)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_943e7bf8fd0b26f43306298c28c30baa.bindTooltip(
+                `<div>
+                     Jardines de Pentas - Nuevo México
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_be64ff29204f960a4181c7f0a0aee0ba = new L.RegularPolygonMarker(
+                [39.5, -105.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_a3d6445791240505df74a9db19d611ee = L.popup({"maxWidth": 300});
+
+        
+            var html_47c677523e75ee4c9ee980e43de28f83 = $(`<div id="html_47c677523e75ee4c9ee980e43de28f83" style="width: 100.0%; height: 100.0%;">     <b>Campos de Verbena - Colorado</b><br>     <b>Planta Principal:</b> Verbena bonariensis<br>     <b>Floración:</b> Junio - Octubre<br>     <b>Importancia:</b> Media<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_a3d6445791240505df74a9db19d611ee.setContent(html_47c677523e75ee4c9ee980e43de28f83);
+        
+
+        regular_polygon_marker_be64ff29204f960a4181c7f0a0aee0ba.bindPopup(popup_a3d6445791240505df74a9db19d611ee)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_be64ff29204f960a4181c7f0a0aee0ba.bindTooltip(
+                `<div>
+                     Campos de Verbena - Colorado
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var regular_polygon_marker_d4ec1e9360259babb81847a7c7a06aa8 = new L.RegularPolygonMarker(
+                [37.5, -92.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "numberOfSides": 6, "opacity": 1.0, "radius": 12, "rotation": 0, "stroke": true, "weight": 2}
+            ).addTo(map_0038dd6013676c9fe62284c743d6f8d0);
+        
+    
+        var popup_2dc4c7eb677f50790a380e4c26938adb = L.popup({"maxWidth": 300});
+
+        
+            var html_c697858cad4a705ea95da32d6957c6fe = $(`<div id="html_c697858cad4a705ea95da32d6957c6fe" style="width: 100.0%; height: 100.0%;">     <b>Praderas de Ironweed - Missouri</b><br>     <b>Planta Principal:</b> Vernonia baldwinii<br>     <b>Floración:</b> Agosto - Octubre<br>     <b>Importancia:</b> Alta<br>     <b>Tipo:</b> Área de Alimentación (Néctar)     </div>`)[0];
+            popup_2dc4c7eb677f50790a380e4c26938adb.setContent(html_c697858cad4a705ea95da32d6957c6fe);
+        
+
+        regular_polygon_marker_d4ec1e9360259babb81847a7c7a06aa8.bindPopup(popup_2dc4c7eb677f50790a380e4c26938adb)
+        ;
+
+        
+    
+    
+            regular_polygon_marker_d4ec1e9360259babb81847a7c7a06aa8.bindTooltip(
+                `<div>
+                     Praderas de Ironweed - Missouri
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

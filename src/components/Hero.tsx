@@ -4,6 +4,9 @@ import Boton from "../components/Boton";
 
 export default function Hero() {
   return (
+    
+
+
     <section
       className={styles.hero}
       style={{

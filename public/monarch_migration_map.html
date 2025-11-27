@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_348b79a9c04e69761605687c492a81e4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 200px; height: 180px; 
+            background-color: white; border:2px solid grey; z-index:9999; 
+            font-size:14px; padding: 10px">
+<h4>Monarch Migration Legend</h4>
+<p><i class="fa fa-circle" style="color:green"></i> Breeding Areas</p>
+<p><i class="fa fa-circle" style="color:orange"></i> Migration Corridor</p>
+<p><i class="fa fa-circle" style="color:darkred"></i> Hibernation Sanctuaries</p>
+<p><i class="fa fa-circle" style="color:blue"></i> Spring Return Route</p>
+<p style="color:red">━━━ Fall Migration</p>
+<p style="color:blue">━━━ Spring Return</p>
+</div>
+    
+            <div class="folium-map" id="map_348b79a9c04e69761605687c492a81e4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_348b79a9c04e69761605687c492a81e4 = L.map(
+                "map_348b79a9c04e69761605687c492a81e4",
+                {
+                    center: [35.0, -95.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d832995aa8998b2628dcb5725cc31d71 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+            var circle_marker_95a675cc149c59fd99a3d4fea114a828 = L.circleMarker(
+                [45.0, -80.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_0691d07cf6b942874daebba5577e1b53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f97266867ed92df7b4511b4dcd1d2c8 = $(`<div id="html_8f97266867ed92df7b4511b4dcd1d2c8" style="width: 100.0%; height: 100.0%;"><b>Southern Canada (Ontario)</b><br>Type: breeding_start<br>Arrival: Month 5<br>Departure: Month 8</div>`)[0];
+            popup_0691d07cf6b942874daebba5577e1b53.setContent(html_8f97266867ed92df7b4511b4dcd1d2c8);
+        
+
+        circle_marker_95a675cc149c59fd99a3d4fea114a828.bindPopup(popup_0691d07cf6b942874daebba5577e1b53)
+        ;
+
+        
+    
+    
+            var circle_marker_52c4993b0e515b22a48bec1d4406448e = L.circleMarker(
+                [43.5, -84.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_2c06175be4dcdf30fe62300bc03d829f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_381c8b5a790d1c71d58942874a1becf5 = $(`<div id="html_381c8b5a790d1c71d58942874a1becf5" style="width: 100.0%; height: 100.0%;"><b>Great Lakes Region</b><br>Type: breeding<br>Arrival: Month 5<br>Departure: Month 8</div>`)[0];
+            popup_2c06175be4dcdf30fe62300bc03d829f.setContent(html_381c8b5a790d1c71d58942874a1becf5);
+        
+
+        circle_marker_52c4993b0e515b22a48bec1d4406448e.bindPopup(popup_2c06175be4dcdf30fe62300bc03d829f)
+        ;
+
+        
+    
+    
+            var circle_marker_9c5463304345c81abcacdb76f9907b0c = L.circleMarker(
+                [45.5, -93.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_a1d0ddd8a2769f806a9c8373284c6476 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3ae8ad610b09392200ce05f2b328eb81 = $(`<div id="html_3ae8ad610b09392200ce05f2b328eb81" style="width: 100.0%; height: 100.0%;"><b>Minnesota/Wisconsin</b><br>Type: breeding<br>Arrival: Month 5<br>Departure: Month 8</div>`)[0];
+            popup_a1d0ddd8a2769f806a9c8373284c6476.setContent(html_3ae8ad610b09392200ce05f2b328eb81);
+        
+
+        circle_marker_9c5463304345c81abcacdb76f9907b0c.bindPopup(popup_a1d0ddd8a2769f806a9c8373284c6476)
+        ;
+
+        
+    
+    
+            var circle_marker_439a3e61b6e2a1a66397347351e889f5 = L.circleMarker(
+                [41.5, -91.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_6cd74e31e6747eb746538d1e0758e981 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13ac68fd7562b9125d5fc6e592e22ee1 = $(`<div id="html_13ac68fd7562b9125d5fc6e592e22ee1" style="width: 100.0%; height: 100.0%;"><b>Iowa/Illinois</b><br>Type: migration_corridor<br>Arrival: Month 8<br>Departure: Month 9</div>`)[0];
+            popup_6cd74e31e6747eb746538d1e0758e981.setContent(html_13ac68fd7562b9125d5fc6e592e22ee1);
+        
+
+        circle_marker_439a3e61b6e2a1a66397347351e889f5.bindPopup(popup_6cd74e31e6747eb746538d1e0758e981)
+        ;
+
+        
+    
+    
+            var circle_marker_12a0b74743024833655a71f1019542b2 = L.circleMarker(
+                [36.0, -92.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_42950ddc300a0f3b730d7021d6d08369 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a558c79aca246f9135b79ef943032880 = $(`<div id="html_a558c79aca246f9135b79ef943032880" style="width: 100.0%; height: 100.0%;"><b>Missouri/Arkansas</b><br>Type: migration_corridor<br>Arrival: Month 9<br>Departure: Month 10</div>`)[0];
+            popup_42950ddc300a0f3b730d7021d6d08369.setContent(html_a558c79aca246f9135b79ef943032880);
+        
+
+        circle_marker_12a0b74743024833655a71f1019542b2.bindPopup(popup_42950ddc300a0f3b730d7021d6d08369)
+        ;
+
+        
+    
+    
+            var circle_marker_8feb58348377cc8b523c73ba4f2e8d3f = L.circleMarker(
+                [31.0, -99.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_da091efc1b94aab0595f6a474d098122 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9caaef4ac37025855a9c20d5950a4f5c = $(`<div id="html_9caaef4ac37025855a9c20d5950a4f5c" style="width: 100.0%; height: 100.0%;"><b>Texas (Central)</b><br>Type: migration_corridor<br>Arrival: Month 10<br>Departure: Month 11</div>`)[0];
+            popup_da091efc1b94aab0595f6a474d098122.setContent(html_9caaef4ac37025855a9c20d5950a4f5c);
+        
+
+        circle_marker_8feb58348377cc8b523c73ba4f2e8d3f.bindPopup(popup_da091efc1b94aab0595f6a474d098122)
+        ;
+
+        
+    
+    
+            var circle_marker_c1a1f52df4965074088d9be64b5c22ec = L.circleMarker(
+                [26.0, -98.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_649a00c4cab6657dcb82ff6da4a814e3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9a2036ac80e7e2f621056f225814be0b = $(`<div id="html_9a2036ac80e7e2f621056f225814be0b" style="width: 100.0%; height: 100.0%;"><b>Texas (South)</b><br>Type: migration_corridor<br>Arrival: Month 10<br>Departure: Month 11</div>`)[0];
+            popup_649a00c4cab6657dcb82ff6da4a814e3.setContent(html_9a2036ac80e7e2f621056f225814be0b);
+        
+
+        circle_marker_c1a1f52df4965074088d9be64b5c22ec.bindPopup(popup_649a00c4cab6657dcb82ff6da4a814e3)
+        ;
+
+        
+    
+    
+            var circle_marker_c060be48998f4e7206cccf42002d2085 = L.circleMarker(
+                [25.5, -100.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_10352d19f72fe43114c7671973f0acef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_abf548ab9f8255b5aaddb9a68258732f = $(`<div id="html_abf548ab9f8255b5aaddb9a68258732f" style="width: 100.0%; height: 100.0%;"><b>Northeastern Mexico</b><br>Type: migration_corridor<br>Arrival: Month 11<br>Departure: Month 12</div>`)[0];
+            popup_10352d19f72fe43114c7671973f0acef.setContent(html_abf548ab9f8255b5aaddb9a68258732f);
+        
+
+        circle_marker_c060be48998f4e7206cccf42002d2085.bindPopup(popup_10352d19f72fe43114c7671973f0acef)
+        ;
+
+        
+    
+    
+            var circle_marker_df215fec436e0c03735f7595d1d8e779 = L.circleMarker(
+                [19.5, -100.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_9a6593678e3cd6dc79743a12ce21b4c5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cb7fd783ce1b177fc8e5a3ea3a0c9f1 = $(`<div id="html_6cb7fd783ce1b177fc8e5a3ea3a0c9f1" style="width: 100.0%; height: 100.0%;"><b>Central Mexico Highlands</b><br>Type: pre_hibernation<br>Arrival: Month 11<br>Departure: Month 3</div>`)[0];
+            popup_9a6593678e3cd6dc79743a12ce21b4c5.setContent(html_6cb7fd783ce1b177fc8e5a3ea3a0c9f1);
+        
+
+        circle_marker_df215fec436e0c03735f7595d1d8e779.bindPopup(popup_9a6593678e3cd6dc79743a12ce21b4c5)
+        ;
+
+        
+    
+    
+            var circle_marker_ae397e9c12012b4d5ceaff298bcdb4c5 = L.circleMarker(
+                [19.6, -100.3],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_60cc2fabe595da133e4d0b2aacad1ee9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_65202d935918fdc606e78b7841a8e04b = $(`<div id="html_65202d935918fdc606e78b7841a8e04b" style="width: 100.0%; height: 100.0%;"><b>Michoacán Sanctuaries</b><br>Type: hibernation_sanctuary<br>Arrival: Month 11<br>Departure: Month 3</div>`)[0];
+            popup_60cc2fabe595da133e4d0b2aacad1ee9.setContent(html_65202d935918fdc606e78b7841a8e04b);
+        
+
+        circle_marker_ae397e9c12012b4d5ceaff298bcdb4c5.bindPopup(popup_60cc2fabe595da133e4d0b2aacad1ee9)
+        ;
+
+        
+    
+    
+            var circle_marker_7c71389a2e912af794a1357c88e918ee = L.circleMarker(
+                [19.3, -99.7],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_14e2b4e615974a5d003e6f9d07d6b1a7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b9b94cb1410586220468e40e71b5dcf8 = $(`<div id="html_b9b94cb1410586220468e40e71b5dcf8" style="width: 100.0%; height: 100.0%;"><b>Estado de México Sanctuaries</b><br>Type: hibernation_sanctuary<br>Arrival: Month 11<br>Departure: Month 3</div>`)[0];
+            popup_14e2b4e615974a5d003e6f9d07d6b1a7.setContent(html_b9b94cb1410586220468e40e71b5dcf8);
+        
+
+        circle_marker_7c71389a2e912af794a1357c88e918ee.bindPopup(popup_14e2b4e615974a5d003e6f9d07d6b1a7)
+        ;
+
+        
+    
+    
+            var poly_line_8b21194c62fc2f10b1dafaff8b7c8418 = L.polyline(
+                [[45.0, -80.0], [43.5, -84.0], [45.5, -93.0], [41.5, -91.0], [36.0, -92.0], [31.0, -99.0], [26.0, -98.0], [25.5, -100.0], [19.5, -100.5], [19.6, -100.3], [19.3, -99.7]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_64e96794eae0f20b9feb118788e208c0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_54ce1a3b5e6f177e9222d01ac4098c9a = $(`<div id="html_54ce1a3b5e6f177e9222d01ac4098c9a" style="width: 100.0%; height: 100.0%;">Fall Migration Route (South)</div>`)[0];
+            popup_64e96794eae0f20b9feb118788e208c0.setContent(html_54ce1a3b5e6f177e9222d01ac4098c9a);
+        
+
+        poly_line_8b21194c62fc2f10b1dafaff8b7c8418.bindPopup(popup_64e96794eae0f20b9feb118788e208c0)
+        ;
+
+        
+    
+    
+            var circle_marker_a30557ffb8ebea929309d4b7c5284675 = L.circleMarker(
+                [19.6, -100.3],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_de109e774464fc89ff250617a4c0c9f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_497a7f8da40fbf26577a70a9737ad46b = $(`<div id="html_497a7f8da40fbf26577a70a9737ad46b" style="width: 100.0%; height: 100.0%;"><b>Michoacán Sanctuaries</b><br>Type: hibernation_end<br>Arrival: Month 3<br>Departure: Month 3</div>`)[0];
+            popup_de109e774464fc89ff250617a4c0c9f1.setContent(html_497a7f8da40fbf26577a70a9737ad46b);
+        
+
+        circle_marker_a30557ffb8ebea929309d4b7c5284675.bindPopup(popup_de109e774464fc89ff250617a4c0c9f1)
+        ;
+
+        
+    
+    
+            var circle_marker_615f9fa7946bd82518cc740fd7903240 = L.circleMarker(
+                [22.0, -100.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_5ae2cee33e8aea2ff010c297b8af835c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bf1747f3b3722fa15b6d4672196ef69a = $(`<div id="html_bf1747f3b3722fa15b6d4672196ef69a" style="width: 100.0%; height: 100.0%;"><b>Central Mexico</b><br>Type: spring_migration<br>Arrival: Month 3<br>Departure: Month 4</div>`)[0];
+            popup_5ae2cee33e8aea2ff010c297b8af835c.setContent(html_bf1747f3b3722fa15b6d4672196ef69a);
+        
+
+        circle_marker_615f9fa7946bd82518cc740fd7903240.bindPopup(popup_5ae2cee33e8aea2ff010c297b8af835c)
+        ;
+
+        
+    
+    
+            var circle_marker_0f9349120c137dc3ff37e423e6cf90a9 = L.circleMarker(
+                [26.0, -99.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_a04bb17ce90ae80b135e828dd276628b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ed240f762a24a0285a4d72eb629f8c35 = $(`<div id="html_ed240f762a24a0285a4d72eb629f8c35" style="width: 100.0%; height: 100.0%;"><b>Northern Mexico</b><br>Type: spring_migration<br>Arrival: Month 4<br>Departure: Month 4</div>`)[0];
+            popup_a04bb17ce90ae80b135e828dd276628b.setContent(html_ed240f762a24a0285a4d72eb629f8c35);
+        
+
+        circle_marker_0f9349120c137dc3ff37e423e6cf90a9.bindPopup(popup_a04bb17ce90ae80b135e828dd276628b)
+        ;
+
+        
+    
+    
+            var circle_marker_d110e822d934588ea67cfad9a755d75a = L.circleMarker(
+                [26.0, -98.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_4bf83190c934f98708046b8ed6cb5833 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cee1c53abdf08975c24a7f8b91b8f34 = $(`<div id="html_6cee1c53abdf08975c24a7f8b91b8f34" style="width: 100.0%; height: 100.0%;"><b>Texas (South)</b><br>Type: spring_migration<br>Arrival: Month 4<br>Departure: Month 4</div>`)[0];
+            popup_4bf83190c934f98708046b8ed6cb5833.setContent(html_6cee1c53abdf08975c24a7f8b91b8f34);
+        
+
+        circle_marker_d110e822d934588ea67cfad9a755d75a.bindPopup(popup_4bf83190c934f98708046b8ed6cb5833)
+        ;
+
+        
+    
+    
+            var circle_marker_d439215b28ff27b463fb39d527f27ae8 = L.circleMarker(
+                [33.0, -97.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_6a57bdfbce5e0eb4c6531311cfaf0096 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7817a3af0dee637518e20264fb1a69b3 = $(`<div id="html_7817a3af0dee637518e20264fb1a69b3" style="width: 100.0%; height: 100.0%;"><b>Texas (North)</b><br>Type: spring_migration<br>Arrival: Month 4<br>Departure: Month 5</div>`)[0];
+            popup_6a57bdfbce5e0eb4c6531311cfaf0096.setContent(html_7817a3af0dee637518e20264fb1a69b3);
+        
+
+        circle_marker_d439215b28ff27b463fb39d527f27ae8.bindPopup(popup_6a57bdfbce5e0eb4c6531311cfaf0096)
+        ;
+
+        
+    
+    
+            var circle_marker_381ce6e7f570f3c229fc09810b5c4680 = L.circleMarker(
+                [36.5, -97.5],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_cb0e2a9e75052b5f1d788b5676f29127 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3864a30b19b14a03764d58c1db35848d = $(`<div id="html_3864a30b19b14a03764d58c1db35848d" style="width: 100.0%; height: 100.0%;"><b>Oklahoma/Kansas</b><br>Type: spring_migration<br>Arrival: Month 5<br>Departure: Month 5</div>`)[0];
+            popup_cb0e2a9e75052b5f1d788b5676f29127.setContent(html_3864a30b19b14a03764d58c1db35848d);
+        
+
+        circle_marker_381ce6e7f570f3c229fc09810b5c4680.bindPopup(popup_cb0e2a9e75052b5f1d788b5676f29127)
+        ;
+
+        
+    
+    
+            var circle_marker_82627ab1cb21245cae8d8dcca2fcef01 = L.circleMarker(
+                [41.0, -96.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_1dadf02451507e1c714c5ad5f956ab01 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8211eeb88510a8d6a9b5211d6a2cec53 = $(`<div id="html_8211eeb88510a8d6a9b5211d6a2cec53" style="width: 100.0%; height: 100.0%;"><b>Nebraska/Iowa</b><br>Type: spring_migration<br>Arrival: Month 5<br>Departure: Month 6</div>`)[0];
+            popup_1dadf02451507e1c714c5ad5f956ab01.setContent(html_8211eeb88510a8d6a9b5211d6a2cec53);
+        
+
+        circle_marker_82627ab1cb21245cae8d8dcca2fcef01.bindPopup(popup_1dadf02451507e1c714c5ad5f956ab01)
+        ;
+
+        
+    
+    
+            var circle_marker_e324fd1d6ddcdd32d31939d0997ced1f = L.circleMarker(
+                [45.5, -93.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_6df4c46ec4f87b7122909aedbd32e7a6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_066f10c9b9690e27624fefcd072d3509 = $(`<div id="html_066f10c9b9690e27624fefcd072d3509" style="width: 100.0%; height: 100.0%;"><b>Minnesota/Wisconsin</b><br>Type: breeding_return<br>Arrival: Month 5<br>Departure: Month 8</div>`)[0];
+            popup_6df4c46ec4f87b7122909aedbd32e7a6.setContent(html_066f10c9b9690e27624fefcd072d3509);
+        
+
+        circle_marker_e324fd1d6ddcdd32d31939d0997ced1f.bindPopup(popup_6df4c46ec4f87b7122909aedbd32e7a6)
+        ;
+
+        
+    
+    
+            var circle_marker_ca284cc33203f19b944eb99baced3099 = L.circleMarker(
+                [48.0, -85.0],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "black", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 2}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_9e3a21df2fc3b7216491463198e318a0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9e240c2156a7579082cf5ac60f25a61f = $(`<div id="html_9e240c2156a7579082cf5ac60f25a61f" style="width: 100.0%; height: 100.0%;"><b>Southern Canada</b><br>Type: breeding_final<br>Arrival: Month 6<br>Departure: Month 8</div>`)[0];
+            popup_9e3a21df2fc3b7216491463198e318a0.setContent(html_9e240c2156a7579082cf5ac60f25a61f);
+        
+
+        circle_marker_ca284cc33203f19b944eb99baced3099.bindPopup(popup_9e3a21df2fc3b7216491463198e318a0)
+        ;
+
+        
+    
+    
+            var poly_line_206ef207183079b5eb3e5d3f18f7ad62 = L.polyline(
+                [[19.6, -100.3], [22.0, -100.0], [26.0, -99.0], [26.0, -98.0], [33.0, -97.0], [36.5, -97.5], [41.0, -96.0], [45.5, -93.0], [48.0, -85.0]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_348b79a9c04e69761605687c492a81e4);
+        
+    
+        var popup_b2d8712021a0225efddee1f91f084ef3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f18200b20fd52b5483a52f2a4f06a487 = $(`<div id="html_f18200b20fd52b5483a52f2a4f06a487" style="width: 100.0%; height: 100.0%;">Spring Migration Route (North)</div>`)[0];
+            popup_b2d8712021a0225efddee1f91f084ef3.setContent(html_f18200b20fd52b5483a52f2a4f06a487);
+        
+
+        poly_line_206ef207183079b5eb3e5d3f18f7ad62.bindPopup(popup_b2d8712021a0225efddee1f91f084ef3)
+        ;
+
+        
+    
+</script>
+</html>

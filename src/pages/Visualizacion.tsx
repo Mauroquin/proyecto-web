@@ -2,15 +2,15 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Migracion.module.css";
 import Boton from "../components/Boton";
 
-import MapaConservacion from "../components/MapaConservacion";
-import { useState } from "react";
+
+
 
 
 import Pagination from "../components/Pagination";
 
 
 export default function Migracion() {
-const [mostrarMapa, setMostrarMapa] = useState(false);  
+
   return (
     <>
       <Navbar />
@@ -42,9 +42,12 @@ const [mostrarMapa, setMostrarMapa] = useState(false);
             <div className={styles.alinearIzquierda}>
               <h3>Iniciativas de Conservación</h3>
             </div>
-            <Boton texto="Explorar" onClick={() => setMostrarMapa(true)} />
-
-{mostrarMapa && <MapaConservacion />}
+            <div className={styles.botonIzquierda}>
+            <Boton
+  texto="Explorar"
+  onClick={() => window.open("/mapa_conservacion_monarca.html", "_blank")}
+/>
+          </div>
           </div>
           <br/>
           <div className={styles.imagenContainer}>
@@ -59,7 +62,10 @@ const [mostrarMapa, setMostrarMapa] = useState(false);
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton
+  texto="Explorar"
+  onClick={() => window.open("/mapa_amenazas_monarca.html", "_blank")}
+/>
             </div>
           </div>
         </div>
@@ -81,7 +87,10 @@ const [mostrarMapa, setMostrarMapa] = useState(false);
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton
+  texto="Explorar"
+  onClick={() => window.open("/mapa_areas_reproduccion_alimentacion.html", "_blank")}
+/>
             </div>
           </div>
           <br/>
