@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import Bienvenida from "./components/Bienvenida";
 import Migracion from "./components/Migracion";
 
+
+
 export default function App() {
   return (
     <div>

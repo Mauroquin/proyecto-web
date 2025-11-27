@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App"; // Landing con Hero + Bienvenida + Migración
+import CicloDeVida from "./pages/CicloDeVida";
 
 // Páginas Atlas
 import Atlas from "./pages/Atlas";
@@ -39,6 +40,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/visualizacion" element={<Visualizacion />} />
         <Route path="/visualizacion_2" element={<Visualizacion_2 />} />
         <Route path="/visualizacion_3" element={<Visualizacion_3 />} />
+
+        <Route path="/ciclo-de-vida" element={<CicloDeVida />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

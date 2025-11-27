@@ -2,15 +2,19 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 import Pagination from "../components/Pagination";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Atlas() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar />
 
       {/* Encabezado */}
       <header className={styles.header}>
-        <h1>⬅ ATLAS DE LA MARIPOSA MONARCA</h1>
+        <h1>ATLAS DE LA MARIPOSA MONARCA</h1>
         <p>
           Descubre la belleza y la ciencia detrás de la mariposa monarca a través
           de nuestros atlas.
@@ -42,7 +46,8 @@ export default function Atlas() {
             </div>
 
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/ciclo-de-vida")} />
+
             </div>
           </div>
 

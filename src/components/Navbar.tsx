@@ -1,17 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
-import { useEffect, useState } from "react";
-
 export default function Navbar() {
-  const [theme, setTheme] = useState("light");
+  
+ 
 
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
+  
 
   return (
     <nav className={styles.navbar}>
@@ -22,10 +15,7 @@ export default function Navbar() {
         <Link to="/visualizacion">Visualización</Link>
       </div>
 
-      {/* BOTÓN DE MODO OSCURO/CLARO */}
-      <button onClick={toggleTheme} className={styles.themeButton}>
-        {theme === "light" ? "🌙 Oscuro" : "☀️ Claro"}
-      </button>
+      
     </nav>
   );
 }

@@ -1,8 +1,11 @@
 import mariposaImg from "../assets/mariposa.png";
 import styles from "../styles/Hero.module.css";
 import Boton from "../components/Boton";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     
 
@@ -43,7 +46,8 @@ export default function Hero() {
         <p style={{ marginTop: "1rem", fontSize: "1.2rem", maxWidth: "600px", color: "white", textAlign: "left" }}>
           Bienvenido a nuestra galeria de arte digital, donde exploramos la fascinante vida de la mariposa monarca a través de visualizaciones interactivas. Sumérgete en un viaje educativo que combina arte y ciencia, destacando la importacia de esta especie en nuestro ecosistema.
         </p>
-        <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+        <Boton texto="Explorar" onClick={() => navigate("/atlas")} />
+
       </div>
     </section>
   );
