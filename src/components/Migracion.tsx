@@ -1,8 +1,11 @@
 import styles from "../styles/Migracion.module.css";
 import migracionImage from "../assets/migracion.png";
 import Boton from "../components/Boton";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Migracion() {
+  const navigate = useNavigate();
   return (
     <section
       className={styles.section}
@@ -39,7 +42,7 @@ export default function Migracion() {
         <p style={{ fontSize: "1.2rem", color: "white", maxWidth: "600px", margin: "0 auto" }}>
           La mariposa monarca y los humanos migran en Norteamérica buscando mejores condiciones. Las mariposas migran a México por instinto biológico, los humanos por razones socioeconómicas. Ambas demuestran resiliencia y conexión territorial.
         </p>
-        <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+        <Boton texto="Explorar" onClick={() => navigate("/migracion")} />
         
       </div>
     </section>

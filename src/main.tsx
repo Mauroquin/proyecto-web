@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App"; // Landing con Hero + Bienvenida + Migración
 import CicloDeVida from "./pages/CicloDeVida";
+import DependenciaEcosomatica from "./pages/DependenciaEcosomatica"; 
+import CorredoresMigratorios from "./pages/CorredoresMigratorios";
 
 // Páginas Atlas
 import Atlas from "./pages/Atlas";
@@ -42,6 +44,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/visualizacion_3" element={<Visualizacion_3 />} />
 
         <Route path="/ciclo-de-vida" element={<CicloDeVida />} />
+        <Route path="/dependencia-ecosomatica" element={<DependenciaEcosomatica />} />
+        <Route path="/corredores-migratorios" element={<CorredoresMigratorios />} />
 
       </Routes>
     </BrowserRouter>

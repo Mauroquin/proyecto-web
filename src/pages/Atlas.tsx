@@ -69,7 +69,7 @@ export default function Atlas() {
             </div>
 
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/dependencia-ecosomatica")} />
             </div>
           </div>
         </div>
@@ -103,8 +103,9 @@ export default function Atlas() {
             </div>
 
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/corredores-migratorios")} />
             </div>
+
           </div>
 
           <br />
