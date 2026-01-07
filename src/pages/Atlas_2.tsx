@@ -4,9 +4,12 @@ import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 
 import Pagination from "../components/Pagination";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function Atlas() {
+  const navigate = useNavigate();
   
   return (
     <>
@@ -34,8 +37,8 @@ export default function Atlas() {
             <br />
             <div className={styles.imagenContainer}>
             <img
-              src="/assets/panel_constrate.png"
-              alt="Red de Dependencias Ecosomática"
+              src="/assets/panel_contraste.png"
+              alt="Panel de Contraste"
               className={styles.imagen}
             />
 
@@ -47,14 +50,14 @@ export default function Atlas() {
               </p>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/panel-contraste")} />
             </div>
           </div>
           <br/>
           <div className={styles.imagenContainer}>
             <img
               src="/assets/tradición.png"
-              alt="Red de Dependencias Ecosomática"
+              alt="En la Tradición"
               className={styles.imagen}
             />
             <br/>
@@ -94,7 +97,7 @@ export default function Atlas() {
               </p>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Naturaleza")} />
             </div>
           </div>
           <br/>

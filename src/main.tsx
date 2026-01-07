@@ -5,6 +5,11 @@ import App from "./App"; // Landing con Hero + Bienvenida + Migración
 import CicloDeVida from "./pages/CicloDeVida";
 import DependenciaEcosomatica from "./pages/DependenciaEcosomatica"; 
 import CorredoresMigratorios from "./pages/CorredoresMigratorios";
+import VozHumana from "./pages/VozHumana";
+import PanelContraste from "./pages/PanelContraste";
+import Naturaleza from "./pages/Naturaleza";
+
+
 
 // Páginas Atlas
 import Atlas from "./pages/Atlas";
@@ -46,6 +51,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/ciclo-de-vida" element={<CicloDeVida />} />
         <Route path="/dependencia-ecosomatica" element={<DependenciaEcosomatica />} />
         <Route path="/corredores-migratorios" element={<CorredoresMigratorios />} />
+        <Route path="/voz-humana" element={<VozHumana />} />
+        <Route path="/panel-contraste" element={<PanelContraste />} />
+        <Route path="/naturaleza" element={<Naturaleza />} />
 
       </Routes>
     </BrowserRouter>

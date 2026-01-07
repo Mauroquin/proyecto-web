@@ -112,7 +112,7 @@ export default function Atlas() {
 
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/vos_humana.png"
+              src="/assets/voz_humana.png"
               alt="La Voz Humana"
               className={styles.imagen}
             />
@@ -129,7 +129,7 @@ export default function Atlas() {
             <br />
 
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/voz-humana")} />
             </div>
           </div>
         </div>
