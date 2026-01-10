@@ -57,7 +57,7 @@ export default function Naturaleza() {
     },
     {
       src: "/assets/img16.png",
-      titulo: "Tormenta invernal con los frentes fríos que durantes los dias 9 y 11 de marzo del 2016 provocaron granizo y vientos superiores a 80 km/h.",
+      titulo: "Tormenta invernal con los frentes fríos que durantes los dias 9 y 11 de marzo del 2016, provocaron granizo y vientos superiores a 80 km/h.",
       descripcion:
         "Esta fotografia muestra a numerosas mariposas monarca sobre un suelo nevado tras una intensa tormenta invernal. Sus colores apagados reflejan el impacto del clima extremo, revelando el lado más frágil y silencioso de su ciclo de vida, marcado por las duras condiciones ambientales."
     }

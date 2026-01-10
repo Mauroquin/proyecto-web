@@ -8,6 +8,7 @@ import CorredoresMigratorios from "./pages/CorredoresMigratorios";
 import VozHumana from "./pages/VozHumana";
 import PanelContraste from "./pages/PanelContraste";
 import Naturaleza from "./pages/Naturaleza";
+import Tradicion from "./pages/Tradicion";
 
 
 
@@ -54,6 +55,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/voz-humana" element={<VozHumana />} />
         <Route path="/panel-contraste" element={<PanelContraste />} />
         <Route path="/naturaleza" element={<Naturaleza />} />
+        <Route path="/Tradicion" element={<Tradicion />} />
 
       </Routes>
     </BrowserRouter>

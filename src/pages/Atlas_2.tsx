@@ -68,7 +68,7 @@ export default function Atlas() {
               </p>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Tradicion")} />
             </div>
           </div>
         </div>
