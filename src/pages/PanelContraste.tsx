@@ -113,41 +113,49 @@ export default function PanelContraste() {
           ))}
         </div>
 
-        {/* MODAL DE LECTURA */}
-        {imagenActiva && (
+{/* MODAL DE LECTURA */}
+{imagenActiva && (
   <div
     className={styles.modalOverlay}
     onClick={() => setImagenActiva(null)}
   >
     <div
-      className={styles.modalLecturaGrande}
+      className={styles.modal}
       onClick={(e) => e.stopPropagation()}
     >
       <button
         className={styles.cerrar}
         onClick={() => setImagenActiva(null)}
+        aria-label="Cerrar modal"
       >
-        ✕
+        ×
       </button>
 
-      <div className={styles.modalContenidoGrande}>
-        {/* IMAGEN IZQUIERDA */}
-        <div className={styles.modalImagenGrande}>
+      <div className={styles.modalContenido}>
+        {/* COLUMNA IZQUIERDA */}
+        <div className={styles.modalColImagen}>
           <img
+            className={styles.modalImagen}
             src={imagenActiva.src}
             alt={imagenActiva.titulo}
           />
         </div>
 
-        {/* TEXTO DERECHO */}
-        <div className={styles.modalTextoGrande}>
-          <h2>{imagenActiva.titulo}</h2>
-          <p>{imagenActiva.descripcion}</p>
+        {/* COLUMNA DERECHA */}
+        <div className={styles.modalColTexto}>
+          <h2 className={styles.modalTitulo}>
+            {imagenActiva.titulo}
+          </h2>
+
+          <p className={styles.modalTexto}>
+            {imagenActiva.descripcion}
+          </p>
         </div>
       </div>
     </div>
   </div>
 )}
+
 
       </main>
 
