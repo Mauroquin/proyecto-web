@@ -10,6 +10,10 @@ import PanelContraste from "./pages/PanelContraste";
 import Naturaleza from "./pages/Naturaleza";
 import Tradicion from "./pages/Tradicion";
 import Lugar from "./pages/Lugar";
+import Arte from "./pages/Arte";
+import ScrollToTop from "./components/ScrollToTop";
+import Fuego from "./pages/Fuego";
+
 
 
 
@@ -31,6 +35,7 @@ import Visualizacion_3 from "./pages/Visualizacion_3";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Página principal */}
         <Route path="/" element={<App />} />
@@ -58,8 +63,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/naturaleza" element={<Naturaleza />} />
         <Route path="/Tradicion" element={<Tradicion />} />
         <Route path="/lugar" element={<Lugar />} />
+        <Route path="/arte" element={<Arte />} />
+        <Route path="/fuego" element={<Fuego />} />
+
 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
+

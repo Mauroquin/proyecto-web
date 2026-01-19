@@ -3,9 +3,12 @@ import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 
 import Pagination from "../components/Pagination";
+import { useNavigate } from "react-router-dom";
+
 
 
 export default function Atlas() {
+  const navigate = useNavigate();
   
 
   return (
@@ -39,7 +42,7 @@ export default function Atlas() {
               </p>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Arte")} />
             </div>
           </div>
         </div>
@@ -62,7 +65,7 @@ export default function Atlas() {
               </p>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Fuego")} />
             </div>
           </div>
           <br/>

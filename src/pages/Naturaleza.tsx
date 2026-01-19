@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Atlas.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 /* 🔹 Tipo para TypeScript */
 type Imagen = {
@@ -10,6 +12,8 @@ type Imagen = {
 };
 
 export default function Naturaleza() {
+  const navigate = useNavigate();
+
   const [imagenActiva, setImagenActiva] = useState<Imagen | null>(null);
 
   const imagenes: Imagen[] = [
@@ -66,6 +70,14 @@ export default function Naturaleza() {
   return (
     <>
       <Navbar />
+
+      <button
+  onClick={() => navigate(-1)}
+  className={styles.botonVolver}
+>
+  ← Volver
+</button>
+
 
       <main className={styles.main}>
         {/* TEXTO SUPERIOR */}
