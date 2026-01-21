@@ -1,59 +1,107 @@
-/* ===== Encabezado ===== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap");
+
+/* =========================================================
+   VARIABLES GLOBALES
+   ========================================================= */
+:root {
+  --titulo-color: #e8891c;
+  --titulo-font: "Playfair Display", serif;
+  --texto-color: #333;
+}
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
 .header {
   background-color: #ffa94d;
   color: white;
   text-align: center;
   padding: 100px 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+  /* Para el mapa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .header h1 {
+  font-family: var(--titulo-font);
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 .header p {
+  font-family: "Georgia", "Times New Roman", serif;
   font-size: 1.3rem;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* ===== Contenido principal ===== */
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
 .main {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
-  gap: 2rem; /* Espaciado uniforme entre columnas */
-  align-items: start; /* Alinea las columnas en la parte superior */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
   padding: 60px;
   background-color: #fff;
 }
 
+/* =========================================================
+   BLOQUE DE TEXTO EDITORIAL (UNIFICADO)
+   ========================================================= */
+.bloqueTexto {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  align-self: start;
+}
 
-
-.texto h2 {
-  font-size: 2rem;
-  color: #d45d00;
+/* Títulos */
+.bloqueTexto h2,
+.bloqueTexto h3 {
+  font-family: var(--titulo-font);
+  font-size: 2.1rem;
+  color: var(--titulo-color);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-.texto p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
+/* Párrafos */
+.bloqueTexto p {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texto-color);
+  margin: 0 auto;
+  max-width: 520px;
 }
 
-/* ===== Imagen con efecto hover ===== */
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
 .imagenContainer {
-  margin: 0 auto; /* Centra las imágenes dentro de su contenedor */
-  text-align: left; /* Alinea el contenido a la izquierda */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .imagen {
   width: 100%;
   max-width: 600px;
+  max-height: 350px;
+  object-fit: contain;
   border-radius: 20px;
+  background-color: #f0f0f0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -63,13 +111,18 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.imagenContainer h3 {
-  margin-top: 15px;
-  font-size: 1.5rem;
-  color: #d45d00;
+/* =========================================================
+   MAPA MIGRACIÓN
+   ========================================================= */
+.mapa {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
-/* ===== Footer ===== */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 .footer {
   background-color: darkorange;
   color: white;
@@ -78,7 +131,9 @@
   margin-top: 40px;
 }
 
-/* ===== Responsivo ===== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;
@@ -86,75 +141,8 @@
     padding: 40px 20px;
   }
 
-  .texto {
-    margin-bottom: 40px;
-  }
-
+ 
   .header h1 {
     font-size: 2.2rem;
   }
-}
-
-/* ===== Estilos Adicionales ===== */
-.contenedorPrincipal {
-  display: flex;
-  gap: 2rem; /* Espaciado entre columnas */
-  width: 100%;
-}
-
-.columnaIzquierda,
-.columnaDerecha {
-  flex: 1; /* Ambas columnas tienen el mismo ancho */
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.columnaIzquierda {
-  text-align: left;
-}
-
-.columnaDerecha {
-  text-align: left;
-}
-
-/* Alineación exacta de columnas */
-.texto, .parrafoDerecha {
-  width: 100%;
-  max-width: 600px;
-  margin: 0;          /* ✅ elimina márgenes verticales */
-  padding: 0;         /* ✅ evita desplazamientos */
-  align-self: start;  /* ✅ fuerza a alinearse arriba */
-}
-
-.imagenContainer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.parrafoDerecha {
-  margin: 0; /* Elimina márgenes adicionales */
-  padding: 0; /* Elimina rellenos adicionales */
-  align-self: start; /* Asegura que la columna se alinee arriba */
-}
-
-.parrafoDerecha p:first-of-type {
-  margin-top: 0; /* Elimina espacio inicial del texto */
-  padding-top: 0; /* Asegura que no haya relleno superior */
-}
-
-.botonIzquierda {
-  display: flex;
-  justify-content: flex-start; /* Alinea el botón a la izquierda */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-}
-
-.alinearIzquierda {
-  text-align: left; /* Alinea el contenido a la izquierda */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-  margin: 0; /* Elimina márgenes adicionales */
-  padding: 0; /* Elimina rellenos adicionales */
 }

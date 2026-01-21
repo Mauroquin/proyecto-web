@@ -42,3 +42,23 @@
   color: #888;
 }
 
+:root {
+  --color-titulo: #e8891c;
+  --color-texto: #222;
+}
+
+/* TÍTULOS */
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--color-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* PÁRRAFOS */
+p {
+  font-family: "Merriweather", serif;
+  color: var(--color-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+}

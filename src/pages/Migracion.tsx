@@ -1,15 +1,16 @@
 import Navbar from "../components/Navbar";
-import styles from "../styles/Migracion.module.css";
+import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 
 import Pagination from "../components/Pagination";
+import { useNavigate } from "react-router-dom";
 
 
 
   
 
 export default function Migracion() {
-  
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -30,22 +31,24 @@ export default function Migracion() {
           <div className={styles.alinearIzquierda}>
           <h2>Descubrir caminos compartidos</h2>
           </div>
-          
+          <a
+            href="/monarch_migration_map.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <br />
             <img
               src="/assets/mapa_migracion.png"
               alt="mapa de migración de la mariposa monarca"
               className={styles.imagen}
             />
+            </a>
             <br />
             <div className={styles.alinearIzquierda}>
               <h3>Mapa de Migración de la Mariposa Monarca</h3>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton
-                texto="Explorar"
-                onClick={() => window.open("/monarch_migration_map.html", "_blank")}
-              />
+              <Boton texto="Explorar" onClick={() => navigate("/Mapa_migracion")} />
             </div>
           </div>
           <br/>
@@ -72,13 +75,26 @@ export default function Migracion() {
           <p>
             La migración une a la mariposas y humanos en una travesía de adaptación, esperanza y vinculo con la tierra.
           </p>
+          <br/>
+          <br />
+
           </div>
           <div className={styles.imagenContainer}>
+
+            <a
+            href="/mapa_migraciones_comparativo.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+ 
             <img
               src="/assets/migración_Mexico_EEUU.png"
               alt="Migración de Mariposas Monarca y Migración Humana México-EE.UU"
               className={styles.imagen}
             />
+            </a>
+
+
             <br/>
             <div style={{ textAlign: "left" }}>
             <h3>Migración de Mariposas Monarca y Migración Humana México-EE.UU</h3>

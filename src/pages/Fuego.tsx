@@ -19,77 +19,54 @@ export default function Lugar() {
   const imagenes: Imagen[] = [
     {
       src: "/assets/img13A.png",
-      titulo: "Diario de mis viajes hacia el norte.",
+      titulo: "Fuego con Fuego I.",
       descripcion:
-        "Esta imagen forma parte de una exposi realizada en 2022 que muestra la visión de 125 artistas con respecto a la migración. Se trata de una muestra mayormente basada en la gráfica, utilizando la técnica de grabado en relieve."
+        "Esta primera imagen evoca la fuerza del fuego y, mediante la simetría vertical, remite al test de Rorschach. Nos invita a una exploración interior, donde proyectamos nuestra fascinación y temor por las llamas, percibiendo figuras que surgen más de nuestra mirada que de la imagen misma."
     },
     {
       src: "/assets/img14A.png",
-      titulo: "El mariposal ",
+      titulo: "Fuego con Fuego II.",
       descripcion:
-        "La imagen muestra auna baldosa con dos mariposas en el centro,como ejemplo de cómo la mariposa se representa en distintos medios más allá del arte tradicional."
+        "En esta obra de Bismarck, que tambien imita el test de tinta, las llamas forman la figura de un ser alado. La imagen captura un intante de fascinación, justo antes de que la mariposa escape, simbolizando el deseo y la inevitable derrota de intentar retener lo efimero."
     },
     {
       src: "/assets/img15A.png",
-      titulo: "Símbolo Mazahua: la mariposa como vínculo cultural y espiritual.",
+      titulo: "Mosaico de Alas de Mariposa.",
       descripcion:
-        "Esta fotografia, aunque es del año 2020, muestra la manera en la que el ícono de la mariposa ha permanecido presente a lo largo del tiempo, llegando a la moda y la ropa. Además, de una visión a la vida y trabajos que tienen los artesanos de las comunidades Michoacanas."
+        "Este mosaico, hecho con fragmentos de las alas de mariposas muertas, sugiere dos ideas clave; fragmento y obsesión. A través de la comtemplación, revela cómo los detalles que nos fascinan forman un todo que solemos ignorar, y como volvemos repetidamente a los mismos simbolos en distintos tiempos y espacios."
     },
     {
       src: "/assets/img16A.png",
-      titulo: "Mariposas migrantes. Gráfica Michoacana.(1).",
+      titulo: "Mariposa como fuego.",
       descripcion:
-        "Esta exposición binacional réune a 125 artistas que, a través del arte gráfico, utilizan a la mariposa monarca como simbolo del antropoceno, abordando temas como migración, desplazamiento y cambio climático, con obras que cruzan fronteras y dan voz a la experiencia migrante."
+        "Al palntear la equivalencia entre mariposa y fuego, esta imagen muestra como el flujo migratorio de las monarcas, al cubrir los árboles, evoca incendios forestales. El movimiento de sus alas recuerda al de las llamas y trasmite la sensación de estar inmerso en una fuerza abrumadora."
     },
     {
       src: "/assets/img17A.png",
-      titulo: "Mariposas migrantes. Gráfica Michoacana.(2).",
+      titulo: "Incendio Forestal en Michoacán.",
       descripcion:
-        "Una multitud de personas fotografiada durante la inauguración de la exposición Mariposas Migrantes. Gráfica Michoacana, muestra la participación activa de la comunidad en este evento cultural."
+        "En distintos lugares, las llamas adoptan formas similares a las alas de las mariposas, simbilizando un vinculo entre fuego y mariposa. Esta imagen, tomada en una zona clave de la migración monarca, invita a reflexionar sobre cómo nuestras acciones afectan a ambos, y como al intentar destruir a la mariposa, también nos dañamos a nosotros mismos."
     },
     {
       src: "/assets/img18A.png",
-      titulo: "Daniel Tamayo y Pineapple.Painting: (Raíces que cruzan).",
+      titulo: "Incendio en Gasolinera.",
       descripcion:
-        "Esta muestra artística, conformada por tres murales de gran formato, dan una visión a la memoria y la migración, e invita a la flexión de las fronteras que se cruzan, fisicas o emocionales."
+        "El incendio en una gasolinera refleja el tema del movimiento y su interrupción, similar a las dinámicas migratorias de la mariposa. La falta de combustible afecta nuestra vida cotidiana, mientras que la gasolina, altamente inflamable, causa incendios que paralizan el tránsito de las mariposas mostrando un paralelismo entre ambas situaciones."
     },
     
     {
       src: "/assets/img19A.png",
-      titulo: "Día de Muertos - La mariposa monarca.",
+      titulo: "Escapar del fuego.",
       descripcion:
-        "Esta fotografia da pie a un diálogo sobre las tradiciones Mexicanas, como el día de muertos, y la relación de la naturaleza espiritual de esta tradición con las mariposas monarcas y sus leyendas."
+        "Traslademonos ahora, la impotencia del escape de la destrucción del entorno a nustros cuerpos. La fotografía es un retrato de la desesperación, la pérdida del entorno, la esperanza y la vida de quienes se ven atrapados en el edificio en llamas. Es otra vez un ejercicio mimético, análogo de nuestra relación con los elementos del mundo, que creemos dominados y domesticados."
     },
     {
       src: "/assets/img20A.png",
-      titulo: "Pexlá. Parte de Tierra arrasada, de Oscar Farfán.",
+      titulo: "La muerte de 6 millones de mariposas.",
       descripcion:
-        "Esta obra abordada la limpieza étnica en Guatemala, donde el ejército arrasó más de 400 comunidades indigenas. Aunque distante del contexto de la mariposa monarca, reflejan una violencia compartida por muchas comunidades indigenas en distintas regiones."
+        "La mariposa genera una obsesión visual que persiste incluso tras su muerte; su cadáver no provoca rechazo, sino fascinación y culpa. Esta sensación refleja nuestra fuerza destructiva y es un recordatorio inquietante de nuestra propia mortalidad."
     },
-    {
-      src: "/assets/img21A.png",
-      titulo: "Nube negra de Carlos Amorales.",
-      descripcion:
-        "Esta obra se ve inspirada por la migración anual de Canadá a México de las mariposas monarca. Envuelven al espectador siendo 25,000 polillas y mariposas de papel negro de 30 diferentes especies. Estos están colocados en formaciones casi escultóricas."
-    },
-    {
-      src: "/assets/img22A.png",
-      titulo: "Kik`.",
-      descripcion:
-        "Nuevamente, aunque lejana al contexto de las mariposas monarca, esta obra habla sobre la limpieza étnica hacia las comunidades indigenas en Guatemala, durante el periodo de 1960 a 1996."
-    },
-    {
-      src: "/assets/img23A.png",
-      titulo: "A través del muralismo artistas reflexionan sobre los diferentes contextos de la migración.",
-      descripcion:
-        "Esta fotografia muestra un programa de muralismo comunitario. Los artistas participantes expresan su visión en torno a la migración en los murales. Utilizan símbolos que hablan sobre los flujos migratorias del pais y su impacto en las familias, junto a la pérdida de la identidad iriginaria."
-    },
-    {
-      src: "/assets/img24A.png",
-      titulo: "Xepje: El alma de los muertos.",
-      descripcion:
-        "Esta ilustración sale de una historia para niños que explica la relación de la mariposa con el día de muertos. En la historia, una niña encuentra esperanza en las leyendas de la mariposas tras la pérdida de su madre. En estas leyendas, el aleteo de las mariposas pueden susurrar mensajes del mas allá."
-    },
+ 
     
   ];
 
@@ -120,8 +97,8 @@ export default function Lugar() {
         {/* IMAGEN PRINCIPAL */}
         <div className={styles.imagenContainer}>
           <img
-            src="/assets/el_arte.png"
-            alt="En el Arte"
+            src="/assets/el_fuego.png"
+            alt="El fuego de la memoria en las alas de la mariposa"
             className={styles.imagen}
           />
         </div>
