@@ -120,6 +120,38 @@
   border-radius: 12px;
 }
 
+
+/* =========================================================
+   contenido final
+   ========================================================= */
+
+.contenidoFinal {
+  grid-column: 1 / -1;   /* ocupa ambas columnas */
+  text-align: center;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+}
+
+.contenidoFinal h2{
+  font-family: var(--titulo-font);
+  font-size: 2.1rem;
+  color: var(--titulo-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contenidoFinal p {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texto-color);
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+
+
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -142,7 +174,43 @@
   }
 
  
-  .header h1 {
-    font-size: 2.2rem;
+  .header h1,
+.main h2 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 60px 20px;
   }
 }
+
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    padding: 0 5px;
+  }
+
+  .header h1 {
+  font-size: clamp(1.4rem, 6vw, 3rem);
+  line-height: 1.25;
+}
+
+}
+
+
+

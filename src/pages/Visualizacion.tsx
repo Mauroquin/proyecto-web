@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import styles from "../styles/Migracion.module.css";
+import styles from "../styles/visualizacion.module.css";
 import Boton from "../components/Boton";
 
 

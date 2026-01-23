@@ -14,6 +14,7 @@ import Arte from "./pages/Arte";
 import ScrollToTop from "./components/ScrollToTop";
 import Fuego from "./pages/Fuego";
 import Mapa_migracion from "./pages/Mapa_migracion";
+import Mapa_comparativo from "./pages/Mapa_comparativo";
 
 
 
@@ -67,6 +68,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/arte" element={<Arte />} />
         <Route path="/fuego" element={<Fuego />} />
         <Route path="/Mapa_migracion" element={<Mapa_migracion />} />
+        <Route path="/Mapa_comparativo" element={<Mapa_comparativo />} />
 
 
       </Routes>

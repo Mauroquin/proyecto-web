@@ -101,10 +101,7 @@ export default function Migracion() {
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton
-                texto="Explorar"
-                onClick={() => window.open("/mapa_migraciones_comparativo.html", "_blank")}
-              />
+              <Boton texto="Explorar" onClick={() => navigate("/Mapa_comparativo")} />
             </div>
           </div>
           <br/>
