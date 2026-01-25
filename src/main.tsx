@@ -15,6 +15,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Fuego from "./pages/Fuego";
 import Mapa_migracion from "./pages/Mapa_migracion";
 import Mapa_comparativo from "./pages/Mapa_comparativo";
+import Migracion_ecosistemas from "./pages/Migracion_ecosistemas";
+import Interrelacion_conservacion from "./pages/Interrelacion_conservacion";
 
 
 
@@ -26,8 +28,8 @@ import Atlas_3 from "./pages/Atlas_3";
 
 // Páginas Migración
 import Migracion from "./pages/Migracion";
-import Migracion_2 from "./pages/Migracion_2";
-import Migracion_3 from "./pages/Migracion_3";
+
+
 
 // Páginas Visualización
 import Visualizacion from "./pages/Visualizacion";
@@ -49,8 +51,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
         {/* Sección Migración */}
         <Route path="/migracion" element={<Migracion />} />
-        <Route path="/migracion_2" element={<Migracion_2 />} />
-        <Route path="/migracion_3" element={<Migracion_3 />} />
+        
 
         {/* Sección Visualización */}
         <Route path="/visualizacion" element={<Visualizacion />} />
@@ -69,6 +70,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/fuego" element={<Fuego />} />
         <Route path="/Mapa_migracion" element={<Mapa_migracion />} />
         <Route path="/Mapa_comparativo" element={<Mapa_comparativo />} />
+        <Route path="/Migracion_ecosistemas" element={<Migracion_ecosistemas />} />
+        <Route path="/Interrelacion_conservacion" element={<Interrelacion_conservacion />} />
 
 
       </Routes>

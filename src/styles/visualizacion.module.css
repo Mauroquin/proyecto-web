@@ -1,26 +1,49 @@
-/* ===== Encabezado ===== */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap");
+
+/* =========================================================
+   VARIABLES GLOBALES
+   ========================================================= */
+:root {
+  --titulo-color: #e8891c;
+  --titulo-font: "Playfair Display", serif;
+  --texto-color: #333;
+}
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
 .header {
   background-color: #ffa94d;
   color: white;
   text-align: center;
   padding: 100px 20px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+  /* Para el mapa */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .header h1 {
+  font-family: var(--titulo-font);
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 .header p {
+  font-family: "Georgia", "Times New Roman", serif;
   font-size: 1.3rem;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* ===== Contenido principal ===== */
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -30,34 +53,55 @@
   background-color: #fff;
 }
 
-/* ===== Texto ===== */
-.texto {
+/* =========================================================
+   BLOQUE DE TEXTO EDITORIAL (UNIFICADO)
+   ========================================================= */
+.bloqueTexto {
+  width: 100%;
   max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  align-self: start;
 }
 
-.texto h2 {
-  font-size: 2rem;
-  color: #d45d00;
+/* Títulos */
+.bloqueTexto h2,
+.bloqueTexto h3 {
+  font-family: var(--titulo-font);
+  font-size: 2.1rem;
+  color: var(--titulo-color);
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
-.texto p {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
+/* Párrafos */
+.bloqueTexto p {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texto-color);
+  margin: 0 auto;
+  max-width: 520px;
 }
 
-/* ===== Imagen ===== */
+/* =========================================================
+   IMÁGENES
+   ========================================================= */
 .imagenContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .imagen {
   width: 100%;
   max-width: 600px;
+  max-height: 350px;
+  object-fit: contain;
   border-radius: 20px;
+  background-color: #f0f0f0;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -67,13 +111,50 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-.imagenContainer h3 {
-  margin-top: 15px;
-  font-size: 1.5rem;
-  color: #d45d00;
+/* =========================================================
+   MAPA MIGRACIÓN
+   ========================================================= */
+.mapa {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
-/* ===== Footer ===== */
+
+/* =========================================================
+   contenido final
+   ========================================================= */
+
+.contenidoFinal {
+  grid-column: 1 / -1;   /* ocupa ambas columnas */
+  text-align: center;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+}
+
+.contenidoFinal h2{
+  font-family: var(--titulo-font);
+  font-size: 2.1rem;
+  color: var(--titulo-color);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contenidoFinal p {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--texto-color);
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 .footer {
   background-color: darkorange;
   color: white;
@@ -82,32 +163,54 @@
   margin-top: 40px;
 }
 
-/* ===== Responsivo ===== */
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 900px) {
-  .header {
-    padding: 70px 20px;
+  .main {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 40px 20px;
   }
 
+ 
+  .header h1,
+.main h2 {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 60px 20px;
+  }
+}
+
+
   .header h1 {
-    font-size: clamp(1.8rem, 5vw, 3rem);
-  
+    font-size: 1.8rem;
   }
 
   .header p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
-  .main {
-    grid-template-columns: 1fr;
-    padding: 40px 20px;
-    text-align: center;
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    padding: 0 5px;
   }
 
-  .texto {
-    max-width: 100%;
-  }
-
-  .imagen {
-    max-width: 100%;
-  }
+  .header h1 {
+  font-size: clamp(1.4rem, 6vw, 3rem);
+  line-height: 1.25;
 }
+
+}
+
+
+

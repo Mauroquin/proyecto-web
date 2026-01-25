@@ -2,7 +2,6 @@ import Navbar from "../components/Navbar";
 import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 
-import Pagination from "../components/Pagination";
 import { useNavigate } from "react-router-dom";
 
 
@@ -45,8 +44,11 @@ export default function Migracion() {
             </a>
             <br />
             <div className={styles.alinearIzquierda}>
+              <br />
               <h3>Mapa de Migración de la Mariposa Monarca</h3>
             </div>
+            <br />
+            
             <div className={styles.botonIzquierda}>
               <Boton texto="Explorar" onClick={() => navigate("/Mapa_migracion")} />
             </div>
@@ -61,16 +63,17 @@ export default function Migracion() {
             <br/>
             <div className={styles.alinearIzquierda}>
             <h3>Migración y Ecosistemas</h3>
-            
+            <br />
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Migracion_ecosistemas")} />
             </div>
           </div>
         </div>
         {/* Segunda columna */}
         <div className={styles.parrafoDerecha}>
           <br/>
+        
           <div style={{ textAlign: "left" }}>
           <p>
             La migración une a la mariposas y humanos en una travesía de adaptación, esperanza y vinculo con la tierra.
@@ -116,15 +119,16 @@ export default function Migracion() {
             <h3>Interrelaciones entre Migración México-EE.UU. y la Conservación de la Mariposa Monarca</h3>
             
             </div>
-            <br/>
+          
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Interrelacion_conservacion")} />
+              
             </div>
           </div>
         </div>
       </main>
 
-      <Pagination totalPages={3} currentPage={1} basePath="Migracion" />
+      
 
 
       <footer className={styles.footer}>
