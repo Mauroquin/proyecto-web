@@ -3,9 +3,6 @@ import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
 
 import { useNavigate } from "react-router-dom";
-
-
-
   
 
 export default function Migracion() {
