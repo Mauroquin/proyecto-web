@@ -27,17 +27,13 @@ export default function Migracion() {
         <div className={styles.texto}>
           <div className={styles.imagenContainer} style={{ textAlign: "left" }}>
           <div className={styles.alinearIzquierda}>
-            <a
-              href="/mapa_conservacion_monarca.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            
               <img
                 src="/assets/iniciativas_conservacion.png"
                 alt="Iniciativas de Conservación de la Mariposa Monarca"
                 className={styles.imagen}
               />
-            </a>
+            
           </div>
             <br />
             <div className={styles.alinearIzquierda}>
@@ -75,27 +71,21 @@ export default function Migracion() {
           
           </div>
           <div className={styles.imagenContainer}>
-            <a
-              href="/monarch_migration_map.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          
               <img
                 src="/assets/reproducción_alimentación.png"
                 alt="Reproducción y Alimentación de la Mariposa Monarca"
                 className={styles.imagen}
               />
-            </a>
+            
             <br/>
             <div style={{ textAlign: "left" }}>
             <h3>Mapa de Áreas de Reproducción y Alimentación</h3>
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton
-  texto="Explorar"
-  onClick={() => window.open("/mapa_areas_reproduccion_alimentacion.html", "_blank")}
-/>
+              <Boton texto="Explorar" onClick={() => navigate("/Reproducción_alimentación")} />
+
             </div>
           </div>
           <br/>

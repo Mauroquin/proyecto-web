@@ -14,7 +14,7 @@ export default function Atlas() {
       <header className={styles.header}>
         <img
           src="/assets/interrelaciones.png"
-          alt="Mapa de migración de la mariposa monarca"
+          alt="Mapa interrelacion y conservación"
           className={styles.mapa}
         />
       </header>

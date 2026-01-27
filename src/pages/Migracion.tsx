@@ -27,18 +27,14 @@ export default function Migracion() {
           <div className={styles.alinearIzquierda}>
           <h2>Descubrir caminos compartidos</h2>
           </div>
-          <a
-            href="/monarch_migration_map.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        
             <br />
             <img
               src="/assets/mapa_migracion.png"
               alt="mapa de migración de la mariposa monarca"
               className={styles.imagen}
-            />
-            </a>
+              />
+          
             <br />
             <div className={styles.alinearIzquierda}>
               <br />
@@ -81,18 +77,14 @@ export default function Migracion() {
           </div>
           <div className={styles.imagenContainer}>
 
-            <a
-            href="/mapa_migraciones_comparativo.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+            
  
             <img
               src="/assets/migración_Mexico_EEUU.png"
               alt="Migración de Mariposas Monarca y Migración Humana México-EE.UU"
               className={styles.imagen}
             />
-            </a>
+          
 
 
             <br/>

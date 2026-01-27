@@ -12,11 +12,24 @@ export default function Atlas() {
 
       {/* ================= MAPA DE MIGRACIÓN ================= */}
       <header className={styles.header}>
-        <img
-          src="/assets/mapa_migracion.png"
-          alt="Mapa de migración de la mariposa monarca"
-          className={styles.mapa}
-        />
+        <a
+  href="/monarch_migration_map.html"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={styles.mapaLink}
+>
+  <div className={styles.mapaContainer}>
+    <img
+      src="/assets/mapa_migracion.png"
+      alt="Mapa de migración de la mariposa monarca"
+      className={styles.mapa}
+    />
+    <div className={styles.mapaOverlay}>
+      <span>Explorar mapa</span>
+    </div>
+  </div>
+</a>
+
       </header>
 
       {/* ================= CONTENIDO PRINCIPAL ================= */}
