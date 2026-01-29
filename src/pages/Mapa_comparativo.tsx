@@ -1,36 +1,26 @@
 import Navbar from "../components/Navbar";
 import styles from "../styles/Migracion.module.css";
+import Boton from "../components/Boton";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Atlas() {
-  
+  const navigate = useNavigate();
 
   return (
     <>
       <Navbar />
 
       {/* ================= MAPA DE MIGRACIÓN ================= */}
-      <header className={styles.header}>
-        <a
-  href="/mapa_migraciones_comparativo.html"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={styles.mapaLink}
->
-  <div className={styles.mapaContainer}>
-    <img
-      src="/assets/migración_Mexico_EEUU.png"
-      alt="Mapa comparativo de migracion"
-      className={styles.mapa}
-    />
-    <div className={styles.mapaOverlay}>
-      <span>Explorar mapa</span>
-    </div>
-  </div>
-</a>
-
+    <header className={styles.header}>
+        <img
+          src="/assets/migración_Mexico_EEUU.png"
+          alt="Mapa de migración de la mariposa monarca"
+          className={styles.mapa}
+        />
       </header>
+
 
       {/* ================= CONTENIDO PRINCIPAL ================= */}
       <main className={styles.main}>
@@ -81,6 +71,16 @@ export default function Atlas() {
           <p>
             Esta herramienta no solo informa, tambiém invita a mirar con otros ojos la migracón. Al mostrar los caminos compartidos, abre una puerta al entendimiento, la empatía y la acción.
           </p>
+          <br />
+
+          <Boton
+  texto="Explorar mapa"
+  onClick={() =>
+    window.open("/mapa_migraciones_comparativo.html", "_blank",)
+  }
+/>
+
+          
         </div>
         
 

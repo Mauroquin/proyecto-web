@@ -1,9 +1,12 @@
 import Navbar from "../components/Navbar";
 import styles from "../styles/Migracion.module.css";
+import Boton from "../components/Boton";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Atlas() {
+  const navigate = useNavigate();
   
 
   return (
@@ -12,25 +15,13 @@ export default function Atlas() {
 
       {/* ================= MAPA DE MIGRACIÓN ================= */}
       <header className={styles.header}>
-        <a
-  href="/monarch_migration_map.html"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={styles.mapaLink}
->
-  <div className={styles.mapaContainer}>
-    <img
-      src="/assets/mapa_migracion.png"
-      alt="Mapa de migración de la mariposa monarca"
-      className={styles.mapa}
-    />
-    <div className={styles.mapaOverlay}>
-      <span>Explorar mapa</span>
-    </div>
-  </div>
-</a>
-
+        <img
+          src="/assets/mapa_migracion.png"
+          alt="Mapa de migración de la mariposa monarca"
+          className={styles.mapa}
+        />
       </header>
+
 
       {/* ================= CONTENIDO PRINCIPAL ================= */}
       <main className={styles.main}>
@@ -81,6 +72,15 @@ export default function Atlas() {
           <p>
             Al visualizar el recorrido de la mariposa, también reconocemos los desafios que enfrentan. Esta herramienta no solo informa, sino que también inspira conciencia y acción para proteger su camino.
           </p>
+
+          <br />
+
+          <Boton
+  texto="Explorar mapa"
+  onClick={() =>
+    window.open("/monarch_migration_map.html", "_blank",)
+  }
+/>
         </div>
         
 

@@ -1,37 +1,26 @@
 import Navbar from "../components/Navbar";
 import styles from "../styles/visualizacion.module.css";
+import Boton from "../components/Boton";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Atlas() {
+  const navigate = useNavigate();
   
-
   return (
     <>
       <Navbar />
 
       {/* ================= Interrelacion ================= */}
       <header className={styles.header}>
-
-        <a
-  href="/mapa_conservacion_monarca.html"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={styles.mapaLink}
->
-  <div className={styles.mapaContainer}>
-    <img
-      src="/assets/iniciativas_conservacion.png"
-      alt="Mapa de conservación de la mariposa monarca"
-      className={styles.mapa}
-    />
-    <div className={styles.mapaOverlay}>
-      <span>Explorar mapa</span>
-    </div>
-  </div>
-</a>
-
+        <img
+          src="/assets/iniciativas_conservacion.png"
+          alt="Mapa de migración de la mariposa monarca"
+          className={styles.mapa}
+        />
       </header>
+
 
       {/* ================= CONTENIDO PRINCIPAL ================= */}
       <main className={styles.main}>
@@ -80,6 +69,14 @@ export default function Atlas() {
           <p>
             Más que una visualización, es una invitación a sumarse a una red activa de personas, comunidades y territorios comprometidos con el futuro de la maariposa monarca.
           </p>
+          <br />
+
+          <Boton
+  texto="Explorar mapa"
+  onClick={() =>
+    window.open("/mapa_conservacion_monarca.html", "_blank",)
+  }
+/>
         </div>
         
 

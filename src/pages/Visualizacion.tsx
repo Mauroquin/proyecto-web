@@ -57,10 +57,7 @@ export default function Migracion() {
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton
-  texto="Explorar"
-  onClick={() => window.open("/mapa_amenazas_monarca.html", "_blank")}
-/>
+              <Boton texto="Explorar" onClick={() => navigate("/Tipo_amenazas")} />
             </div>
           </div>
         </div>
@@ -102,7 +99,7 @@ export default function Migracion() {
             </div>
             
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Tendencia_poblacional")} />
             </div>
           </div>
         </div>

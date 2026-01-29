@@ -1,12 +1,13 @@
 import Navbar from "../components/Navbar";
-import styles from "../styles/Migracion.module.css";
+import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
-
+import { useNavigate } from "react-router-dom";
 
 import Pagination from "../components/Pagination";
 
 
 export default function Migracion() {
+  const navigate = useNavigate();
   
   return (
     <>

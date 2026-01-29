@@ -16,7 +16,7 @@ export default function Atlas() {
       {/* ================= Interrelacion ================= */}
       <header className={styles.header}>
         <img
-          src="/assets/reproducción_alimentación.png"
+          src="/assets/tipos_de_amenazas.png"
           alt="Mapa de migración de la mariposa monarca"
           className={styles.mapa}
         />
@@ -27,54 +27,54 @@ export default function Atlas() {
 
   {/* -------- COLUMNA IZQUIERDA -------- */}
   <section className={styles.bloqueTexto}>
-    <h2>Un mapa para proteger el vuelo de la monarca</h2>
-    <p>Esta herramienta interactiva muestra dónde y cómo se están llevando a cabo acciones para conservar a la mariposa monarca a lo largo de su ruta migratoria.
-      
+    <h2>Un mapa de las amenazas en el camino</h2>
+    <p>Este mapa interactivo muestra los riesgos que enfrenta la mariposa monarca a lo largo de su ruta migratoria, ayudando a identificar los puntos más vulnerables.
     </p>
     <br />
-  
-    
-    <h2>Información al alcance de un clic</h2>
+
+    <h2>Zonas críticas bajo presón</h2>
     <p>
-      Al seleccionaar cada punto, se despliega una ventana con datos claves sobre la ubicación, el tipo de proyecto y su impacto en la protección de la especie.
+      El mapa destaca las áreas donde los riesgos son más graves, permitiendo ver la intensidad del impacto ambiental en tiempo y espacio.
     </p>
   </section>
 
   {/* -------- COLUMNA DERECHA -------- */} 
   <section className={styles.bloqueTexto}>
-    <h2>Iniciativas que se pueden ver y explorar</h2>
+    <h2>Colores que alertan, símbolos que explican</h2>
     <p>
-      Cada punto en el mapa representa un proyecto de conservación: santuarios, jardines, corredores y siembras de algodoncillo, visibles por colores y tamaños.
+      Cada amenaza como la deforestación, los agroquímicos o el cambio climático está representada con íconos y colores claros, facilitando su comprensión visual.
     </p>
+
     <br />
-    <h2>Una herramienta para aprender y actuar</h2>
+
+    <h2>Una herramienta para actuar a tiempo</h2>
     <p>
-     Este mapa facilita el seguimiento de los esfuerzos existentes, promueve el conocimiento colectivo y ayuda a identificar dónde hacen falta más acciones.
+     Ideal para investigadores, docentes y tomadores de decisiones, este mapa apoya la planificación de estrategías para reducir amenazas y proteger hábitats clave.
     </p>
   </section>
 
  {/* TEXTO INTRODUCTORIO */}
         <div className={styles.contenidoFinal}>
           <h2 >
-           Datos reunidos, conservación conectada
+           Una mirada clara a los peligros
           </h2>
           <p>
-            Al integrar múltiples fuentes en un solo lugar, el mapa permite ver el panorama completo de conservación de la monarca en América del Norte.
+            El mapa ofrece una visión general de los principales riesgos que enfrentan la mariposa monarca, mostrando con claridad dónde se concentran las amenazas y qué tan intensas son.
           </p>
           <br />
           <br />
           <h2 >
-           Ver para cuidar: una red en construcción
+           Proteger a la monarca es un esfuerzo compartido
           </h2>
           <p>
-            Más que una visualización, es una invitación a sumarse a una red activa de personas, comunidades y territorios comprometidos con el futuro de la maariposa monarca.
+            Al mostrar los peligros distribuidos en tres paises, el mapa refuerza la necesidad de una conservación trinacional, coordinada y urgente.
           </p>
           <br />
 
           <Boton
   texto="Explorar mapa"
   onClick={() =>
-    window.open("/mapa_areas_reproduccion_alimentacion.html", "_blank",)
+    window.open("/mapa_amenazas_monarca.html", "_blank",)
   }
 />
 
@@ -82,8 +82,6 @@ export default function Atlas() {
         </div>
 
         
-
-
 </main>
 
       {/* ================= FOOTER ================= */}

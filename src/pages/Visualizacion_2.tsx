@@ -1,13 +1,13 @@
 import Navbar from "../components/Navbar";
-import styles from "../styles/Migracion.module.css";
+import styles from "../styles/Atlas.module.css";
 import Boton from "../components/Boton";
-
+import { useNavigate } from "react-router-dom";
 
 import Pagination from "../components/Pagination";
 
 
 export default function Migracion() {
-  
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -31,8 +31,8 @@ export default function Migracion() {
           
             <br />
             <img
-              src="/assets/iniciativas_conservacion.png"
-              alt="Iniciativas de Conservación de la Mariposa Monarca"
+              src="/assets/progreso_iniciativas.png"
+              alt="Progreso e iniciativas de conservación"
               className={styles.imagen}
             />
             <br />
@@ -46,7 +46,7 @@ export default function Migracion() {
           <br/>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/tipos_de_amenazas.png"
+              src="/assets/amenazas.png"
               alt="Tipos de Amenazas a la Mariposa Monarca"
               className={styles.imagen}
             />

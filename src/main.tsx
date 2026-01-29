@@ -18,7 +18,9 @@ import Mapa_comparativo from "./pages/Mapa_comparativo";
 import Migracion_ecosistemas from "./pages/Migracion_ecosistemas";
 import Interrelacion_conservacion from "./pages/Interrelacion_conservacion";
 import Iniciativas_conservacion from "./pages/Iniciativas_conservacion";
-import Reproducción_alimentación from "./pages/Reproducción_alimentación"
+import Reproducción_alimentación from "./pages/Reproducción_alimentación";
+import Tipo_amenazas from "./pages/Tipo_amenazas";
+import Tendencia_poblacional from "./pages/Tendencia_poblacional";
 
 
 
@@ -76,6 +78,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/Interrelacion_conservacion" element={<Interrelacion_conservacion />} />
         <Route path="/Iniciativas_conservacion" element={<Iniciativas_conservacion />} />
         <Route path="/Reproducción_alimentación" element={<Reproducción_alimentación />} />
+        <Route path="/Tipo_amenazas" element={<Tipo_amenazas />} />
+        <Route path="/Tendencia_poblacional" element={<Tendencia_poblacional />} />
 
 
       </Routes>

@@ -20,6 +20,7 @@ export default function Atlas() {
       </header>
 
       {/* ================= CONTENIDO PRINCIPAL ================= */}
+      
       <main className={styles.main}>
 
   {/* -------- COLUMNA IZQUIERDA -------- */}
