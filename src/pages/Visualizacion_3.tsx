@@ -32,7 +32,7 @@ export default function Migracion() {
           
             <br />
             <img
-              src="/assets/iniciativas_conservacion.png"
+              src="/assets/impacto_cultivo.png"
               alt="Iniciativas de Conservación de la Mariposa Monarca"
               className={styles.imagen}
             />
@@ -47,7 +47,7 @@ export default function Migracion() {
           <br/>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/tipos_de_amenazas.png"
+              src="/assets/relación_cultivo_deforestación.png"
               alt="Tipos de Amenazas a la Mariposa Monarca"
               className={styles.imagen}
             />
@@ -69,11 +69,12 @@ export default function Migracion() {
           </div>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/reproducción_alimentación.png"
+              src="/assets/deforestación_población.png"
               alt="Reproducción y Alimentación de la Mariposa Monarca"
               className={styles.imagen}
             />
             <br/>
+            <br />
             <div style={{ textAlign: "left" }}>
             <h3>Mapa de Áreas de Reproducción y Alimentación</h3>
             
@@ -82,23 +83,7 @@ export default function Migracion() {
               <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
             </div>
           </div>
-          <br/>
-          <div className={styles.imagenContainer}>
-            <img
-              src="/assets/tendencia_poblacional.png"
-              alt="Tendencia Poblacional de la Mariposa Monarca"
-              className={styles.imagen}
-            />
-            <br/>
-            <div style={{ textAlign: "left" }}>
-            <h3>Tendencia Poblacional de la Mariposa Monarca</h3>
-            
-            </div>
-            <br/>
-            <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
-            </div>
-          </div>
+          
         </div>
       </main>
 

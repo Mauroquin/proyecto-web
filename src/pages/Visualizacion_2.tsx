@@ -37,10 +37,10 @@ export default function Migracion() {
             />
             <br />
             <div className={styles.alinearIzquierda}>
-              <h3>Iniciativas de Conservación</h3>
+              <h3>Progreso de iniciativas de conservación </h3>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Progreso_iniciativas_conservación")} />
             </div>
           </div>
           <br/>
@@ -53,10 +53,11 @@ export default function Migracion() {
             <br/>
             <div className={styles.alinearIzquierda}>
             <h3>Tipos de Amenazas</h3>
+            <br />
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Amenazas")} />
             </div>
           </div>
         </div>
@@ -68,7 +69,7 @@ export default function Migracion() {
           </div>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/reproducción_alimentación.png"
+              src="/assets/área_reproducción.png"
               alt="Reproducción y Alimentación de la Mariposa Monarca"
               className={styles.imagen}
             />
@@ -78,24 +79,24 @@ export default function Migracion() {
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/área_reproducción_alimentación")} />
             </div>
           </div>
           <br/>
           <div className={styles.imagenContainer}>
             <img
-              src="/assets/tendencia_poblacional.png"
+              src="/assets/analicis_correlacion.png"
               alt="Tendencia Poblacional de la Mariposa Monarca"
               className={styles.imagen}
             />
             <br/>
             <div style={{ textAlign: "left" }}>
-            <h3>Tendencia Poblacional de la Mariposa Monarca</h3>
+            <h3>Análisis de la Relación entre Migración Humana y Población</h3>
             
             </div>
-            <br/>
+          
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Relacion_migracion_humana")} />
             </div>
           </div>
         </div>

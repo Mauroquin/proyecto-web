@@ -21,6 +21,10 @@ import Iniciativas_conservacion from "./pages/Iniciativas_conservacion";
 import Reproducción_alimentación from "./pages/Reproducción_alimentación";
 import Tipo_amenazas from "./pages/Tipo_amenazas";
 import Tendencia_poblacional from "./pages/Tendencia_poblacional";
+import área_reproducción_alimentación from "./pages/área_reproducción_alimentación";
+import Progreso_iniciativas_conservación from "./pages/Progreso_iniciativas_conservación";
+import Amenazas from "./pages/Amenazas";
+import Relacion_migracion_humana from "./pages/Relacion_migracion_humana";
 
 
 
@@ -80,6 +84,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/Reproducción_alimentación" element={<Reproducción_alimentación />} />
         <Route path="/Tipo_amenazas" element={<Tipo_amenazas />} />
         <Route path="/Tendencia_poblacional" element={<Tendencia_poblacional />} />
+        <Route path="/área_reproducción_alimentación" element={<área_reproducción_alimentación />} />
+        <Route path="/Progreso_iniciativas_conservación" element={<Progreso_iniciativas_conservación />} />
+        <Route path="/Amenazas" element={<Amenazas />} />
+        <Route path="/Relacion_migracion_humana" element={<Relacion_migracion_humana />} />
 
 
       </Routes>
