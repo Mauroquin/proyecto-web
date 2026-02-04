@@ -25,7 +25,9 @@ import área_reproducción_alimentación from "./pages/área_reproducción_alime
 import Progreso_iniciativas_conservación from "./pages/Progreso_iniciativas_conservación";
 import Amenazas from "./pages/Amenazas";
 import Relacion_migracion_humana from "./pages/Relacion_migracion_humana";
-
+import Impacto_cultivo_aguacate from "./pages/Impacto_cultivo_aguacate";
+import Relación_cultivo_aguacate_deforestación from "./pages/Relación_cultivo_aguacate_deforestación";
+import Deforestación_población_mariposa_monarca from "./pages/Deforestación_población_mariposa_monarca";
 
 
 
@@ -88,7 +90,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/Progreso_iniciativas_conservación" element={<Progreso_iniciativas_conservación />} />
         <Route path="/Amenazas" element={<Amenazas />} />
         <Route path="/Relacion_migracion_humana" element={<Relacion_migracion_humana />} />
-
+        <Route path="/Impacto_cultivo_aguacate" element={<Impacto_cultivo_aguacate />} />
+        <Route path="/Relación_cultivo_aguacate_deforestación" element={<Relación_cultivo_aguacate_deforestación />} />
+        <Route path="/Deforestación_población_mariposa_monarca" element={<Deforestación_población_mariposa_monarca />} />
 
       </Routes>
     </BrowserRouter>

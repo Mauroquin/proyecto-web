@@ -33,15 +33,15 @@ export default function Migracion() {
             <br />
             <img
               src="/assets/impacto_cultivo.png"
-              alt="Iniciativas de Conservación de la Mariposa Monarca"
+              alt="Impacto de los cultivos"
               className={styles.imagen}
             />
             <br />
             <div className={styles.alinearIzquierda}>
-              <h3>Iniciativas de Conservación</h3>
+              <h3>Impacto del Cultivo de aguacate  en las Mariposas Monarca en Michoacán</h3>
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Impacto_cultivo_aguacate")} />
             </div>
           </div>
           <br/>
@@ -53,11 +53,11 @@ export default function Migracion() {
             />
             <br/>
             <div className={styles.alinearIzquierda}>
-            <h3>Tipos de Amenazas</h3>
+            <h3>Relación entre Cultivo de Aguacate, Deforestación y Población</h3>
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Relación_cultivo_aguacate_deforestación")} />
             </div>
           </div>
         </div>
@@ -70,17 +70,17 @@ export default function Migracion() {
           <div className={styles.imagenContainer}>
             <img
               src="/assets/deforestación_población.png"
-              alt="Reproducción y Alimentación de la Mariposa Monarca"
+              alt="Deforestación y población de mariposas"
               className={styles.imagen}
             />
             <br/>
             <br />
             <div style={{ textAlign: "left" }}>
-            <h3>Mapa de Áreas de Reproducción y Alimentación</h3>
+            <h3>La deforestación y la población de mariposas monarca en Michoacán</h3>
             
             </div>
             <div className={styles.botonIzquierda}>
-              <Boton texto="Explorar" onClick={() => alert("Explorando...")} />
+              <Boton texto="Explorar" onClick={() => navigate("/Deforestación_población_mariposa_monarca")} />
             </div>
           </div>
           
