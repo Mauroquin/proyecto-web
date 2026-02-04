@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_52a2469eac7b87dff632453750c2cfd2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 200px; height: 120px; 
+     background-color: white; border:2px solid grey; z-index:9999; 
+     font-size:14px; padding: 10px">
+<p><b>Tipos de Amenazas</b></p>
+<p><i class="fa fa-circle" style="color:#8B0000"></i> Deforestación</p>
+<p><i class="fa fa-circle" style="color:#FF4500"></i> Pesticidas</p>
+<p><i class="fa fa-circle" style="color:#FF6347"></i> Herbicidas</p>
+<p><i class="fa fa-circle" style="color:#4169E1"></i> Desarrollo Urbano</p>
+</div>
+    
+            <div class="folium-map" id="map_52a2469eac7b87dff632453750c2cfd2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_52a2469eac7b87dff632453750c2cfd2 = L.map(
+                "map_52a2469eac7b87dff632453750c2cfd2",
+                {
+                    center: [35.0, -95.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fcd5c26456e92fb3e16fba5b192f83bf = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_fcd5c26456e92fb3e16fba5b192f83bf.addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+            var circle_marker_f5c3c2f0e457190fef8fc31ba39aca25 = L.circleMarker(
+                [19.6097, -100.2401],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_f96075a778b739984f93671284a2e578 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1623adf3aaed78f056a5a1df0406b308 = $(`<div id="html_1623adf3aaed78f056a5a1df0406b308" style="width: 100.0%; height: 100.0%;">         <b>Michoacán - Santuario El Rosario</b><br>         Amenaza: Deforestación<br>         Intensidad: 9/10<br>         Nivel de Impacto: Crítico         </div>`)[0];
+                popup_f96075a778b739984f93671284a2e578.setContent(html_1623adf3aaed78f056a5a1df0406b308);
+            
+        
+
+        circle_marker_f5c3c2f0e457190fef8fc31ba39aca25.bindPopup(popup_f96075a778b739984f93671284a2e578)
+        ;
+
+        
+    
+    
+            var circle_marker_319148205dca1fde49fc16d253aca8b5 = L.circleMarker(
+                [19.4326, -100.1234],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_f144f2e9f6d03b0f96ee00de577b6124 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd831d53c5630c7ed0a13574b6f301d2 = $(`<div id="html_fd831d53c5630c7ed0a13574b6f301d2" style="width: 100.0%; height: 100.0%;">         <b>Estado de México - Sierra Chincua</b><br>         Amenaza: Deforestación<br>         Intensidad: 8/10<br>         Nivel de Impacto: Alto         </div>`)[0];
+                popup_f144f2e9f6d03b0f96ee00de577b6124.setContent(html_fd831d53c5630c7ed0a13574b6f301d2);
+            
+        
+
+        circle_marker_319148205dca1fde49fc16d253aca8b5.bindPopup(popup_f144f2e9f6d03b0f96ee00de577b6124)
+        ;
+
+        
+    
+    
+            var circle_marker_fdd26441ae2dd2ae26be63262c2e2f58 = L.circleMarker(
+                [19.55, -100.3456],
+                {"bubblingMouseEvents": true, "color": "#8B0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8B0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_acbcb584398df7b2c49fac0771916ecd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a98c56b67e2aed470dd212e7de040fc = $(`<div id="html_4a98c56b67e2aed470dd212e7de040fc" style="width: 100.0%; height: 100.0%;">         <b>Michoacán - Cerro Pelón</b><br>         Amenaza: Deforestación<br>         Intensidad: 7/10<br>         Nivel de Impacto: Alto         </div>`)[0];
+                popup_acbcb584398df7b2c49fac0771916ecd.setContent(html_4a98c56b67e2aed470dd212e7de040fc);
+            
+        
+
+        circle_marker_fdd26441ae2dd2ae26be63262c2e2f58.bindPopup(popup_acbcb584398df7b2c49fac0771916ecd)
+        ;
+
+        
+    
+    
+            var circle_marker_e3e8c0864dce1af2bf6c8b9c46ae9ac0 = L.circleMarker(
+                [31.3069, -97.7431],
+                {"bubblingMouseEvents": true, "color": "#4169E1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4169E1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_a8b7a3252187da86e43bc6c42a155dbf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb0cbbe96393d54e2dd24aee927c1c85 = $(`<div id="html_bb0cbbe96393d54e2dd24aee927c1c85" style="width: 100.0%; height: 100.0%;">         <b>Texas - Corredor I-35</b><br>         Amenaza: Desarrollo Urbano<br>         Intensidad: 6/10<br>         Nivel de Impacto: Medio         </div>`)[0];
+                popup_a8b7a3252187da86e43bc6c42a155dbf.setContent(html_bb0cbbe96393d54e2dd24aee927c1c85);
+            
+        
+
+        circle_marker_e3e8c0864dce1af2bf6c8b9c46ae9ac0.bindPopup(popup_a8b7a3252187da86e43bc6c42a155dbf)
+        ;
+
+        
+    
+    
+            var circle_marker_1fa5bcf913ff37dd4165813b70c1ec9e = L.circleMarker(
+                [38.5266, -96.7265],
+                {"bubblingMouseEvents": true, "color": "#FF4500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4500", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_07e8996eb15e0cdc0274b749c2d66fb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e056fea28a4ccd3a4efa7b3b4cc2306 = $(`<div id="html_0e056fea28a4ccd3a4efa7b3b4cc2306" style="width: 100.0%; height: 100.0%;">         <b>Kansas - Zona Agrícola</b><br>         Amenaza: Pesticidas<br>         Intensidad: 8/10<br>         Nivel de Impacto: Alto         </div>`)[0];
+                popup_07e8996eb15e0cdc0274b749c2d66fb8.setContent(html_0e056fea28a4ccd3a4efa7b3b4cc2306);
+            
+        
+
+        circle_marker_1fa5bcf913ff37dd4165813b70c1ec9e.bindPopup(popup_07e8996eb15e0cdc0274b749c2d66fb8)
+        ;
+
+        
+    
+    
+            var circle_marker_3c2e26816d76a3d55e5a3e1e9dc5c020 = L.circleMarker(
+                [41.5868, -93.62],
+                {"bubblingMouseEvents": true, "color": "#FF4500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4500", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_d4827976e26f357a5470bb822bce62ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53c9550b412a6698a9495a0dd6138f93 = $(`<div id="html_53c9550b412a6698a9495a0dd6138f93" style="width: 100.0%; height: 100.0%;">         <b>Iowa - Cinturón de Maíz</b><br>         Amenaza: Pesticidas<br>         Intensidad: 9/10<br>         Nivel de Impacto: Crítico         </div>`)[0];
+                popup_d4827976e26f357a5470bb822bce62ff.setContent(html_53c9550b412a6698a9495a0dd6138f93);
+            
+        
+
+        circle_marker_3c2e26816d76a3d55e5a3e1e9dc5c020.bindPopup(popup_d4827976e26f357a5470bb822bce62ff)
+        ;
+
+        
+    
+    
+            var circle_marker_79af998c8851fc839b54d600eec26f16 = L.circleMarker(
+                [45.6945, -93.9002],
+                {"bubblingMouseEvents": true, "color": "#FF4500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4500", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_debd99e7620f6c2f960ece20e04f2c46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b0bb177ebd46f87c56515229638af6c7 = $(`<div id="html_b0bb177ebd46f87c56515229638af6c7" style="width: 100.0%; height: 100.0%;">         <b>Minnesota - Zona de Soja</b><br>         Amenaza: Pesticidas<br>         Intensidad: 7/10<br>         Nivel de Impacto: Alto         </div>`)[0];
+                popup_debd99e7620f6c2f960ece20e04f2c46.setContent(html_b0bb177ebd46f87c56515229638af6c7);
+            
+        
+
+        circle_marker_79af998c8851fc839b54d600eec26f16.bindPopup(popup_debd99e7620f6c2f960ece20e04f2c46)
+        ;
+
+        
+    
+    
+            var circle_marker_0d558ec4c5506f18b4255c0d1f8ad31a = L.circleMarker(
+                [43.6532, -79.3832],
+                {"bubblingMouseEvents": true, "color": "#4169E1", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4169E1", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_d9955e5a4ae945e7c7b116c0e85cd007 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_851e8d7fb7b656c50edc6665bf48ec8c = $(`<div id="html_851e8d7fb7b656c50edc6665bf48ec8c" style="width: 100.0%; height: 100.0%;">         <b>Ontario - Zona Urbana</b><br>         Amenaza: Desarrollo Urbano<br>         Intensidad: 5/10<br>         Nivel de Impacto: Medio         </div>`)[0];
+                popup_d9955e5a4ae945e7c7b116c0e85cd007.setContent(html_851e8d7fb7b656c50edc6665bf48ec8c);
+            
+        
+
+        circle_marker_0d558ec4c5506f18b4255c0d1f8ad31a.bindPopup(popup_d9955e5a4ae945e7c7b116c0e85cd007)
+        ;
+
+        
+    
+    
+            var circle_marker_bb88a58bfa3fb113436ee5454c76458c = L.circleMarker(
+                [36.7783, -119.4179],
+                {"bubblingMouseEvents": true, "color": "#FF4500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF4500", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 24, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_0fd53014db3606f710b748bb58f69372 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2103c46c44ff07031171a1a75ad0e1d7 = $(`<div id="html_2103c46c44ff07031171a1a75ad0e1d7" style="width: 100.0%; height: 100.0%;">         <b>California - Valle Central</b><br>         Amenaza: Pesticidas<br>         Intensidad: 8/10<br>         Nivel de Impacto: Alto         </div>`)[0];
+                popup_0fd53014db3606f710b748bb58f69372.setContent(html_2103c46c44ff07031171a1a75ad0e1d7);
+            
+        
+
+        circle_marker_bb88a58bfa3fb113436ee5454c76458c.bindPopup(popup_0fd53014db3606f710b748bb58f69372)
+        ;
+
+        
+    
+    
+            var circle_marker_4095f4ddb7afc849f37be491f8e71416 = L.circleMarker(
+                [41.4925, -99.9018],
+                {"bubblingMouseEvents": true, "color": "#FF6347", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#FF6347", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27, "stroke": true, "weight": 2}
+            ).addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+    
+        var popup_e1560e6fc3a9154a525ed2e25cbb1766 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68bbbb29500594780fe1651b4c83142c = $(`<div id="html_68bbbb29500594780fe1651b4c83142c" style="width: 100.0%; height: 100.0%;">         <b>Nebraska - Zona de Herbicidas</b><br>         Amenaza: Herbicidas<br>         Intensidad: 9/10<br>         Nivel de Impacto: Crítico         </div>`)[0];
+                popup_e1560e6fc3a9154a525ed2e25cbb1766.setContent(html_68bbbb29500594780fe1651b4c83142c);
+            
+        
+
+        circle_marker_4095f4ddb7afc849f37be491f8e71416.bindPopup(popup_e1560e6fc3a9154a525ed2e25cbb1766)
+        ;
+
+        
+    
+    
+            var heat_map_ac0199a45a220dee3f97f36572ab0b30 = L.heatLayer(
+                [[19.6097, -100.2401, 9], [19.4326, -100.1234, 8], [19.55, -100.3456, 7], [31.3069, -97.7431, 6], [38.5266, -96.7265, 8], [41.5868, -93.62, 9], [45.6945, -93.9002, 7], [43.6532, -79.3832, 5], [36.7783, -119.4179, 8], [41.4925, -99.9018, 9]],
+                {
+  "minOpacity": 0.5,
+  "maxZoom": 1,
+  "radius": 50,
+  "blur": 25,
+}
+            );
+        
+    
+            heat_map_ac0199a45a220dee3f97f36572ab0b30.addTo(map_52a2469eac7b87dff632453750c2cfd2);
+        
+</script>
+</html>

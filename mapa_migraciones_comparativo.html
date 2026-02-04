@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c74ee41ac2e69906e71588bd922c87f3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 300px; height: 200px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <h4>Leyenda de Migraciones</h4>
+    <p><span style="color:#FF6B35; font-weight:bold;">━━━</span> Migración Mariposas Monarca</p>
+    <p><span style="color:#004E89; font-weight:bold;">┅┅┅</span> Migración Humana México-EE.UU.</p>
+    <p>🦋 <span style="color:orange;">●</span> Santuarios de hibernación</p>
+    <p>👥 <span style="color:blue;">●</span> Ciudades de origen (México)</p>
+    <p>🚪 <span style="color:orange;">●</span> Ciudades fronterizas</p>
+    <p>🏙️ <span style="color:red;">●</span> Ciudades de destino (EE.UU.)</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_c74ee41ac2e69906e71588bd922c87f3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c74ee41ac2e69906e71588bd922c87f3 = L.map(
+                "map_c74ee41ac2e69906e71588bd922c87f3",
+                {
+                    center: [35.0, -100.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_80ba6104779b69bb6f2a877b562493ca = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var marker_e3210753052b0b7267d38c337a694dae = L.marker(
+                [50.0, -100.0],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_af459a19f154bf5ee6cbec9afa5f8f58 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "play", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e3210753052b0b7267d38c337a694dae.setIcon(icon_af459a19f154bf5ee6cbec9afa5f8f58);
+        
+    
+        var popup_d869dfa75fa73521675210f4573ebcb3 = L.popup({"maxWidth": 300});
+
+        
+            var html_78e7967533542c3759762aea7473cd97 = $(`<div id="html_78e7967533542c3759762aea7473cd97" style="width: 100.0%; height: 100.0%;">🦋 Canadá - Punto de partida<br>Punto de partida<br>Temporada: verano</div>`)[0];
+            popup_d869dfa75fa73521675210f4573ebcb3.setContent(html_78e7967533542c3759762aea7473cd97);
+        
+
+        marker_e3210753052b0b7267d38c337a694dae.bindPopup(popup_d869dfa75fa73521675210f4573ebcb3)
+        ;
+
+        
+    
+    
+            marker_e3210753052b0b7267d38c337a694dae.bindTooltip(
+                `<div>
+                     Canadá - Punto de partida
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91f8bf62d1784926a39ddc3d111bee90 = L.marker(
+                [46.7296, -94.6859],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_34de4fb68c2917817131a3212758c6a2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "arrow-right", "iconColor": "white", "markerColor": "lightgreen", "prefix": "fa"}
+            );
+            marker_91f8bf62d1784926a39ddc3d111bee90.setIcon(icon_34de4fb68c2917817131a3212758c6a2);
+        
+    
+        var popup_a8d3cce4f41176c7163c0a521de9ab05 = L.popup({"maxWidth": 300});
+
+        
+            var html_9c41020fc77029319c42b3609e2a9393 = $(`<div id="html_9c41020fc77029319c42b3609e2a9393" style="width: 100.0%; height: 100.0%;">🦋 Minnesota, EE.UU.<br>Punto de paso<br>Temporada: otoño</div>`)[0];
+            popup_a8d3cce4f41176c7163c0a521de9ab05.setContent(html_9c41020fc77029319c42b3609e2a9393);
+        
+
+        marker_91f8bf62d1784926a39ddc3d111bee90.bindPopup(popup_a8d3cce4f41176c7163c0a521de9ab05)
+        ;
+
+        
+    
+    
+            marker_91f8bf62d1784926a39ddc3d111bee90.bindTooltip(
+                `<div>
+                     Minnesota, EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a0d657b523d58cb3eeb5b7f879a434aa = L.marker(
+                [39.0119, -98.4842],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_57d79050c459edf848fc4606f471c5df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "arrow-right", "iconColor": "white", "markerColor": "lightgreen", "prefix": "fa"}
+            );
+            marker_a0d657b523d58cb3eeb5b7f879a434aa.setIcon(icon_57d79050c459edf848fc4606f471c5df);
+        
+    
+        var popup_e346268cdf9270ed38a321a53020766c = L.popup({"maxWidth": 300});
+
+        
+            var html_2bd55dc1d9a3d88b3d2b6c2e673d0157 = $(`<div id="html_2bd55dc1d9a3d88b3d2b6c2e673d0157" style="width: 100.0%; height: 100.0%;">🦋 Kansas, EE.UU.<br>Punto de paso<br>Temporada: otoño</div>`)[0];
+            popup_e346268cdf9270ed38a321a53020766c.setContent(html_2bd55dc1d9a3d88b3d2b6c2e673d0157);
+        
+
+        marker_a0d657b523d58cb3eeb5b7f879a434aa.bindPopup(popup_e346268cdf9270ed38a321a53020766c)
+        ;
+
+        
+    
+    
+            marker_a0d657b523d58cb3eeb5b7f879a434aa.bindTooltip(
+                `<div>
+                     Kansas, EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_11861fdd5a72c0a53f6be364a2c1aba0 = L.marker(
+                [31.9686, -99.9018],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_f941f832eb65ae5fac786c93b91c944d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "arrow-right", "iconColor": "white", "markerColor": "lightgreen", "prefix": "fa"}
+            );
+            marker_11861fdd5a72c0a53f6be364a2c1aba0.setIcon(icon_f941f832eb65ae5fac786c93b91c944d);
+        
+    
+        var popup_a0eac66583a154479c8c9894c7769d99 = L.popup({"maxWidth": 300});
+
+        
+            var html_2e4b5de18db6ead5ee7b240d9ecd9de9 = $(`<div id="html_2e4b5de18db6ead5ee7b240d9ecd9de9" style="width: 100.0%; height: 100.0%;">🦋 Texas, EE.UU.<br>Punto de paso<br>Temporada: otoño</div>`)[0];
+            popup_a0eac66583a154479c8c9894c7769d99.setContent(html_2e4b5de18db6ead5ee7b240d9ecd9de9);
+        
+
+        marker_11861fdd5a72c0a53f6be364a2c1aba0.bindPopup(popup_a0eac66583a154479c8c9894c7769d99)
+        ;
+
+        
+    
+    
+            marker_11861fdd5a72c0a53f6be364a2c1aba0.bindTooltip(
+                `<div>
+                     Texas, EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2624c968bd245858cb37812910ac3b08 = L.marker(
+                [19.6167, -100.3167],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_7fc213d52c3c8bd6ead0d15e9f8943dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_2624c968bd245858cb37812910ac3b08.setIcon(icon_7fc213d52c3c8bd6ead0d15e9f8943dc);
+        
+    
+        var popup_c6b1f4cdde546180c1bf97189a067cea = L.popup({"maxWidth": 300});
+
+        
+            var html_786dc0f28a2b1cba5b6e5b4735eda765 = $(`<div id="html_786dc0f28a2b1cba5b6e5b4735eda765" style="width: 100.0%; height: 100.0%;">🦋 Santuario El Rosario, Michoacán<br>Santuario de hibernación<br>Temporada: invierno</div>`)[0];
+            popup_c6b1f4cdde546180c1bf97189a067cea.setContent(html_786dc0f28a2b1cba5b6e5b4735eda765);
+        
+
+        marker_2624c968bd245858cb37812910ac3b08.bindPopup(popup_c6b1f4cdde546180c1bf97189a067cea)
+        ;
+
+        
+    
+    
+            marker_2624c968bd245858cb37812910ac3b08.bindTooltip(
+                `<div>
+                     Santuario El Rosario, Michoacán
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_18ebf707e1e5a7aedfaf3fca1a88538b = L.marker(
+                [19.6333, -100.3],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_cc4cd9e8afeda80d6a9661ceed385d04 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_18ebf707e1e5a7aedfaf3fca1a88538b.setIcon(icon_cc4cd9e8afeda80d6a9661ceed385d04);
+        
+    
+        var popup_023a00b1cb9eecc5ea7484422c8b1ad9 = L.popup({"maxWidth": 300});
+
+        
+            var html_ad53600a6356a6e12ac21e021ad2a415 = $(`<div id="html_ad53600a6356a6e12ac21e021ad2a415" style="width: 100.0%; height: 100.0%;">🦋 Santuario Sierra Chincua, Michoacán<br>Santuario de hibernación<br>Temporada: invierno</div>`)[0];
+            popup_023a00b1cb9eecc5ea7484422c8b1ad9.setContent(html_ad53600a6356a6e12ac21e021ad2a415);
+        
+
+        marker_18ebf707e1e5a7aedfaf3fca1a88538b.bindPopup(popup_023a00b1cb9eecc5ea7484422c8b1ad9)
+        ;
+
+        
+    
+    
+            marker_18ebf707e1e5a7aedfaf3fca1a88538b.bindTooltip(
+                `<div>
+                     Santuario Sierra Chincua, Michoacán
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e0bde7919028dfcdd9eb4e1e0dae74e3 = L.marker(
+                [19.5833, -100.2833],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_a2aa6c4ab4e6ca07a5fe17902a7c0303 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_e0bde7919028dfcdd9eb4e1e0dae74e3.setIcon(icon_a2aa6c4ab4e6ca07a5fe17902a7c0303);
+        
+    
+        var popup_65cf4218a77631750962d6f322301571 = L.popup({"maxWidth": 300});
+
+        
+            var html_4b09f122f6ebfc90f7d13e3a2b8d787e = $(`<div id="html_4b09f122f6ebfc90f7d13e3a2b8d787e" style="width: 100.0%; height: 100.0%;">🦋 Santuario Cerro Pelón, Estado de México<br>Santuario de hibernación<br>Temporada: invierno</div>`)[0];
+            popup_65cf4218a77631750962d6f322301571.setContent(html_4b09f122f6ebfc90f7d13e3a2b8d787e);
+        
+
+        marker_e0bde7919028dfcdd9eb4e1e0dae74e3.bindPopup(popup_65cf4218a77631750962d6f322301571)
+        ;
+
+        
+    
+    
+            marker_e0bde7919028dfcdd9eb4e1e0dae74e3.bindTooltip(
+                `<div>
+                     Santuario Cerro Pelón, Estado de México
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_d881f1d246b90b05b83b098c9aa1cc32 = L.polyline(
+                [[50.0, -100.0], [46.7296, -94.6859], [39.0119, -98.4842], [31.9686, -99.9018], [19.6167, -100.3167]],
+                {"bubblingMouseEvents": true, "color": "#FF6B35", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF6B35", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_3f08f7f86d85a6923d6310aa49b758b8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0e9c810e98e6cf3d04cb45c8798a464a = $(`<div id="html_0e9c810e98e6cf3d04cb45c8798a464a" style="width: 100.0%; height: 100.0%;">🦋 Ruta migratoria de mariposas monarca 1</div>`)[0];
+            popup_3f08f7f86d85a6923d6310aa49b758b8.setContent(html_0e9c810e98e6cf3d04cb45c8798a464a);
+        
+
+        poly_line_d881f1d246b90b05b83b098c9aa1cc32.bindPopup(popup_3f08f7f86d85a6923d6310aa49b758b8)
+        ;
+
+        
+    
+    
+            poly_line_d881f1d246b90b05b83b098c9aa1cc32.bindTooltip(
+                `<div>
+                     Migración de mariposas monarca
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_38706fd777c4d5c0be38fadf463201b8 = L.polyline(
+                [[31.9686, -99.9018], [19.6333, -100.3]],
+                {"bubblingMouseEvents": true, "color": "#FF6B35", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF6B35", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_7a63db11745d00a78d507a4a615abe2d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4e2e6884443a2b71c6a9d7fe943892c8 = $(`<div id="html_4e2e6884443a2b71c6a9d7fe943892c8" style="width: 100.0%; height: 100.0%;">🦋 Ruta migratoria de mariposas monarca 2</div>`)[0];
+            popup_7a63db11745d00a78d507a4a615abe2d.setContent(html_4e2e6884443a2b71c6a9d7fe943892c8);
+        
+
+        poly_line_38706fd777c4d5c0be38fadf463201b8.bindPopup(popup_7a63db11745d00a78d507a4a615abe2d)
+        ;
+
+        
+    
+    
+            poly_line_38706fd777c4d5c0be38fadf463201b8.bindTooltip(
+                `<div>
+                     Migración de mariposas monarca
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_7a10ffa8beb21b68a1afab2efd3f008b = L.polyline(
+                [[31.9686, -99.9018], [19.5833, -100.2833]],
+                {"bubblingMouseEvents": true, "color": "#FF6B35", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#FF6B35", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_d0b9d6c9e8fbecdeb263dc2eb2f94ce4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6351711c117b5ed712ce5ec0e13303cd = $(`<div id="html_6351711c117b5ed712ce5ec0e13303cd" style="width: 100.0%; height: 100.0%;">🦋 Ruta migratoria de mariposas monarca 3</div>`)[0];
+            popup_d0b9d6c9e8fbecdeb263dc2eb2f94ce4.setContent(html_6351711c117b5ed712ce5ec0e13303cd);
+        
+
+        poly_line_7a10ffa8beb21b68a1afab2efd3f008b.bindPopup(popup_d0b9d6c9e8fbecdeb263dc2eb2f94ce4)
+        ;
+
+        
+    
+    
+            poly_line_7a10ffa8beb21b68a1afab2efd3f008b.bindTooltip(
+                `<div>
+                     Migración de mariposas monarca
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d7c3329d4f70efbc835f1ce5bef4e4ca = L.marker(
+                [19.4326, -99.1332],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_8bbbd8e7c4fa1ab0bbb519269c3ff206 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_d7c3329d4f70efbc835f1ce5bef4e4ca.setIcon(icon_8bbbd8e7c4fa1ab0bbb519269c3ff206);
+        
+    
+        var popup_1d02bd44a4d63afb161c007e59a6d869 = L.popup({"maxWidth": 300});
+
+        
+            var html_ae70dada0afb0bfafb54bbec46efcdc6 = $(`<div id="html_ae70dada0afb0bfafb54bbec46efcdc6" style="width: 100.0%; height: 100.0%;">👥 Ciudad de México<br>Ciudad de origen<br>Población: 9,000,000</div>`)[0];
+            popup_1d02bd44a4d63afb161c007e59a6d869.setContent(html_ae70dada0afb0bfafb54bbec46efcdc6);
+        
+
+        marker_d7c3329d4f70efbc835f1ce5bef4e4ca.bindPopup(popup_1d02bd44a4d63afb161c007e59a6d869)
+        ;
+
+        
+    
+    
+            marker_d7c3329d4f70efbc835f1ce5bef4e4ca.bindTooltip(
+                `<div>
+                     Ciudad de México
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1a9aa68e0551be88351b97186d8805c = L.marker(
+                [20.6597, -103.3496],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_4d7c084bc838d724b355930639569de4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_a1a9aa68e0551be88351b97186d8805c.setIcon(icon_4d7c084bc838d724b355930639569de4);
+        
+    
+        var popup_d04dc7e66ef59f48ece7c218e24ae0f1 = L.popup({"maxWidth": 300});
+
+        
+            var html_6652b7af0bd523c0f379eab269e43fc6 = $(`<div id="html_6652b7af0bd523c0f379eab269e43fc6" style="width: 100.0%; height: 100.0%;">👥 Guadalajara, Jalisco<br>Ciudad de origen<br>Población: 1,500,000</div>`)[0];
+            popup_d04dc7e66ef59f48ece7c218e24ae0f1.setContent(html_6652b7af0bd523c0f379eab269e43fc6);
+        
+
+        marker_a1a9aa68e0551be88351b97186d8805c.bindPopup(popup_d04dc7e66ef59f48ece7c218e24ae0f1)
+        ;
+
+        
+    
+    
+            marker_a1a9aa68e0551be88351b97186d8805c.bindTooltip(
+                `<div>
+                     Guadalajara, Jalisco
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a2761c1bd8aebcb2cde67906953f82c = L.marker(
+                [25.6866, -100.3161],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_f24d0bc330756f99a12b8f8e512bb832 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_9a2761c1bd8aebcb2cde67906953f82c.setIcon(icon_f24d0bc330756f99a12b8f8e512bb832);
+        
+    
+        var popup_b08b199d35845e4f9f059019520cb1a0 = L.popup({"maxWidth": 300});
+
+        
+            var html_b9be64a5204e89c300c14fad909d75e4 = $(`<div id="html_b9be64a5204e89c300c14fad909d75e4" style="width: 100.0%; height: 100.0%;">👥 Monterrey, Nuevo León<br>Ciudad de origen<br>Población: 1,100,000</div>`)[0];
+            popup_b08b199d35845e4f9f059019520cb1a0.setContent(html_b9be64a5204e89c300c14fad909d75e4);
+        
+
+        marker_9a2761c1bd8aebcb2cde67906953f82c.bindPopup(popup_b08b199d35845e4f9f059019520cb1a0)
+        ;
+
+        
+    
+    
+            marker_9a2761c1bd8aebcb2cde67906953f82c.bindTooltip(
+                `<div>
+                     Monterrey, Nuevo León
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f9395644edf5161ae0d5140a86173d22 = L.marker(
+                [19.0414, -98.2063],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_b7b5109cb3dc90a7a7fa7a39bcdcbb18 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_f9395644edf5161ae0d5140a86173d22.setIcon(icon_b7b5109cb3dc90a7a7fa7a39bcdcbb18);
+        
+    
+        var popup_74615c5729d5eb511e15b56b6b693fdd = L.popup({"maxWidth": 300});
+
+        
+            var html_85f70b2f9f5b041df032cb3a6cbef5b7 = $(`<div id="html_85f70b2f9f5b041df032cb3a6cbef5b7" style="width: 100.0%; height: 100.0%;">👥 Puebla, Puebla<br>Ciudad de origen<br>Población: 1,500,000</div>`)[0];
+            popup_74615c5729d5eb511e15b56b6b693fdd.setContent(html_85f70b2f9f5b041df032cb3a6cbef5b7);
+        
+
+        marker_f9395644edf5161ae0d5140a86173d22.bindPopup(popup_74615c5729d5eb511e15b56b6b693fdd)
+        ;
+
+        
+    
+    
+            marker_f9395644edf5161ae0d5140a86173d22.bindTooltip(
+                `<div>
+                     Puebla, Puebla
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_85c0dbe7c8685a0cd3d4cc14ca5c350e = L.marker(
+                [17.0732, -96.7266],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_dabea0e78b1c6418e98d561e0b47fd76 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "home", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_85c0dbe7c8685a0cd3d4cc14ca5c350e.setIcon(icon_dabea0e78b1c6418e98d561e0b47fd76);
+        
+    
+        var popup_e87524069635c84cbf8145d3e6d7f728 = L.popup({"maxWidth": 300});
+
+        
+            var html_20e186ede14a2a93b2e8487ad8199df6 = $(`<div id="html_20e186ede14a2a93b2e8487ad8199df6" style="width: 100.0%; height: 100.0%;">👥 Oaxaca, Oaxaca<br>Ciudad de origen<br>Población: 300,000</div>`)[0];
+            popup_e87524069635c84cbf8145d3e6d7f728.setContent(html_20e186ede14a2a93b2e8487ad8199df6);
+        
+
+        marker_85c0dbe7c8685a0cd3d4cc14ca5c350e.bindPopup(popup_e87524069635c84cbf8145d3e6d7f728)
+        ;
+
+        
+    
+    
+            marker_85c0dbe7c8685a0cd3d4cc14ca5c350e.bindTooltip(
+                `<div>
+                     Oaxaca, Oaxaca
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1051ad8d1357ac336edf41b87b9226b5 = L.marker(
+                [32.5149, -117.0382],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_3725ffd1f2a57c65828af1544d1c72cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "exchange", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_1051ad8d1357ac336edf41b87b9226b5.setIcon(icon_3725ffd1f2a57c65828af1544d1c72cd);
+        
+    
+        var popup_e3a8503d371a4595de099ed098efa20c = L.popup({"maxWidth": 300});
+
+        
+            var html_f18ee60b03f90d6eddacb321613ee7eb = $(`<div id="html_f18ee60b03f90d6eddacb321613ee7eb" style="width: 100.0%; height: 100.0%;">🚪 Tijuana, Baja California<br>Ciudad fronteriza<br>Población: 1,800,000</div>`)[0];
+            popup_e3a8503d371a4595de099ed098efa20c.setContent(html_f18ee60b03f90d6eddacb321613ee7eb);
+        
+
+        marker_1051ad8d1357ac336edf41b87b9226b5.bindPopup(popup_e3a8503d371a4595de099ed098efa20c)
+        ;
+
+        
+    
+    
+            marker_1051ad8d1357ac336edf41b87b9226b5.bindTooltip(
+                `<div>
+                     Tijuana, Baja California
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e53fec989f344766788deb7f8b2b4ec = L.marker(
+                [31.6904, -106.4245],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_64a6bfaa32868dbf12bc9c5a604e8d0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "exchange", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_1e53fec989f344766788deb7f8b2b4ec.setIcon(icon_64a6bfaa32868dbf12bc9c5a604e8d0a);
+        
+    
+        var popup_097eb2d050f21b2204656b356bc5ba4e = L.popup({"maxWidth": 300});
+
+        
+            var html_5fd2500c2b6feafc64c7f83b9758b6a2 = $(`<div id="html_5fd2500c2b6feafc64c7f83b9758b6a2" style="width: 100.0%; height: 100.0%;">🚪 Ciudad Juárez, Chihuahua<br>Ciudad fronteriza<br>Población: 1,400,000</div>`)[0];
+            popup_097eb2d050f21b2204656b356bc5ba4e.setContent(html_5fd2500c2b6feafc64c7f83b9758b6a2);
+        
+
+        marker_1e53fec989f344766788deb7f8b2b4ec.bindPopup(popup_097eb2d050f21b2204656b356bc5ba4e)
+        ;
+
+        
+    
+    
+            marker_1e53fec989f344766788deb7f8b2b4ec.bindTooltip(
+                `<div>
+                     Ciudad Juárez, Chihuahua
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d47740615f7ba73cd276e2c7dbc7ac5a = L.marker(
+                [27.4758, -99.5077],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_967f8ff47cf210cd44a85abc98cf9f31 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "exchange", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_d47740615f7ba73cd276e2c7dbc7ac5a.setIcon(icon_967f8ff47cf210cd44a85abc98cf9f31);
+        
+    
+        var popup_05a59be7ec6792326304d2fd496ebd56 = L.popup({"maxWidth": 300});
+
+        
+            var html_61882d55e44f159906189930a394d08c = $(`<div id="html_61882d55e44f159906189930a394d08c" style="width: 100.0%; height: 100.0%;">🚪 Nuevo Laredo, Tamaulipas<br>Ciudad fronteriza<br>Población: 400,000</div>`)[0];
+            popup_05a59be7ec6792326304d2fd496ebd56.setContent(html_61882d55e44f159906189930a394d08c);
+        
+
+        marker_d47740615f7ba73cd276e2c7dbc7ac5a.bindPopup(popup_05a59be7ec6792326304d2fd496ebd56)
+        ;
+
+        
+    
+    
+            marker_d47740615f7ba73cd276e2c7dbc7ac5a.bindTooltip(
+                `<div>
+                     Nuevo Laredo, Tamaulipas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5cca55f627aabb167f343f117ea7f59d = L.marker(
+                [25.8699, -97.5044],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_860caf22c9e60958ad16095520210398 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "exchange", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_5cca55f627aabb167f343f117ea7f59d.setIcon(icon_860caf22c9e60958ad16095520210398);
+        
+    
+        var popup_fb1004fca1e7231fa036efebc88dd5ba = L.popup({"maxWidth": 300});
+
+        
+            var html_f1de95f56fbc851e5a6033a4f7ffb44c = $(`<div id="html_f1de95f56fbc851e5a6033a4f7ffb44c" style="width: 100.0%; height: 100.0%;">🚪 Matamoros, Tamaulipas<br>Ciudad fronteriza<br>Población: 500,000</div>`)[0];
+            popup_fb1004fca1e7231fa036efebc88dd5ba.setContent(html_f1de95f56fbc851e5a6033a4f7ffb44c);
+        
+
+        marker_5cca55f627aabb167f343f117ea7f59d.bindPopup(popup_fb1004fca1e7231fa036efebc88dd5ba)
+        ;
+
+        
+    
+    
+            marker_5cca55f627aabb167f343f117ea7f59d.bindTooltip(
+                `<div>
+                     Matamoros, Tamaulipas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_988991d3d380b036c00e4cbf8f8e4e83 = L.marker(
+                [34.0522, -118.2437],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_d87bd777354b13119b087dfbd21afac9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_988991d3d380b036c00e4cbf8f8e4e83.setIcon(icon_d87bd777354b13119b087dfbd21afac9);
+        
+    
+        var popup_fc7656b2b72a63c107a8c4bdc5904273 = L.popup({"maxWidth": 300});
+
+        
+            var html_40872991e5e34ab4fd93c2ab05fbeab2 = $(`<div id="html_40872991e5e34ab4fd93c2ab05fbeab2" style="width: 100.0%; height: 100.0%;">🏙️ Los Angeles, California<br>Ciudad de destino<br>Población: 4,000,000</div>`)[0];
+            popup_fc7656b2b72a63c107a8c4bdc5904273.setContent(html_40872991e5e34ab4fd93c2ab05fbeab2);
+        
+
+        marker_988991d3d380b036c00e4cbf8f8e4e83.bindPopup(popup_fc7656b2b72a63c107a8c4bdc5904273)
+        ;
+
+        
+    
+    
+            marker_988991d3d380b036c00e4cbf8f8e4e83.bindTooltip(
+                `<div>
+                     Los Angeles, California
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1cb2c8f207aeeacd5b9e2a2445b3f2aa = L.marker(
+                [29.7604, -95.3698],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_15927f0237ce0135fe6a0766559d6018 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_1cb2c8f207aeeacd5b9e2a2445b3f2aa.setIcon(icon_15927f0237ce0135fe6a0766559d6018);
+        
+    
+        var popup_6ea1d0e3f40fd86eed698ac0ea69b3ef = L.popup({"maxWidth": 300});
+
+        
+            var html_4f3421396a7fc11c58fe3da2aefe3c68 = $(`<div id="html_4f3421396a7fc11c58fe3da2aefe3c68" style="width: 100.0%; height: 100.0%;">🏙️ Houston, Texas<br>Ciudad de destino<br>Población: 2,300,000</div>`)[0];
+            popup_6ea1d0e3f40fd86eed698ac0ea69b3ef.setContent(html_4f3421396a7fc11c58fe3da2aefe3c68);
+        
+
+        marker_1cb2c8f207aeeacd5b9e2a2445b3f2aa.bindPopup(popup_6ea1d0e3f40fd86eed698ac0ea69b3ef)
+        ;
+
+        
+    
+    
+            marker_1cb2c8f207aeeacd5b9e2a2445b3f2aa.bindTooltip(
+                `<div>
+                     Houston, Texas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc80fc04697d41c9f46152980b7df061 = L.marker(
+                [41.8781, -87.6298],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_544de5760fa95a1b3fe63200003648cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_bc80fc04697d41c9f46152980b7df061.setIcon(icon_544de5760fa95a1b3fe63200003648cb);
+        
+    
+        var popup_a81419677c1e59691435afef02650562 = L.popup({"maxWidth": 300});
+
+        
+            var html_2682d644a66236bb2449b7f74af197ad = $(`<div id="html_2682d644a66236bb2449b7f74af197ad" style="width: 100.0%; height: 100.0%;">🏙️ Chicago, Illinois<br>Ciudad de destino<br>Población: 2,700,000</div>`)[0];
+            popup_a81419677c1e59691435afef02650562.setContent(html_2682d644a66236bb2449b7f74af197ad);
+        
+
+        marker_bc80fc04697d41c9f46152980b7df061.bindPopup(popup_a81419677c1e59691435afef02650562)
+        ;
+
+        
+    
+    
+            marker_bc80fc04697d41c9f46152980b7df061.bindTooltip(
+                `<div>
+                     Chicago, Illinois
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_280e935b3da150ed06fdddde4408a7f4 = L.marker(
+                [33.4484, -112.074],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_af30534b2c3278ac65b55deaae188f0f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_280e935b3da150ed06fdddde4408a7f4.setIcon(icon_af30534b2c3278ac65b55deaae188f0f);
+        
+    
+        var popup_de9034960e40a33bb80b11950cef83ea = L.popup({"maxWidth": 300});
+
+        
+            var html_6a246720ffa8b73d082c118ce3d82c04 = $(`<div id="html_6a246720ffa8b73d082c118ce3d82c04" style="width: 100.0%; height: 100.0%;">🏙️ Phoenix, Arizona<br>Ciudad de destino<br>Población: 1,700,000</div>`)[0];
+            popup_de9034960e40a33bb80b11950cef83ea.setContent(html_6a246720ffa8b73d082c118ce3d82c04);
+        
+
+        marker_280e935b3da150ed06fdddde4408a7f4.bindPopup(popup_de9034960e40a33bb80b11950cef83ea)
+        ;
+
+        
+    
+    
+            marker_280e935b3da150ed06fdddde4408a7f4.bindTooltip(
+                `<div>
+                     Phoenix, Arizona
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_38e09f1e3923019b841c337d7d08ae31 = L.marker(
+                [32.7767, -96.797],
+                {}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+            var icon_ccd1f8d0652fb17c35c2a6d7606cfbc5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "flag", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_38e09f1e3923019b841c337d7d08ae31.setIcon(icon_ccd1f8d0652fb17c35c2a6d7606cfbc5);
+        
+    
+        var popup_7ad004ae07003eb0c0a058f0b451e568 = L.popup({"maxWidth": 300});
+
+        
+            var html_853b0c50a5e1ae87b433d647345f2d2c = $(`<div id="html_853b0c50a5e1ae87b433d647345f2d2c" style="width: 100.0%; height: 100.0%;">🏙️ Dallas, Texas<br>Ciudad de destino<br>Población: 1,300,000</div>`)[0];
+            popup_7ad004ae07003eb0c0a058f0b451e568.setContent(html_853b0c50a5e1ae87b433d647345f2d2c);
+        
+
+        marker_38e09f1e3923019b841c337d7d08ae31.bindPopup(popup_7ad004ae07003eb0c0a058f0b451e568)
+        ;
+
+        
+    
+    
+            marker_38e09f1e3923019b841c337d7d08ae31.bindTooltip(
+                `<div>
+                     Dallas, Texas
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_bc1746239f55f5f718885995cbd906f2 = L.polyline(
+                [[19.4326, -99.1332], [32.5149, -117.0382], [34.0522, -118.2437]],
+                {"bubblingMouseEvents": true, "color": "#004E89", "dashArray": "10,5", "dashOffset": null, "fill": false, "fillColor": "#004E89", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_76e0a318732c77fe291bd45121fd362f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ccd7fc702a765c61c8e9c63d0055f22b = $(`<div id="html_ccd7fc702a765c61c8e9c63d0055f22b" style="width: 100.0%; height: 100.0%;">👥 Ruta migratoria humana 1</div>`)[0];
+            popup_76e0a318732c77fe291bd45121fd362f.setContent(html_ccd7fc702a765c61c8e9c63d0055f22b);
+        
+
+        poly_line_bc1746239f55f5f718885995cbd906f2.bindPopup(popup_76e0a318732c77fe291bd45121fd362f)
+        ;
+
+        
+    
+    
+            poly_line_bc1746239f55f5f718885995cbd906f2.bindTooltip(
+                `<div>
+                     Migración humana México-EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_e164b895ef3ca0e02b526eed84aa99bc = L.polyline(
+                [[20.6597, -103.3496], [32.5149, -117.0382], [34.0522, -118.2437]],
+                {"bubblingMouseEvents": true, "color": "#004E89", "dashArray": "10,5", "dashOffset": null, "fill": false, "fillColor": "#004E89", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_e717cd7ddb7bd50dc9962fef013a4d8b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c6c13c0b21b4715f1a4bc8a03fda6471 = $(`<div id="html_c6c13c0b21b4715f1a4bc8a03fda6471" style="width: 100.0%; height: 100.0%;">👥 Ruta migratoria humana 2</div>`)[0];
+            popup_e717cd7ddb7bd50dc9962fef013a4d8b.setContent(html_c6c13c0b21b4715f1a4bc8a03fda6471);
+        
+
+        poly_line_e164b895ef3ca0e02b526eed84aa99bc.bindPopup(popup_e717cd7ddb7bd50dc9962fef013a4d8b)
+        ;
+
+        
+    
+    
+            poly_line_e164b895ef3ca0e02b526eed84aa99bc.bindTooltip(
+                `<div>
+                     Migración humana México-EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_e142f4a37a3b4c13dc17c04e4cf19192 = L.polyline(
+                [[25.6866, -100.3161], [31.6904, -106.4245], [29.7604, -95.3698]],
+                {"bubblingMouseEvents": true, "color": "#004E89", "dashArray": "10,5", "dashOffset": null, "fill": false, "fillColor": "#004E89", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_593332ff540da1bde49018ca0e192140 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5259e450481230393cf1f18337630874 = $(`<div id="html_5259e450481230393cf1f18337630874" style="width: 100.0%; height: 100.0%;">👥 Ruta migratoria humana 3</div>`)[0];
+            popup_593332ff540da1bde49018ca0e192140.setContent(html_5259e450481230393cf1f18337630874);
+        
+
+        poly_line_e142f4a37a3b4c13dc17c04e4cf19192.bindPopup(popup_593332ff540da1bde49018ca0e192140)
+        ;
+
+        
+    
+    
+            poly_line_e142f4a37a3b4c13dc17c04e4cf19192.bindTooltip(
+                `<div>
+                     Migración humana México-EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_539dc362e5b5f5a6483e4affc31b9465 = L.polyline(
+                [[19.0414, -98.2063], [27.4758, -99.5077], [29.7604, -95.3698]],
+                {"bubblingMouseEvents": true, "color": "#004E89", "dashArray": "10,5", "dashOffset": null, "fill": false, "fillColor": "#004E89", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_d1ccec4689de55cf930d3c61609807ef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1c905eef748b3ca6634bcb37acc4b2f7 = $(`<div id="html_1c905eef748b3ca6634bcb37acc4b2f7" style="width: 100.0%; height: 100.0%;">👥 Ruta migratoria humana 4</div>`)[0];
+            popup_d1ccec4689de55cf930d3c61609807ef.setContent(html_1c905eef748b3ca6634bcb37acc4b2f7);
+        
+
+        poly_line_539dc362e5b5f5a6483e4affc31b9465.bindPopup(popup_d1ccec4689de55cf930d3c61609807ef)
+        ;
+
+        
+    
+    
+            poly_line_539dc362e5b5f5a6483e4affc31b9465.bindTooltip(
+                `<div>
+                     Migración humana México-EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var poly_line_583198dc64966a0f49e98cfba03705b3 = L.polyline(
+                [[17.0732, -96.7266], [25.8699, -97.5044], [41.8781, -87.6298]],
+                {"bubblingMouseEvents": true, "color": "#004E89", "dashArray": "10,5", "dashOffset": null, "fill": false, "fillColor": "#004E89", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_c74ee41ac2e69906e71588bd922c87f3);
+        
+    
+        var popup_a0af0dc42d107c1ff7fe530d53a12b21 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fecf34f628424af27f818c3f187d1be7 = $(`<div id="html_fecf34f628424af27f818c3f187d1be7" style="width: 100.0%; height: 100.0%;">👥 Ruta migratoria humana 5</div>`)[0];
+            popup_a0af0dc42d107c1ff7fe530d53a12b21.setContent(html_fecf34f628424af27f818c3f187d1be7);
+        
+
+        poly_line_583198dc64966a0f49e98cfba03705b3.bindPopup(popup_a0af0dc42d107c1ff7fe530d53a12b21)
+        ;
+
+        
+    
+    
+            poly_line_583198dc64966a0f49e98cfba03705b3.bindTooltip(
+                `<div>
+                     Migración humana México-EE.UU.
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
